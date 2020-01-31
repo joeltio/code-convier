@@ -4,6 +4,7 @@
 #include <vector>
 #include <unordered_set>
 #include <unordered_map>
+#include <queue>
 #include <typeindex>
 
 #include "constants.h"
@@ -23,6 +24,9 @@ class Manager {
 		std::unordered_map<Types::TypeId, void*> components;
 		// EntityId -> ComponentType -> vector index
 		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>*> entityComponents;
+		// Queue for entities which should be removed
+		// [[EntityId, EntityType], ...]
+		std::queue<std::pair<EntityIdType, Types::TypeId>> entityRemovalQueue;
 		EntityIdType lastCreatedEntityId = NULL;
 
 	public:
@@ -41,8 +45,16 @@ class Manager {
 
 		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
 
+		// Removes entity and its components immediately
 		template<typename EntityType> void removeEntity(EntityIdType id);
+		// Removes entity and its components immediately
 		void removeEntity(EntityIdType id, Types::TypeId entityType);
+		// Queues entity for removal
+		template<typename EntityType> void queueEntityForRemoval(EntityIdType id);
+		void queueEntityForRemoval(EntityIdType id, Types::TypeId entityType);
+
+		// Removes all entities in removal queue
+		void flushEntityRemovalQueue();
 
 		// Memory clean up
 		void releaseAll();

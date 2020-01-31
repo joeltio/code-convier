@@ -86,6 +86,12 @@ template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	this->removeEntity(id, entityTypeId);
 }
 
+template<typename EntityType> void Manager::queueEntityForRemoval(EntityIdType id) {
+	Types::TypeId entityTypeId = Types::toTypeId<EntityType>();
+
+	this->queueEntityForRemoval(id, entityTypeId);
+}
+
 template<typename ComponentType> void Manager::addComponent(EntityIdType id, ComponentType component) {
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 

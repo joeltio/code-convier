@@ -43,6 +43,24 @@ void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 	this->entities.erase(id);
 }
 
+void Manager::queueEntityForRemoval(EntityIdType id, Types::TypeId entityType) {
+	// Create a pair with the id and the entity type to be inserted into the queue
+	std::pair<EntityIdType, Types::TypeId> entityPair = std::make_pair(id, entityType);
+
+	// Put it into the queue
+	this->entityRemovalQueue.push(entityPair);
+}
+
+void Manager::flushEntityRemovalQueue() {
+	while (!this->entityRemovalQueue.empty())
+	{
+		std::pair<EntityIdType, Types::TypeId> entityPair = this->entityRemovalQueue.front();
+		this->entityRemovalQueue.pop();
+
+		this->removeEntity(entityPair.first, entityPair.second);
+	}
+}
+
 void Manager::releaseAll() {
 	// Delete all entities
 	// Create a copy of the entity ids and types
