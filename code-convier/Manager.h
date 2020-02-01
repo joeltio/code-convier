@@ -39,6 +39,7 @@ class Manager {
 		Entity* getEntity(EntityIdType id);
 		std::unordered_set<EntityIdType>* getEntities(Types::TypeId entityType);
 		template<typename ComponentType> std::vector<ComponentType>* getComponents();
+		std::vector<Component>* getComponents(Types::TypeId componentTypeId);
 		template<typename ComponentType> ComponentType& getEntityComponent(EntityIdType id);
 		template<typename EntityType> std::unordered_set<EntityIdType>* getEntities();
 		template<typename ComponentType> bool entityHasComponent(EntityIdType id);

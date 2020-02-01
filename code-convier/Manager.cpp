@@ -19,6 +19,20 @@ std::unordered_set<EntityIdType>* Manager::getEntities(Types::TypeId entityType)
 	return this->entityFamilies.at(entityType);
 }
 
+std::vector<Component>* Manager::getComponents(Types::TypeId componentTypeId) {
+	if (this->components.find(componentTypeId) == this->components.end())
+	{
+		// Add an empty vector with the componentType if it does not exist
+		std::vector<Component>* componentVector = new std::vector<Component>();
+		std::pair<Types::TypeId, std::vector<Component>*> emptyRecord
+			(componentTypeId, componentVector);
+		this->components.insert(emptyRecord);
+	}
+
+	std::vector<Component>* componentVectorPtr = (std::vector<Component>*) this->components.at(componentTypeId);
+	return componentVectorPtr;
+}
+
 void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 	// Remove the entity's components
 	std::unordered_map<Types::TypeId, int>* componentMap = this->entityComponents.at(id);
