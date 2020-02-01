@@ -5,7 +5,7 @@
 
 namespace Component {
 	struct State : public ECS::Component {
-		ECS::Types::TypeId state;
+		Types::TypeId state;
 
 		template<typename NewStateType> void changeState();
 	};

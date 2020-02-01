@@ -2,4 +2,6 @@
 
 #include "State.h"
 
-class MenuState : public FSM::State {};
+class GameMenuState : public FSM::State {
+	void update(float frameTime);
+};
