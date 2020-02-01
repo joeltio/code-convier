@@ -134,7 +134,6 @@
   <ItemGroup>
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="FiniteStateSystem.cpp" />
     <ClCompile Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
@@ -155,6 +154,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
+    <ClInclude Include="GameMenuState.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="Reducer.h" />

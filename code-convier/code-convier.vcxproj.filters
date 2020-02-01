@@ -14,6 +14,12 @@
     <Filter Include="Header Files\FSM">
       <UniqueIdentifier>{aa731301-7f52-431d-8762-c91f3e7dc863}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States">
+      <UniqueIdentifier>{32cf2de5-4b27-4818-b10b-8a3df0d43522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States\Game">
+      <UniqueIdentifier>{935062c0-ac9c-41f2-a0c6-4d59fcf0a799}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\System">
       <UniqueIdentifier>{a413f069-2231-4193-8ac7-e86077355568}</UniqueIdentifier>
     </Filter>
@@ -45,9 +51,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="FiniteStateSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="FiniteStateSystem.h">
       <Filter>Header Files\System</Filter>
     </ClCompile>
@@ -76,7 +79,7 @@
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="typeUtil.cpp">
-      <Filter>Source Files\ECS</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenuState.h">
+      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>
@@ -132,7 +138,7 @@
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="typeUtil.h">
-      <Filter>Header Files\ECS</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -146,7 +152,7 @@
       <Filter>Source Files\Component</Filter>
     </None>
     <None Include="typeUtil.tpp">
-      <Filter>Source Files\ECS</Filter>
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
 </Project>
