@@ -20,12 +20,18 @@ Convier::~Convier()
 void Convier::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd); // throws GameError
+	this->manager = new ECS::Manager();
+
+	// Register systems
+
+	this->systemRunner.initialize(this->manager, this->graphics, this->input);
 }
 
 //=============================================================================
 // Update all game items
 //=============================================================================
 void Convier::update() {
+	this->systemRunner.update(this->frameTime);
 }
 
 //=============================================================================
@@ -33,6 +39,9 @@ void Convier::update() {
 //=============================================================================
 void Convier::render()
 {
+	graphics->spriteBegin();
+	this->systemRunner.render();
+	graphics->spriteEnd();
 }
 
 //=============================================================================
@@ -41,6 +50,9 @@ void Convier::render()
 //=============================================================================
 void Convier::releaseAll()
 {
+	this->systemRunner.releaseAll();
+	SAFE_DELETE(this->manager);
+	Game::releaseAll();
 }
 
 //=============================================================================
@@ -49,4 +61,6 @@ void Convier::releaseAll()
 //=============================================================================
 void Convier::resetAll()
 {
+	Game::resetAll();
+	this->systemRunner.resetAll();
 }

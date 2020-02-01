@@ -2,13 +2,16 @@
 #define WIN32_LEAN_AND_MEAN
 #include <string.h>
 #include "game.h"
+#include "Manager.h"
+#include "SystemRunner.h"
 
 //=============================================================================
 // Create game class
 //=============================================================================
 class Convier : public Game {
 private:
-
+	ECS::Manager* manager = NULL;
+	ECS::SystemRunner systemRunner;
 public:
 	// Constructor
 	Convier();
