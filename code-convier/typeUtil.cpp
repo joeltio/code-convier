@@ -1,6 +1,5 @@
 #include "typeUtil.h"
 
-namespace ECS {
 namespace Types {
 
 bool isSameType(TypeId a, TypeId b) {
@@ -8,5 +7,4 @@ bool isSameType(TypeId a, TypeId b) {
 	return a == b;
 }
 
-}
 }
