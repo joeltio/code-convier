@@ -1,5 +1,5 @@
 #include "GameRunningState.h"
 
-void GameRunningState::update(float frameTime) {
-
+FSM::Action GameRunningState::update(float frameTime) {
+	return FSM::NoAction();
 }

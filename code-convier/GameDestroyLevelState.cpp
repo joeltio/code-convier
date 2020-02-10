@@ -1,5 +1,5 @@
 #include "GameDestroyLevelState.h"
 
-void GameDestroyLevelState::update(float frameTime) {
-
+FSM::Action GameDestroyLevelState::update(float frameTime) {
+	return FSM::NoAction();
 }

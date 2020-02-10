@@ -1,5 +1,5 @@
 #include "GameCreateLevelState.h"
 
-void GameCreateLevelState::update(float frameTime) {
-
+FSM::Action GameCreateLevelState::update(float frameTime) {
+	return FSM::NoAction();
 }

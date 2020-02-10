@@ -1,5 +1,5 @@
 #include "GamePlayerDeathState.h"
 
-void GamePlayerDeathState::update(float frameTime) {
-
+FSM::Action GamePlayerDeathState::update(float frameTime) {
+	return FSM::NoAction();
 }

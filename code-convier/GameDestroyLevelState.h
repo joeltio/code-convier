@@ -1,7 +1,8 @@
 #pragma once
 
+#include "Action.h"
 #include "State.h"
 
 class GameDestroyLevelState : FSM::State {
-	void update(float frameTime);
+	FSM::Action update(float frameTime);
 };

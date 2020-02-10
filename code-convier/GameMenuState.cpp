@@ -1,5 +1,5 @@
 #include "GameMenuState.h"
 
-void GameMenuState::update(float frameTime) {
-
+FSM::Action GameMenuState::update(float frameTime) {
+	return FSM::NoAction();
 }
