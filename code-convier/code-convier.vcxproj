@@ -149,6 +149,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="PlayerMovementSystem.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Store.cpp" />
@@ -173,6 +174,9 @@
     <ClInclude Include="GameStateComponent.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="PlayerMovementSystem.h" />
+    <ClInclude Include="PositionComponent.h" />
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
