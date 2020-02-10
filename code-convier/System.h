@@ -27,4 +27,4 @@ class System {
 		virtual void resetAll() {};
 };
 
-};
+}

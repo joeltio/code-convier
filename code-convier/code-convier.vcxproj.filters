@@ -90,6 +90,9 @@
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="State.cpp">
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
@@ -101,6 +104,9 @@
     </ClCompile>
     <ClCompile Include="SystemRunner.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureComponent.cpp">
+      <Filter>Source Files\Component</Filter>
     </ClCompile>
     <ClCompile Include="typeUtil.cpp">
       <Filter>Source Files</Filter>
@@ -161,6 +167,9 @@
     <ClInclude Include="Reducer.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
@@ -175,6 +184,12 @@
     </ClInclude>
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>

@@ -3,5 +3,7 @@
 #include "StateComponent.h"
 
 namespace Component {
-	struct GameState : public Component::State {};
+	struct GameState : public Component::State {
+		RECT renderRect;
+	};
 }

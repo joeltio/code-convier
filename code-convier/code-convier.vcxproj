@@ -144,10 +144,12 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="SystemRunner.cpp" />
+    <ClCompile Include="TextureComponent.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
@@ -169,11 +171,14 @@
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
     <ClInclude Include="Store.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemRunner.h" />
+    <ClInclude Include="TextureComponent.h" />
+    <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="typeUtil.h" />
   </ItemGroup>
   <ItemGroup>
