@@ -58,6 +58,18 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Player">
+      <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Background">
+      <UniqueIdentifier>{7ef6f92c-7e65-4e4a-8984-a6c6880f63dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Button">
+      <UniqueIdentifier>{43cac398-5a13-46f4-a1f6-454420c9e44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{cb43fca0-80f0-4fd8-9422-628f3feab2e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="convier.cpp">
@@ -194,6 +206,12 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="QuitGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowCreditsAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -208,5 +226,55 @@
     <None Include="typeUtil.tpp">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Player spritesheets\Player_Dying.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Idle.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Jump.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Melee.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Run.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="..\..\..\Credits.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Menu.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Quit.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Resume.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Start.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
   </ItemGroup>
 </Project>
