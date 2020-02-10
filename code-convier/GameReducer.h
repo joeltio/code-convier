@@ -2,11 +2,15 @@
 
 #include "Reducer.h"
 #include "State.h"
+
 #include "GameEntity.h"
 #include "GameStateComponent.h"
 
 // Actions this reducer handles
 #include "PrepareGameAction.h"
+
+// States that this reducer hanndles
+#include "GameCreateLevelState.h"
 
 static std::string ACCEPTED_ACTIONS[] = {
 	PREPARE_GAME_ACTION

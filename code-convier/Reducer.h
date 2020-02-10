@@ -6,11 +6,15 @@
 #include "Manager.h"
 #include "State.h"
 #include "Action.h"
+#include "StateComponent.h"
 
 namespace FSM {
 	class Reducer {
 		protected:
-			static void changeState();
+			template<typename NewStateType> static void changeState(
+				std::unordered_map<Types::TypeId, State*>& states,
+				Component::State& stateComponent
+			);
 		public:
 			virtual bool acceptsAction(Action &action) = 0;
 			virtual void reduce(
@@ -20,3 +24,5 @@ namespace FSM {
 			) = 0;
 	};
 }
+
+#include "Reducer.tpp"
