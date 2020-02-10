@@ -14,6 +14,9 @@
     <Filter Include="Header Files\ECS">
       <UniqueIdentifier>{eb4b8f1e-c3bd-4c4e-9163-ea0495a76392}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{8e46328c-8573-4df8-a9f7-a0feebf01d36}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\FSM">
       <UniqueIdentifier>{aa731301-7f52-431d-8762-c91f3e7dc863}</UniqueIdentifier>
     </Filter>
@@ -42,6 +45,9 @@
     </Filter>
     <Filter Include="Source Files\ECS">
       <UniqueIdentifier>{450a48d2-651c-4189-b6aa-678584d7f8fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{61c71b4b-0751-41b4-ad6e-3d3fc306a1ea}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\FSM">
       <UniqueIdentifier>{3367818c-1212-4c82-a54f-7c9cd7253579}</UniqueIdentifier>
@@ -74,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="GameMenuState.cpp">
       <Filter>Source Files\States\Game</Filter>
@@ -139,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDataComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>

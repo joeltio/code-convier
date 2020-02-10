@@ -145,6 +145,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
+    <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="System.cpp" />
@@ -162,6 +163,8 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="fsmConstants.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="GameDataComponent.h" />
+    <ClInclude Include="GameEntity.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="GameMenuState.h" />
     <ClInclude Include="GameReducer.h" />

@@ -5,6 +5,9 @@ namespace System {
 void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
 	System::initialize(manager, graphics, input);
 
+	// Create the GameState
+	Entity::Game::create(manager);
+
 	// Create the store
 	this->store = new FSM::Store(manager);
 	// Register the reducers

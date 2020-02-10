@@ -8,19 +8,20 @@
 
 namespace Component {
 
-	struct Texture : ECS::Component {
-		bool visible = false;
+	struct Texture : public ECS::Component {
+		public:
+			bool visible = false;
 
-		UINT totalWidth = 0;
-		UINT totalHeight = 0;
+			UINT totalWidth = 0;
+			UINT totalHeight = 0;
 
-		RECT viewableRect;
+			RECT viewableRect;
 
-		std::string filePath;
-		LP_TEXTURE texture = NULL;
-		COLOR_ARGB filter = graphicsNS::WHITE;
+			std::string filePath;
+			LP_TEXTURE texture = NULL;
+			COLOR_ARGB filter = graphicsNS::WHITE;
 
-		bool loadTexture(Graphics* graphics, const char* filePath);
+			bool loadTexture(Graphics* graphics, const char* filePath);
 	};
 
 }

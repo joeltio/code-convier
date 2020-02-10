@@ -81,13 +81,19 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	if (this->components.find(componentTypeId) == this->components.end())
 	{
 		// Add an empty vector with the componentType if it does not exist
-		std::vector<ComponentType>* componentVector = new std::vector<ComponentType>();
 		std::pair<Types::TypeId, std::vector<ComponentType>*> emptyRecord
-			(componentTypeId, componentVector);
+			(componentTypeId, new std::vector<ComponentType>());
 		this->components.insert(emptyRecord);
 	}
 
-	std::vector<ComponentType>* componentVectorPtr = this->components.at(componentTypeId);
+	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
+
+	if (this->deletedComponents.find(componentTypeId) == this->deletedComponents.end())
+	{
+		std::pair<Types::TypeId, std::queue<int>*> emptyRecord
+			(componentTypeId, new std::queue<int>());
+		this->deletedComponents.insert(emptyRecord);
+	}
 
 	// Set the entity id
 	component.entityId = id;
