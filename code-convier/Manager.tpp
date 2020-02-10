@@ -75,12 +75,6 @@ template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	this->removeEntity(id, entityTypeId);
 }
 
-template<typename EntityType> void Manager::queueEntityForRemoval(EntityIdType id) {
-	Types::TypeId entityTypeId = Types::toTypeId<EntityType>();
-
-	this->queueEntityForRemoval(id, entityTypeId);
-}
-
 template<typename ComponentType> void Manager::addComponent(EntityIdType id, ComponentType component) {
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 
@@ -93,9 +87,28 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 		this->components.insert(emptyRecord);
 	}
 
+	std::vector<ComponentType>* componentVectorPtr = this->components.at(componentTypeId);
+
 	// Set the entity id
 	component.entityId = id;
-	((std::vector<ComponentType>*) this->components.at(componentTypeId))->push_back(component);
+
+	// Add the component to the manager
+	int componentIndex = -1;
+	if (!this->deletedComponents.at(componentTypeId)->empty())
+	{
+		// Reuse old components
+		componentIndex = this->deletedComponents.at(componentTypeId)->front();
+		this->deletedComponents.at(componentTypeId)->pop();
+
+		// Set the reused component's values to the new components values
+		componentVectorPtr->at(componentIndex) = component;
+	}
+	else
+	{
+		// Add the new component
+		componentVectorPtr->push_back(component);
+		componentIndex = componentVectorPtr->size() - 1;
+	}
 
 	// Add to the entity components
 	// Check if there is a map for the entity id
@@ -109,7 +122,6 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 		this->entityComponents.insert(emptyRecord);
 	}
 
-	int componentIndex = ((std::vector<ComponentType>*) this->components.at(componentTypeId))->size() - 1;
 	std::pair<Types::TypeId, int> componentIndexPair = std::make_pair(componentTypeId, componentIndex);
 	this->entityComponents.at(id)->insert(componentIndexPair);
 }

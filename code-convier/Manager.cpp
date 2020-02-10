@@ -42,7 +42,12 @@ void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 
 		int componentIndex = this->entityComponents.at(id)->at(componentType);
 		std::vector<Component>* componentVectorPtr = (std::vector<Component>*) this->components.at(componentType);
-		componentVectorPtr->erase(componentVectorPtr->begin() + componentIndex);
+
+		// Deactivate the component
+		componentVectorPtr->at(componentIndex).isActive = false;
+
+		// Add the component to the queue of components to be reused
+		this->deletedComponents.at(componentType)->push(componentIndex);
 	}
 
 	// Remove the entity from the entityComponents map
@@ -55,24 +60,6 @@ void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 	// Remove the entity from the list of entities
 	SAFE_DELETE(this->entities.at(id));
 	this->entities.erase(id);
-}
-
-void Manager::queueEntityForRemoval(EntityIdType id, Types::TypeId entityType) {
-	// Create a pair with the id and the entity type to be inserted into the queue
-	std::pair<EntityIdType, Types::TypeId> entityPair = std::make_pair(id, entityType);
-
-	// Put it into the queue
-	this->entityRemovalQueue.push(entityPair);
-}
-
-void Manager::flushEntityRemovalQueue() {
-	while (!this->entityRemovalQueue.empty())
-	{
-		std::pair<EntityIdType, Types::TypeId> entityPair = this->entityRemovalQueue.front();
-		this->entityRemovalQueue.pop();
-
-		this->removeEntity(entityPair.first, entityPair.second);
-	}
 }
 
 void Manager::releaseAll() {

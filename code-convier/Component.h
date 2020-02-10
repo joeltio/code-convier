@@ -6,6 +6,7 @@ namespace ECS {
 
 struct Component {
 	EntityIdType entityId;
+	bool isActive = true;
 };
 
 }

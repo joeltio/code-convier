@@ -15,5 +15,6 @@ bool GameReducer::acceptsAction(FSM::Action& action) {
 void GameReducer::reduce(ECS::Manager* manager, FSM::Action action) {
 	if (action.type == PREPARE_GAME_ACTION)
 	{
+
 	}
 }
