@@ -81,6 +81,14 @@
     <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(DXSDK_DIR)\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(DXSDK_DIR)\Lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -100,6 +108,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,11 +140,13 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -178,9 +189,11 @@
     <ClInclude Include="PlayerMovementSystem.h" />
     <ClInclude Include="PositionComponent.h" />
     <ClInclude Include="PrepareGameAction.h" />
+    <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="RenderSystem.h" />
+    <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
     <ClInclude Include="Store.h" />
@@ -195,6 +208,24 @@
     <None Include="Manager.tpp" />
     <None Include="StateComponent.tpp" />
     <None Include="typeUtil.tpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Credits.png" />
+    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png" />
+    <Image Include="..\..\..\Menu.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Dying.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Idle.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Jump.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Melee.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Run.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Slide.png" />
+    <Image Include="..\..\..\Quit.png" />
+    <Image Include="..\..\..\Resume.png" />
+    <Image Include="..\..\..\Start.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
