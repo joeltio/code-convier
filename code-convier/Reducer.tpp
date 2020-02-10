@@ -1,3 +1,6 @@
+#ifndef REDUCER_TPP
+#define REDUCER_TPP
+
 #include "Reducer.h"
 
 namespace FSM {
@@ -18,3 +21,5 @@ namespace FSM {
 	}
 
 }
+
+#endif

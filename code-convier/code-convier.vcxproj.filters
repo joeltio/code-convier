@@ -129,6 +129,9 @@
     <ClCompile Include="PlayerMovementSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Reducer.tpp">
+      <Filter>Source Files\FSM</Filter>
+    </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>

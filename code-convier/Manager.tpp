@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Manager.h"
 
 namespace ECS {

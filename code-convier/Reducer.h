@@ -15,6 +15,7 @@ namespace FSM {
 				std::unordered_map<Types::TypeId, State*>& states,
 				Component::State& stateComponent
 			);
+
 		public:
 			virtual bool acceptsAction(Action &action) = 0;
 			virtual void reduce(
