@@ -4,6 +4,7 @@
 #include "game.h"
 #include "Manager.h"
 #include "SystemRunner.h"
+#include "ecsConstants.h"
 
 //=============================================================================
 // Create game class

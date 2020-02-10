@@ -5,6 +5,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Header Files\Actions">
+      <UniqueIdentifier>{3dcdb413-ba66-4a27-8e9f-f1b4e7735b36}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\Component">
       <UniqueIdentifier>{ef381933-3baf-4aad-8d6e-edfc2f8e8c12}</UniqueIdentifier>
     </Filter>
@@ -13,6 +16,9 @@
     </Filter>
     <Filter Include="Header Files\FSM">
       <UniqueIdentifier>{aa731301-7f52-431d-8762-c91f3e7dc863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Reducers">
+      <UniqueIdentifier>{ad12a001-7fc8-47de-8ff9-cd6f5f013907}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\States">
       <UniqueIdentifier>{32cf2de5-4b27-4818-b10b-8a3df0d43522}</UniqueIdentifier>
@@ -40,6 +46,15 @@
     <Filter Include="Source Files\FSM">
       <UniqueIdentifier>{3367818c-1212-4c82-a54f-7c9cd7253579}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Reducers">
+      <UniqueIdentifier>{d7948023-4280-4684-a832-a7525081e329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States">
+      <UniqueIdentifier>{96aeb3a2-d0d7-4cdc-abb0-00260fe30cb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Game">
+      <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
@@ -51,11 +66,20 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="FiniteStateSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="FiniteStateSystem.h">
       <Filter>Header Files\System</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenuState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
@@ -98,8 +122,14 @@
     <ClInclude Include="convier.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ecsConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="fsmConstants.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
@@ -110,6 +140,12 @@
     <ClInclude Include="GameMenuState.h">
       <Filter>Header Files\States\Game</Filter>
     </ClInclude>
+    <ClInclude Include="GameReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -118,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="PrepareGameAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="Reducer.h">
       <Filter>Header Files\FSM</Filter>

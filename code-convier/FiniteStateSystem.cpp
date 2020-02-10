@@ -7,6 +7,7 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 
 	// Create the store
 	this->store = new FSM::Store(manager);
+	// Register the reducers
 
 	// Initialize the store first
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)

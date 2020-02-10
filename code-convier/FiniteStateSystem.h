@@ -5,6 +5,7 @@
 #include "fsmConstants.h"
 #include "typeUtil.h"
 #include "System.h"
+#include "Manager.h"
 #include "Store.h"
 #include "State.h"
 
