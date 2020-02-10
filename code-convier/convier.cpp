@@ -23,6 +23,10 @@ void Convier::initialize(HWND hwnd)
 	this->manager = new ECS::Manager();
 
 	// Register systems
+	for (ECS::System* systemPtr : ENABLED_SYSTEMS)
+	{
+		this->systemRunner.registerSystem(systemPtr);
+	}
 
 	this->systemRunner.initialize(this->manager, this->graphics, this->input);
 }
