@@ -265,6 +265,13 @@
     <Text Include="map5.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="PauseMenu.png" />
+    <Image Include="Skeleton_Attack.png" />
+    <Image Include="Skeleton_Dead.png" />
+    <Image Include="Skeleton_Hit.png" />
+    <Image Include="Skeleton_Idle.png" />
+    <Image Include="Skeleton_React.png" />
+    <Image Include="Skeleton_Walk.png" />
     <Image Include="sprites\Experience_Orb.gif" />
     <Image Include="sprites\tiles - Legend.png" />
     <Image Include="sprites\tiles.png" />

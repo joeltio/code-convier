@@ -112,6 +112,9 @@
     <Filter Include="Source Files\States\Click">
       <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Enemy">
+      <UniqueIdentifier>{9ef5670c-b878-43ce-a223-c256a0f88bc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AttackIdleState.cpp">
@@ -527,6 +530,27 @@
     </Image>
     <Image Include="sprites\tileset.png">
       <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Skeleton_Idle.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_React.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Walk.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Attack.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Dead.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Hit.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="PauseMenu.png">
+      <Filter>Resource Files\Background</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
