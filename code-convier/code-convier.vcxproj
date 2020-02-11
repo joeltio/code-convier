@@ -170,7 +170,6 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="NotClickedState.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
@@ -200,10 +199,8 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
     <ClInclude Include="ClickingState.h" />
-    <ClInclude Include="ClickStateComponent.h" />
     <ClInclude Include="HealthComponent.h" />
-    <ClInclude Include="NotClickedState.h" />
-    <ClInclude Include="PauseGameAction.h" />
+    <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="PlayerDeathState.h" />
     <ClInclude Include="ecsConstants.h" />
     <ClInclude Include="Entity.h" />
@@ -232,13 +229,11 @@
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementRunningState.h" />
     <ClInclude Include="PrepareGameAction.h" />
-    <ClInclude Include="PrepareMenuAction.h" />
     <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
-    <ClInclude Include="ResumeGameAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />

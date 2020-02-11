@@ -1,5 +1,9 @@
 #include "PlayerMovementIdleState.h"
 
 FSM::Action PlayerMovementIdleState::update(float frameTime) {
-	return FSM::NoAction();
+	// check for inputs to move out of idle
+	if (!input->anyKeyPressed()) {
+		return FSM::NoAction();
+	}
+	return FSM::Action();
 }

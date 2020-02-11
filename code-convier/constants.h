@@ -37,7 +37,7 @@ const char QUIT_BUTTON[] = "Quit.png";
 const char RESUME_BUTTON[] = "Resume.png";
 const char START_BUTTON[] = "Start.png";
 
-const char PLAYER_IDLE_IMAGE[] = "Player_Idle.png";
+const char PLAYER_IMAGE[] = "Player_Idle.png";
 const char PLAYER_DYING_IMAGE[] = "Player_Dying.png";
 const char PLAYER_JUMP_IMAGE[] = "Player_Jump.png";
 const char PLAYER_JUMP_SHOOT_IMAGE[] = "Player_Jump_Shooting.png";
@@ -81,9 +81,13 @@ const int tileWidth = 48;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
-const float PLAYER_SPEED = 150.0f;
-const float ENEMY_SPEED = 150.0f;
-
+const float PLAYER_SPEED = 100.0f;
+const float PLAYER_CHARGE_SPEED = 200.0f;
+const float RUN_MULTIPLIER = 1.5f;
+const float JUMP_SPEED = 50.0f;
+const int HEALTH_TICK = 3;
+const int RUNNING_HEATLH_TICK = 4;
+const float ENEMY_SPEED = 100.0f;
 
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used
@@ -91,9 +95,6 @@ const float ENEMY_SPEED = 150.0f;
 const UCHAR ESC_KEY = VK_ESCAPE;   // escape key
 const UCHAR ALT_KEY = VK_MENU;     // Alt key
 const UCHAR ENTER_KEY = VK_RETURN;   // Enter key
-const UCHAR LEFT_KEY = VK_A;
-const UCHAR RIGHT_KEY = VK_D;
-const UCHAR UP_KEY = VK_W;
-const UCHAR DOWN_KEY = VK_S;
+const UCHAR LSHIFT_KEY = VK_LSHIFT;
 
 #endif
