@@ -22,6 +22,7 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 		for (Component::State& stateComp : *componentsPtr)
 		{
 			this->states.at(stateComp.state)->initialize(manager, graphics, input);
+			this->states.at(stateComp.state)->enter(stateComp);
 		}
 	}
 }
@@ -36,6 +37,7 @@ void FiniteState::update(float frameTime) {
 		for (Component::State& stateComp : *componentsPtr)
 		{
 			FSM::Action action = this->states.at(stateComp.state)->update(frameTime, stateComp);
+			action.dispatcherEntityId = stateComp.entityId;
 			if (action.type != FSM::NO_ACTION) {
 				this->store->dispatchAction(action);
 			}
@@ -53,6 +55,7 @@ void FiniteState::render() {
 		for (Component::State& stateComp : *componentsPtr)
 		{
 			FSM::Action action = this->states.at(stateComp.state)->render(stateComp);
+			action.dispatcherEntityId = stateComp.entityId;
 			if (action.type != FSM::NO_ACTION) {
 				this->store->dispatchAction(action);
 			}
