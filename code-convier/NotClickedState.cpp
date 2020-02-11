@@ -31,7 +31,6 @@ FSM::Action NotClickedState::update(float frameTime, Component::State state) {
 				return PrepareMenuAction();
 			}
 		}
-		input->setMouseLButton(FALSE);
 	}
 	return FSM::NoAction();
 }

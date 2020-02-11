@@ -16,9 +16,9 @@ namespace Entity {
 		manager->addComponent<Component::Texture>(mainMenuId, textureComponent);
 
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.x = 0;
+		transformComponent.scale = GAME_HEIGHT / (float) textureComponent.totalHeight;
+		transformComponent.x = -(textureComponent.totalWidth * transformComponent.scale - GAME_WIDTH) / 2.0f;
 		transformComponent.y = 0;
-		transformComponent.scale = GAME_WIDTH / textureComponent.totalWidth;
 
 		manager->addComponent<Component::Transform>(mainMenuId, transformComponent);
 

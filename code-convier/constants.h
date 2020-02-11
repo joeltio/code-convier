@@ -72,6 +72,8 @@ const int tileWidth = 48;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
+const int BUTTON_MARGIN = 30;
+
 const float PLAYER_SPEED = 150.0f;
 const float ENEMY_SPEED = 150.0f;
 
