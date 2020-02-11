@@ -45,8 +45,14 @@
     <Filter Include="Resource Files\Button">
       <UniqueIdentifier>{43cac398-5a13-46f4-a1f6-454420c9e44c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\map">
+      <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files\Player">
       <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\sprite">
+      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
@@ -87,9 +93,6 @@
     </Filter>
     <Filter Include="Header Files\States\PlayerHealth">
       <UniqueIdentifier>{3f436459-026d-4adc-af71-0083a6fc4b6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\States\PlayerMovement">
-      <UniqueIdentifier>{e7687eb9-39d4-4e88-92d7-c5c569ccbfb0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +143,12 @@
     </ClCompile>
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerEntity.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Reducer.tpp">
       <Filter>Source Files\FSM</Filter>
@@ -241,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
@@ -391,16 +403,16 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="sprites\tileset.png">
+    <Image Include="sprites\Experience_Orb.gif">
       <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="sprites\Experience_Orb.gif">
+    <Image Include="sprites\tiles - Legend.png">
       <Filter>Resource Files\sprite</Filter>
     </Image>
     <Image Include="sprites\tiles.png">
       <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="sprites\tiles - Legend.png">
+    <Image Include="sprites\tileset.png">
       <Filter>Resource Files\sprite</Filter>
     </Image>
   </ItemGroup>
