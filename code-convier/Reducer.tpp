@@ -10,14 +10,14 @@ namespace FSM {
 		Component::State& stateComponent
 	) {
 		// Exit the previous state
-		states.at(stateComponent.state)->exit();
+		states.at(stateComponent.state)->exit(stateComponent);
 
 		// Update to the new state
 		stateComponent.changeState<NewStateType>();
 
 		// Enter new state
 		Types::TypeId newStateTypeId = Types::toTypeId<NewStateType>();
-		states.at(newStateTypeId)->enter();
+		states.at(newStateTypeId)->enter(stateComponent);
 	}
 
 }

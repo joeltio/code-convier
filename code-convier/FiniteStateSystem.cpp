@@ -35,7 +35,7 @@ void FiniteState::update(float frameTime) {
 
 		for (Component::State& stateComp : *componentsPtr)
 		{
-			FSM::Action action = this->states.at(stateComp.state)->update(frameTime);
+			FSM::Action action = this->states.at(stateComp.state)->update(frameTime, stateComp);
 			if (action.type != FSM::NO_ACTION) {
 				this->store->dispatchAction(action);
 			}
@@ -52,7 +52,7 @@ void FiniteState::render() {
 
 		for (Component::State& stateComp : *componentsPtr)
 		{
-			FSM::Action action = this->states.at(stateComp.state)->render();
+			FSM::Action action = this->states.at(stateComp.state)->render(stateComp);
 			if (action.type != FSM::NO_ACTION) {
 				this->store->dispatchAction(action);
 			}
