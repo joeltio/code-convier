@@ -76,8 +76,10 @@ const float PLAYER_SPEED = 100.0f;
 const float PLAYER_CHARGE_SPEED = 200.0f;
 const float RUN_MULTIPLIER = 1.5f;
 const float JUMP_SPEED = 50.0f;
+const int PLAYER_HEALTH = 100;
 const int HEALTH_TICK = 3;
 const int RUNNING_HEATLH_TICK = 4;
+const int CHARGE_HEALTH_TICK = 2;
 const float ENEMY_SPEED = 100.0f;
 
 // key mappings

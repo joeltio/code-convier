@@ -6,7 +6,7 @@ FSM::Action PlayerMovementRunningState::update(float frametime, Component::State
 	if (input->isKeyDown(LSHIFT_KEY))
 	{
 		// check for direction
-		if (input->isKeyDown('A'))
+		if (input->isKeyDown('A')) // left
 		{
 			Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(stateComponent.entityId);
 			physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
@@ -14,7 +14,7 @@ FSM::Action PlayerMovementRunningState::update(float frametime, Component::State
 			healthComponent.health -= RUNNING_HEATLH_TICK;
 		}
 
-		else if (input->isKeyDown('D'))
+		else if (input->isKeyDown('D')) // right
 		{
 			Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(stateComponent.entityId);
 			physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;

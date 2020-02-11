@@ -234,6 +234,9 @@
     <ClCompile Include="ClickingState.cpp">
       <Filter>Source Files\States\Click</Filter>
     </ClCompile>
+    <ClCompile Include="AugmentationSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -436,6 +439,12 @@
     </ClInclude>
     <ClInclude Include="JumpingComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AugmentationComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AugmentationSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
