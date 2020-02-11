@@ -7,7 +7,8 @@
 #include "ButtonEntity.h"
 
 class GameMenuState : public FSM::State {
-	FSM::Action update(float frameTime, Component::State state);
-	void enter(Component::State state);
-	void exit(Component::State state);
+	public:
+		FSM::Action update(float frameTime, Component::State state);
+		void enter(Component::State state);
+		void exit(Component::State state);
 };
