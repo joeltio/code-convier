@@ -170,6 +170,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="NotClickedState.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
@@ -200,6 +201,9 @@
     <ClInclude Include="convier.h" />
     <ClInclude Include="ClickingState.h" />
     <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="JumpingComponent.h" />
+    <ClInclude Include="NotClickedState.h" />
+    <ClInclude Include="PauseGameAction.h" />
     <ClInclude Include="PlayerDeathState.h" />
     <ClInclude Include="ecsConstants.h" />
     <ClInclude Include="Entity.h" />
@@ -228,11 +232,13 @@
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementRunningState.h" />
     <ClInclude Include="PrepareGameAction.h" />
+    <ClInclude Include="PrepareMenuAction.h" />
     <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
+    <ClInclude Include="ResumeGameAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
@@ -260,6 +266,13 @@
     <Text Include="map\start.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="PauseMenu.png" />
+    <Image Include="Skeleton_Attack.png" />
+    <Image Include="Skeleton_Dead.png" />
+    <Image Include="Skeleton_Hit.png" />
+    <Image Include="Skeleton_Idle.png" />
+    <Image Include="Skeleton_React.png" />
+    <Image Include="Skeleton_Walk.png" />
     <Image Include="sprites\Experience_Orb.gif" />
     <Image Include="sprites\tiles - Legend.png" />
     <Image Include="sprites\tiles.png" />

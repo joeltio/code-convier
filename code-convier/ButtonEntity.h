@@ -7,6 +7,8 @@
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 #include "TextComponent.h"
+#include "ClickStateComponent.h"
+#include "NotClickedState.h"
 
 namespace Entity {
 
