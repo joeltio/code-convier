@@ -480,9 +480,6 @@
     <Image Include="Player_Slide.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="MainMenu.png">
-      <Filter>Resource Files\Background</Filter>
-    </Image>
     <Image Include="Credits.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
@@ -497,6 +494,9 @@
     </Image>
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="MainMenuBackground.png">
+      <Filter>Resource Files\Background</Filter>
     </Image>
   </ItemGroup>
 </Project>

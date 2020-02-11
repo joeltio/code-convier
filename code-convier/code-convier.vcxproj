@@ -251,7 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Credits.png" />
-    <Image Include="MainMenu.png" />
+    <Image Include="MainMenuBackground.png" />
     <Image Include="Menu.png" />
     <Image Include="Player_Dying.png" />
     <Image Include="Player_Idle.png" />
