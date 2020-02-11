@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ButtonEntity.cpp" />
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
@@ -173,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
+    <ClInclude Include="ButtonEntity.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="GameStateComponent.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="PlayerMovementSystem.h" />
     <ClInclude Include="PositionComponent.h" />
@@ -213,22 +216,22 @@
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Credits.png" />
-    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png" />
-    <Image Include="..\..\..\Menu.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Dying.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Idle.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Jump.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Melee.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Run.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png" />
-    <Image Include="..\..\..\Player spritesheets\Player_Slide.png" />
-    <Image Include="..\..\..\Quit.png" />
-    <Image Include="..\..\..\Resume.png" />
-    <Image Include="..\..\..\Start.png" />
+    <Image Include="Credits.png" />
+    <Image Include="MainMenu.png" />
+    <Image Include="Menu.png" />
+    <Image Include="Player_Dying.png" />
+    <Image Include="Player_Idle.png" />
+    <Image Include="Player_Jump.png" />
+    <Image Include="Player_Jump_Shooting.png" />
+    <Image Include="Player_Melee.png" />
+    <Image Include="Player_Melee_Jump.png" />
+    <Image Include="Player_Run.png" />
+    <Image Include="Player_Run_Shooting.png" />
+    <Image Include="Player_Shoot.png" />
+    <Image Include="Player_Slide.png" />
+    <Image Include="Quit.png" />
+    <Image Include="Resume.png" />
+    <Image Include="Start.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

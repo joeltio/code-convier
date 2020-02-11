@@ -76,6 +76,9 @@
     <Filter Include="Header Files\Entity">
       <UniqueIdentifier>{cb43fca0-80f0-4fd8-9422-628f3feab2e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States\Click">
+      <UniqueIdentifier>{a339fbd0-958d-454f-b963-a3c704c9ca12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="convier.cpp">
@@ -134,6 +137,12 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +236,21 @@
     <ClInclude Include="ShowCreditsAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -243,53 +267,53 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Player spritesheets\Player_Dying.png">
+    <Image Include="Player_Dying.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Idle.png">
+    <Image Include="Player_Melee.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Jump.png">
+    <Image Include="Player_Melee_Jump.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
+    <Image Include="Player_Run.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Melee.png">
+    <Image Include="Player_Run_Shooting.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png">
+    <Image Include="Player_Shoot.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Run.png">
+    <Image Include="Player_Slide.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png">
+    <Image Include="Player_Idle.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png">
+    <Image Include="Player_Jump.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
+    <Image Include="Player_Jump_Shooting.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png">
+    <Image Include="Menu.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Resume.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Start.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Credits.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Quit.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="MainMenu.png">
       <Filter>Resource Files\Background</Filter>
-    </Image>
-    <Image Include="..\..\..\Credits.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="..\..\..\Menu.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="..\..\..\Quit.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="..\..\..\Resume.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="..\..\..\Start.png">
-      <Filter>Resource Files\Button</Filter>
     </Image>
   </ItemGroup>
 </Project>
