@@ -200,6 +200,7 @@
     <ClInclude Include="convier.h" />
     <ClInclude Include="ClickingState.h" />
     <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="PlayerDeathState.h" />
     <ClInclude Include="ecsConstants.h" />
     <ClInclude Include="Entity.h" />

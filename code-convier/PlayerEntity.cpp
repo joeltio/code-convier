@@ -22,7 +22,7 @@ namespace Entity {
 
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
-		textureComponent.loadTexture(graphics, PLAYER_SPRITE);
+		textureComponent.loadTexture(graphics, PLAYER_IMAGE);
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
 
 		return entityId;
