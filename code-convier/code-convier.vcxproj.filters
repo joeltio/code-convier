@@ -344,11 +344,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="map0">
-      <Filter>Resource Files\map</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="sprites\tileset.png">
       <Filter>Resource Files\sprite</Filter>
     </Image>
@@ -361,5 +356,25 @@
     <Image Include="sprites\tiles - Legend.png">
       <Filter>Resource Files\sprite</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map\map0.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map1.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map2.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map3.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map4.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map5.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
   </ItemGroup>
 </Project>

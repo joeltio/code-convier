@@ -224,7 +224,12 @@
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="map0" />
+    <Text Include="map3.txt" />
+    <Text Include="map\map0.txt" />
+    <Text Include="map\map1.txt" />
+    <Text Include="map2.txt" />
+    <Text Include="map4.txt" />
+    <Text Include="map5.txt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="sprites\Experience_Orb.gif" />
