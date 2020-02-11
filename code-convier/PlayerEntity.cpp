@@ -17,7 +17,7 @@ namespace Entity {
 
 		// add the health component
 		Component::Health healthComponent = Component::Health();
-		healthComponent.health = 100;
+		healthComponent.health = PLAYER_HEALTH;
 		manager->addComponent<Component::Health>(entityId, healthComponent);
 
 		// add the texture component

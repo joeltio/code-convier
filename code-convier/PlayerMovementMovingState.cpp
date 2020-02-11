@@ -5,17 +5,17 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	ECS::EntityIdType referenceId = stateComponent.entityId; // for use later
 
 	// check for player movement button clicks
-	if (input->isKeyDown('A'))
+	if (input->isKeyDown('A')) // left
 	{
 		Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(referenceId);
 		physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR;
 	}
-	if (input->isKeyDown('D'))
+	if (input->isKeyDown('D')) // right
 	{
 		Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(referenceId);
 		physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR;
 	}
-	if (input->isKeyDown('W'))
+	if (input->isKeyDown('W')) // jump
 	{
 		// check if the entity is already jumping or not
 		if (!manager->getEntityComponent<Component::Jumping>(referenceId).isJumping)

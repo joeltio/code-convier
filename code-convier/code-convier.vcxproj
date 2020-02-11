@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="AttackIdleState.cpp" />
     <ClCompile Include="AttackingState.cpp" />
+    <ClCompile Include="AugmentationSystem.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
     <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="convier.cpp" />
@@ -195,6 +196,8 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="AttackIdleState.h" />
     <ClInclude Include="AttackingState.h" />
+    <ClInclude Include="AugmentationComponent.h" />
+    <ClInclude Include="AugmentationSystem.h" />
     <ClInclude Include="ButtonEntity.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
