@@ -109,6 +109,9 @@
     <Filter Include="Source Files\States\PlayerHealth">
       <UniqueIdentifier>{7b93894d-003a-404b-921c-58a64fe56ec2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Click">
+      <UniqueIdentifier>{5cb3a38b-a846-4602-a9fa-71c30d9c7260}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonEntity.cpp">
@@ -226,7 +229,7 @@
       <Filter>Source Files\States\PlayerHealth</Filter>
     </ClCompile>
     <ClCompile Include="ClickingState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\States\Click</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
