@@ -234,6 +234,9 @@
     <ClCompile Include="ClickingState.cpp">
       <Filter>Source Files\States\Click</Filter>
     </ClCompile>
+    <ClCompile Include="NotClickedState.cpp">
+      <Filter>Source Files\States\Click</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -322,9 +325,6 @@
     </ClInclude>
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
@@ -436,6 +436,21 @@
     </ClInclude>
     <ClInclude Include="MainMenuEntity.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ClickStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="NotClickedState.h">
+      <Filter>Header Files\States\Click</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ResumeGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PrepareMenuAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
