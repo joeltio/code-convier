@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="AttackIdleState.cpp" />
     <ClCompile Include="AttackingState.cpp" />
+    <ClCompile Include="AugmentationSystem.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
     <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="convier.cpp" />
@@ -195,13 +196,15 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="AttackIdleState.h" />
     <ClInclude Include="AttackingState.h" />
+    <ClInclude Include="AugmentationComponent.h" />
+    <ClInclude Include="AugmentationSystem.h" />
     <ClInclude Include="ButtonEntity.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
     <ClInclude Include="ClickingState.h" />
-    <ClInclude Include="ClickStateComponent.h" />
     <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="NotClickedState.h" />
     <ClInclude Include="PauseGameAction.h" />
     <ClInclude Include="PlayerDeathState.h" />
@@ -257,14 +260,22 @@
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="map3.txt" />
     <Text Include="map\map0.txt" />
     <Text Include="map\map1.txt" />
-    <Text Include="map2.txt" />
-    <Text Include="map4.txt" />
-    <Text Include="map5.txt" />
+    <Text Include="map\map2.txt" />
+    <Text Include="map\map3.txt" />
+    <Text Include="map\map4.txt" />
+    <Text Include="map\map5.txt" />
+    <Text Include="map\start.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="PauseMenu.png" />
+    <Image Include="Skeleton_Attack.png" />
+    <Image Include="Skeleton_Dead.png" />
+    <Image Include="Skeleton_Hit.png" />
+    <Image Include="Skeleton_Idle.png" />
+    <Image Include="Skeleton_React.png" />
+    <Image Include="Skeleton_Walk.png" />
     <Image Include="sprites\Experience_Orb.gif" />
     <Image Include="sprites\tiles - Legend.png" />
     <Image Include="sprites\tiles.png" />

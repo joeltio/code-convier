@@ -234,8 +234,8 @@
     <ClCompile Include="ClickingState.cpp">
       <Filter>Source Files\States\Click</Filter>
     </ClCompile>
-    <ClCompile Include="NotClickedState.cpp">
-      <Filter>Source Files\States\Click</Filter>
+    <ClCompile Include="AugmentationSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -437,20 +437,14 @@
     <ClInclude Include="MainMenuEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="ClickStateComponent.h">
+    <ClInclude Include="JumpingComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="NotClickedState.h">
-      <Filter>Header Files\States\Click</Filter>
+    <ClInclude Include="AugmentationComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="PauseGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="ResumeGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PrepareMenuAction.h">
-      <Filter>Header Files\Actions</Filter>
+    <ClInclude Include="AugmentationSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -516,25 +510,40 @@
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
     <Image Include="sprites\Experience_Orb.gif">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\sprite</Filter>
     </Image>
     <Image Include="sprites\tiles - Legend.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\sprite</Filter>
     </Image>
     <Image Include="sprites\tiles.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="sprites\tileset.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\sprite</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="map3.txt" />
-    <Text Include="map\map0.txt" />
-    <Text Include="map\map1.txt" />
-    <Text Include="map2.txt" />
-    <Text Include="map4.txt" />
-    <Text Include="map5.txt" />
+    <Text Include="map\map0.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map1.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map2.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map3.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map4.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map5.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\start.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
   </ItemGroup>
 </Project>

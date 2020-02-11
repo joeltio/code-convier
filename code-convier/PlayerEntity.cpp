@@ -1,7 +1,7 @@
 #include "PlayerEntity.h"
 
 namespace Entity {
-	ECS::EntityIdType Player::create(ECS::Manager* manager, Graphics* graphics) {
+	ECS::EntityIdType Player::create(ECS::Manager* manager, Graphics* graphics, float x, float y) {
 		ECS::EntityIdType entityId = manager->createEntity<Player>();
 
 		// add the physics component
@@ -11,18 +11,18 @@ namespace Entity {
 
 		// add the transform component
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.x = 0;
-		transformComponent.y = 0;
+		transformComponent.x = x;
+		transformComponent.y = y;
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 
 		// add the health component
 		Component::Health healthComponent = Component::Health();
-		healthComponent.health = 100;
+		healthComponent.health = PLAYER_HEALTH;
 		manager->addComponent<Component::Health>(entityId, healthComponent);
 
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
-		textureComponent.loadTexture(graphics, PLAYER_IDLE_IMAGE);
+		textureComponent.loadTexture(graphics, PLAYER_IMAGE);
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
 
 		return entityId;
