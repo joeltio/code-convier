@@ -100,8 +100,14 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\States\Click">
-      <UniqueIdentifier>{b7edf2ed-42a8-48d2-8ed9-6b1f848af531}</UniqueIdentifier>
+    <Filter Include="Source Files\States\PlayerMovement">
+      <UniqueIdentifier>{e40d56f7-52bf-4afb-9c68-3e73bc9a8d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Attack">
+      <UniqueIdentifier>{e198cafe-163d-4445-9951-c9a2f0bc701c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\PlayerHealth">
+      <UniqueIdentifier>{7b93894d-003a-404b-921c-58a64fe56ec2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -192,11 +198,32 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="PlayerMovementIdleState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="PlayerMovementRunningState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementChargingState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementMovingState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackIdleState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackingState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthIdleState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthReplenishingState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDeathState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
     </ClCompile>
     <ClCompile Include="ClickingState.cpp">
       <Filter>Source Files\States\Click</Filter>
@@ -420,6 +447,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\Credits.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Dying.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Idle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Jump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -441,53 +486,14 @@
     <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Player_Jump_Shooting.png">
-      <Filter>Resource Files\Player</Filter>
+    <Image Include="..\..\..\Quit.png">
+      <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Player_Melee.png">
-      <Filter>Resource Files\Player</Filter>
+    <Image Include="..\..\..\Resume.png">
+      <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Player_Melee_Jump.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Run.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Run_Shooting.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Shoot.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Slide.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Dying.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Idle.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Player_Jump.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="Resume.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="Start.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="Quit.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="Menu.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="Credits.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="MainMenu.png">
-      <Filter>Resource Files\Background</Filter>
+    <Image Include="..\..\..\Start.png">
+      <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
 </Project>

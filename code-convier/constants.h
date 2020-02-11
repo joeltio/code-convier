@@ -58,7 +58,6 @@ const int visibleY = GAME_HEIGHT / tileHeight;
 const float PLAYER_SPEED = 150.0f;
 const float ENEMY_SPEED = 150.0f;
 
-const float playerMaxHealth = 20.0f;
 
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used

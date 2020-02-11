@@ -150,6 +150,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AttackIdleState.cpp" />
+    <ClCompile Include="AttackingState.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
     <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="convier.cpp" />
@@ -168,7 +170,14 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
+    <ClCompile Include="PlayerHealthIdleState.cpp" />
+    <ClCompile Include="PlayerHealthReplenishingState.cpp" />
+    <ClCompile Include="PlayerMovementChargingState.cpp" />
+    <ClCompile Include="PlayerMovementIdleState.cpp" />
+    <ClCompile Include="PlayerMovementRunningState.cpp" />
+    <ClCompile Include="PlayerMovementMovingState.cpp" />
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
