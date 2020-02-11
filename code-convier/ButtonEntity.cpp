@@ -2,18 +2,9 @@
 
 namespace Entity {
 
-	ECS::EntityIdType Button::create(ECS::Manager* manager, Graphics* graphics, const char* buttonSprite, float x, float y) {
+	ECS::EntityIdType Button::create(ECS::Manager* manager, Graphics* graphics, const char* buttonSprite, std::string buttonText, float x, float y) {
 
 		ECS::EntityIdType buttonId = manager->createEntity<Button>();
-
-		Component::GameState gameStateComponent = Component::GameState{
-			buttonId,
-			true, // isActive
-			Types::toTypeId<GameMenuState>()
-		};
-
-		manager->addComponent<Component::GameState>(buttonId, gameStateComponent);
-
 
 		Component::Texture textureComponent = Component::Texture();
 		if (!textureComponent.loadTexture(graphics, buttonSprite))
@@ -23,6 +14,11 @@ namespace Entity {
 		textureComponent.visible = true;
 
 		manager->addComponent<Component::Texture>(buttonId, textureComponent);
+
+		Component::Text textComponent = Component::Text();
+		textComponent.buttonText = buttonText;
+
+		manager->addComponent<Component::Text>(buttonId, textComponent);
 
 		return buttonId;
 	}
