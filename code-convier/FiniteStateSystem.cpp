@@ -9,7 +9,7 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 	Entity::Game::create(manager);
 
 	// Create the store
-	this->store = new FSM::Store(manager);
+	this->store = new FSM::Store(manager, this->states);
 	// Register the reducers
 
 	// Initialize the store first
@@ -21,7 +21,7 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 
 		for (Component::State& stateComp : *componentsPtr)
 		{
-			this->states.at(stateComp.state)->initialize(manager, graphics, input, this->store);
+			this->states.at(stateComp.state)->initialize(manager, graphics, input);
 		}
 	}
 }
@@ -35,7 +35,10 @@ void FiniteState::update(float frameTime) {
 
 		for (Component::State& stateComp : *componentsPtr)
 		{
-			this->states.at(stateComp.state)->update(frameTime);
+			FSM::Action action = this->states.at(stateComp.state)->update(frameTime);
+			if (action.type != FSM::NO_ACTION) {
+				this->store->dispatchAction(action);
+			}
 		}
 	}
 }
@@ -49,7 +52,10 @@ void FiniteState::render() {
 
 		for (Component::State& stateComp : *componentsPtr)
 		{
-			this->states.at(stateComp.state)->render();
+			FSM::Action action = this->states.at(stateComp.state)->render();
+			if (action.type != FSM::NO_ACTION) {
+				this->store->dispatchAction(action);
+			}
 		}
 	}
 }

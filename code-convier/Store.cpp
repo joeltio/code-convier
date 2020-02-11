@@ -10,7 +10,8 @@ Store::~Store() {
 	}
 }
 
-Store::Store(ECS::Manager* manager) {
+Store::Store(ECS::Manager* manager, std::unordered_map<Types::TypeId, State*> states) {
+	this->states = states;
 	this->manager = manager;
 }
 
@@ -24,7 +25,7 @@ void Store::dispatchAction(Action &action) {
 	{
 		if (reducer->acceptsAction(action))
 		{
-			reducer->reduce(this->manager, action);
+			reducer->reduce(this->manager, this->states, action);
 			break;
 		}
 	}

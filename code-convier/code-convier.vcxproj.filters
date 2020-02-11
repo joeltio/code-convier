@@ -17,6 +17,9 @@
     <Filter Include="Header Files\Entity">
       <UniqueIdentifier>{8e46328c-8573-4df8-a9f7-a0feebf01d36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{cb43fca0-80f0-4fd8-9422-628f3feab2e7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\FSM">
       <UniqueIdentifier>{aa731301-7f52-431d-8762-c91f3e7dc863}</UniqueIdentifier>
     </Filter>
@@ -35,6 +38,15 @@
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Background">
+      <UniqueIdentifier>{7ef6f92c-7e65-4e4a-8984-a6c6880f63dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Button">
+      <UniqueIdentifier>{43cac398-5a13-46f4-a1f6-454420c9e44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Player">
+      <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
@@ -64,17 +76,20 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Player">
-      <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
+    <Filter Include="Resource Files\sprite">
+      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Background">
-      <UniqueIdentifier>{7ef6f92c-7e65-4e4a-8984-a6c6880f63dc}</UniqueIdentifier>
+    <Filter Include="Resource Files\map">
+      <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Button">
-      <UniqueIdentifier>{43cac398-5a13-46f4-a1f6-454420c9e44c}</UniqueIdentifier>
+    <Filter Include="Header Files\States\Attack">
+      <UniqueIdentifier>{e59f343d-92e6-4a6d-9357-03bcaab5c67b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Entity">
-      <UniqueIdentifier>{cb43fca0-80f0-4fd8-9422-628f3feab2e7}</UniqueIdentifier>
+    <Filter Include="Header Files\States\PlayerHealth">
+      <UniqueIdentifier>{3f436459-026d-4adc-af71-0083a6fc4b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States\PlayerMovement">
+      <UniqueIdentifier>{e7687eb9-39d4-4e88-92d7-c5c569ccbfb0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\States\Click">
       <UniqueIdentifier>{a339fbd0-958d-454f-b963-a3c704c9ca12}</UniqueIdentifier>
@@ -96,14 +111,29 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameCreateLevelState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDestroyLevelState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
     <ClCompile Include="GameEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="GameMenuState.cpp">
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
+    <ClCompile Include="GamePauseState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayerDeathState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
     <ClCompile Include="GameReducer.cpp">
       <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRunningState.cpp">
+      <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
@@ -113,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Reducer.tpp">
+      <Filter>Source Files\FSM</Filter>
     </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -137,6 +170,12 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="PlayerMovementSystem.cpp">
       <Filter>Source Files</Filter>
@@ -170,8 +209,14 @@
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameCreateLevelState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
     <ClInclude Include="GameDataComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDestroyLevelState.h">
+      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -182,8 +227,17 @@
     <ClInclude Include="GameMenuState.h">
       <Filter>Header Files\States\Game</Filter>
     </ClInclude>
+    <ClInclude Include="GamePauseState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayerDeathState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
     <ClInclude Include="GameReducer.h">
       <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRunningState.h">
+      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameStateComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -200,11 +254,17 @@
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="QuitGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="Reducer.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowCreditsAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files\FSM</Filter>
@@ -230,11 +290,44 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuitGameAction.h">
-      <Filter>Header Files\Actions</Filter>
+    <ClInclude Include="PlayerMovementChargingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
-    <ClInclude Include="ShowCreditsAction.h">
-      <Filter>Header Files\Actions</Filter>
+    <ClInclude Include="PlayerMovementIdleState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementMovingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementRunningState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeathState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReplenishingState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthIdleState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsComponent.h">
       <Filter>Header Files</Filter>
@@ -314,6 +407,25 @@
     </Image>
     <Image Include="MainMenu.png">
       <Filter>Resource Files\Background</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map0">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\Experience_Orb.gif">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\tiles.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\tiles - Legend.png">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
   </ItemGroup>
 </Project>

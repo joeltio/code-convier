@@ -7,11 +7,12 @@
 #include "Manager.h"
 #include "PhysicsComponent.h"
 
-namespace System {
+namespace System { 
 
-	class PlayerMovement : public ECS::System {
+	class Movement : public ECS::System {
 	public:
 		void update(float frameTime);
 	};
 
 }
+
