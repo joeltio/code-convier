@@ -189,9 +189,6 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MovementSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -383,9 +380,6 @@
     <ClInclude Include="PlayerHealthIdleState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
     </ClInclude>
-    <ClInclude Include="MovementSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
     <ClInclude Include="HealthComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -417,36 +411,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Credits.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Idle.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Jump.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Melee.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Run.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
-      <Filter>Resource Files\Player</Filter>
-    </Image>
     <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -468,14 +432,53 @@
     <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\Quit.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Jump_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Resume.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Melee.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Start.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Melee_Jump.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Run.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Run_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Shoot.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Slide.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Dying.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Idle.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Player_Jump.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="Resume.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Start.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Quit.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Menu.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="Credits.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="MainMenu.png">
+      <Filter>Resource Files\Background</Filter>
     </Image>
   </ItemGroup>
 </Project>
