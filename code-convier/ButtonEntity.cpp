@@ -20,6 +20,12 @@ namespace Entity {
 
 		manager->addComponent<Component::Text>(buttonId, textComponent);
 
+		Component::Transform transformComponent = Component::Transform();
+		transformComponent.x = x;
+		transformComponent.y = y;
+
+		manager->addComponent<Component::Transform>(buttonId, transformComponent);
+
 		return buttonId;
 	}
 }
