@@ -192,6 +192,15 @@
     <None Include="StateComponent.tpp" />
     <None Include="typeUtil.tpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="map0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\Experience_Orb.gif" />
+    <Image Include="sprites\tiles - Legend.png" />
+    <Image Include="sprites\tiles.png" />
+    <Image Include="sprites\tileset.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
