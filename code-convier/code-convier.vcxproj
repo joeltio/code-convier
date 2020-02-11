@@ -153,6 +153,7 @@
     <ClCompile Include="AttackIdleState.cpp" />
     <ClCompile Include="AttackingState.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
+    <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
@@ -237,6 +238,7 @@
     <ClInclude Include="Store.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemRunner.h" />
+    <ClInclude Include="TextComponent.h" />
     <ClInclude Include="TextureComponent.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="typeUtil.h" />
@@ -248,6 +250,36 @@
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="map3.txt" />
+    <Text Include="map\map0.txt" />
+    <Text Include="map\map1.txt" />
+    <Text Include="map2.txt" />
+    <Text Include="map4.txt" />
+    <Text Include="map5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\Experience_Orb.gif" />
+    <Image Include="sprites\tiles - Legend.png" />
+    <Image Include="sprites\tiles.png" />
+    <Image Include="sprites\tileset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Credits.png" />
+    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png" />
+    <Image Include="..\..\..\Menu.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Dying.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Idle.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Jump.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Melee.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Run.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png" />
+    <Image Include="..\..\..\Player spritesheets\Player_Slide.png" />
+    <Image Include="..\..\..\Quit.png" />
+    <Image Include="..\..\..\Resume.png" />
+    <Image Include="..\..\..\Start.png" />
     <Image Include="Credits.png" />
     <Image Include="MainMenu.png" />
     <Image Include="Menu.png" />

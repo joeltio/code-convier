@@ -109,6 +109,9 @@
     <Filter Include="Source Files\States\PlayerHealth">
       <UniqueIdentifier>{7b93894d-003a-404b-921c-58a64fe56ec2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Click">
+      <UniqueIdentifier>{5cb3a38b-a846-4602-a9fa-71c30d9c7260}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonEntity.cpp">
@@ -224,6 +227,9 @@
     </ClCompile>
     <ClCompile Include="PlayerDeathState.cpp">
       <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickingState.cpp">
+      <Filter>Source Files\States\Click</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -377,6 +383,57 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerMovementChargingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementIdleState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementMovingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementRunningState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeathState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReplenishingState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthIdleState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ClickingState.h">
+      <Filter>Header Files\States\Click</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="TextComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -393,53 +450,83 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Credits.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Dying.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Idle.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Menu.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Jump.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Dying.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Jump_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Idle.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Melee.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Jump.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Melee_Jump.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Run.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Melee.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Run_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Shoot.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Run.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Player_Slide.png">
+      <Filter>Resource Files\Player</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Credits.png">
+      <Filter>Resource Files\Button</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Menu.png">
+      <Filter>Resource Files\Button</Filter>
     </Image>
-    <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="Quit.png">
+      <Filter>Resource Files\Button</Filter>
     </Image>
-    <Image Include="..\..\..\Quit.png">
-      <Filter>Resource Files</Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="..\..\..\Resume.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="sprites\Experience_Orb.gif">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="..\..\..\Start.png">
-      <Filter>Resource Files</Filter>
+    <Image Include="sprites\tiles.png">
+      <Filter>Resource Files\sprite</Filter>
+    <Image Include="Resume.png">
+      <Filter>Resource Files\Button</Filter>
     </Image>
+    <Image Include="Start.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="MainMenuBackground.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map\map0.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map1.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map2.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map3.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map4.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map5.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
   </ItemGroup>
 </Project>
