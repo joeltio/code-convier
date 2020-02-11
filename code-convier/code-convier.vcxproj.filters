@@ -323,9 +323,6 @@
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
@@ -501,25 +498,40 @@
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
     <Image Include="sprites\Experience_Orb.gif">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\sprite</Filter>
     </Image>
     <Image Include="sprites\tiles - Legend.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\sprite</Filter>
     </Image>
     <Image Include="sprites\tiles.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="sprites\tileset.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\sprite</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="map3.txt" />
-    <Text Include="map\map0.txt" />
-    <Text Include="map\map1.txt" />
-    <Text Include="map2.txt" />
-    <Text Include="map4.txt" />
-    <Text Include="map5.txt" />
+    <Text Include="map\map0.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map1.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map2.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map3.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map4.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map5.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\start.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
   </ItemGroup>
 </Project>

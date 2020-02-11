@@ -12,7 +12,7 @@ namespace Entity {
 
 	class Player : public ECS::Entity {
 	public:
-		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics);
+		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics, float x, float y);
 	};
 
 }
