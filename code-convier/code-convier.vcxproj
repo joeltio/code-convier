@@ -166,8 +166,8 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
-    <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
@@ -210,12 +210,12 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="PhysicsSystem.h" />
     <ClInclude Include="PlayerEntity.h" />
     <ClInclude Include="PlayerMovementChargingState.h" />
     <ClInclude Include="PlayerMovementIdleState.h" />
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementRunningState.h" />
-    <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />

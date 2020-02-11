@@ -5,8 +5,10 @@
 
 namespace Component {
 
-	struct Physics : ECS::Component {
-		D3DXVECTOR2 velocity = D3DXVECTOR2(0.0f, 0.0f);
+	struct Physics : public ECS::Component {
+		public:
+			D3DXVECTOR2 velocity = D3DXVECTOR2(0.0f, 0.0f);
+			D3DXVECTOR2 acceleration = D3DXVECTOR2(0.0f, 0.0f);
 	};
 
 }
