@@ -94,25 +94,34 @@
     <Filter Include="Source Files\States">
       <UniqueIdentifier>{96aeb3a2-d0d7-4cdc-abb0-00260fe30cb0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\States\Game">
-      <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\System">
-      <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\PlayerMovement">
-      <UniqueIdentifier>{e40d56f7-52bf-4afb-9c68-3e73bc9a8d5b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\States\Attack">
       <UniqueIdentifier>{e198cafe-163d-4445-9951-c9a2f0bc701c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Game">
+      <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\States\PlayerHealth">
       <UniqueIdentifier>{7b93894d-003a-404b-921c-58a64fe56ec2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\PlayerMovement">
+      <UniqueIdentifier>{e40d56f7-52bf-4afb-9c68-3e73bc9a8d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AttackIdleState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackingState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
     <ClCompile Include="ButtonEntity.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickingState.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="convier.cpp">
       <Filter>Source Files</Filter>
@@ -165,11 +174,32 @@
     <ClCompile Include="PhysicsSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerEntity.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="PlayerDeathState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
     </ClCompile>
     <ClCompile Include="PlayerEntity.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthIdleState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthReplenishingState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementChargingState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementIdleState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementMovingState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementRunningState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
     <ClCompile Include="Reducer.tpp">
       <Filter>Source Files\FSM</Filter>
@@ -198,36 +228,6 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerMovementIdleState.cpp">
-      <Filter>Source Files\States\PlayerMovement</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMovementRunningState.cpp">
-      <Filter>Source Files\States\PlayerMovement</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMovementChargingState.cpp">
-      <Filter>Source Files\States\PlayerMovement</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMovementMovingState.cpp">
-      <Filter>Source Files\States\PlayerMovement</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackIdleState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackingState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerHealthIdleState.cpp">
-      <Filter>Source Files\States\PlayerHealth</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerHealthReplenishingState.cpp">
-      <Filter>Source Files\States\PlayerHealth</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerDeathState.cpp">
-      <Filter>Source Files\States\PlayerHealth</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickingState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -236,8 +236,20 @@
     <ClInclude Include="AttackIdleState.h">
       <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
+    <ClInclude Include="AttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
     <ClInclude Include="AttackingState.h">
       <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ClickingState.h">
+      <Filter>Header Files\States\Click</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Header Files\ECS</Filter>
@@ -299,8 +311,14 @@
     <ClInclude Include="HealthComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Header Files\Entity</Filter>
@@ -314,8 +332,17 @@
     <ClInclude Include="PhysicsComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="PhysicsSystem.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeathState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDeathState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
@@ -323,7 +350,16 @@
     <ClInclude Include="PlayerEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerHealthIdleState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthIdleState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReplenishingState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
     </ClInclude>
     <ClInclude Include="PlayerHealthReplenishingState.h">
@@ -332,10 +368,22 @@
     <ClInclude Include="PlayerMovementChargingState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerMovementChargingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementIdleState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerMovementIdleState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementMovingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementMovingState.h">
+      <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementRunningState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementRunningState.h">
@@ -371,6 +419,9 @@
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="TextComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="TextureComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -379,57 +430,6 @@
     </ClInclude>
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementChargingState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementIdleState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementMovingState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementRunningState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackingState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerDeathState.h">
-      <Filter>Header Files\States\PlayerHealth</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthReplenishingState.h">
-      <Filter>Header Files\States\PlayerHealth</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthIdleState.h">
-      <Filter>Header Files\States\PlayerHealth</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="ClickingState.h">
-      <Filter>Header Files\States\Click</Filter>
-    </ClInclude>
-    <ClInclude Include="ButtonEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="TextComponent.h">
-      <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -447,6 +447,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Credits.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="MainMenu.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Menu.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
     <Image Include="Player_Dying.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
@@ -476,15 +485,6 @@
     </Image>
     <Image Include="Player_Slide.png">
       <Filter>Resource Files\Player</Filter>
-    </Image>
-    <Image Include="MainMenu.png">
-      <Filter>Resource Files\Background</Filter>
-    </Image>
-    <Image Include="Credits.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="Menu.png">
-      <Filter>Resource Files\Button</Filter>
     </Image>
     <Image Include="Quit.png">
       <Filter>Resource Files\Button</Filter>

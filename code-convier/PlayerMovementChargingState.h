@@ -5,4 +5,4 @@
 
 class PlayerMovementChargingState : public FSM::State {
 	FSM::Action update(float frametime);
-}; 
+};
