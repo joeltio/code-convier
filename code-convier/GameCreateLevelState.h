@@ -2,7 +2,8 @@
 
 #include "Action.h"
 #include "State.h"
+#include "StateComponent.h"
 
 class GameCreateLevelState : public FSM::State {
-	FSM::Action update(float frameTime);
+	FSM::Action update(float frameTime, Component::State state);
 };
