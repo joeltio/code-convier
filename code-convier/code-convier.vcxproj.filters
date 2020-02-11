@@ -237,6 +237,9 @@
     <ClCompile Include="ClickingState.cpp">
       <Filter>Source Files\States\Click</Filter>
     </ClCompile>
+    <ClCompile Include="NotClickedState.cpp">
+      <Filter>Source Files\States\Click</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -448,6 +451,9 @@
     </ClInclude>
     <ClInclude Include="ResumeGameAction.h">
       <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="NotClickedState.h">
+      <Filter>Header Files\States\Click</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

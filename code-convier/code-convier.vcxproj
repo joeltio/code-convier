@@ -170,6 +170,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="NotClickedState.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="ClickingState.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
+    <ClInclude Include="NotClickedState.h" />
     <ClInclude Include="PauseGameAction.h" />
     <ClInclude Include="PlayerDeathState.h" />
     <ClInclude Include="ecsConstants.h" />
