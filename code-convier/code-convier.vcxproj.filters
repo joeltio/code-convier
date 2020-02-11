@@ -76,8 +76,11 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\States\PlayerMovement">
-      <UniqueIdentifier>{5d16c229-46c3-424e-9a90-dfe3d1ec2816}</UniqueIdentifier>
+    <Filter Include="Resource Files\sprite">
+      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\map">
+      <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +132,9 @@
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMovementSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Reducer.tpp">
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
@@ -155,12 +161,6 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="MovementSystem.cpp">
-      <Filter>Source Files\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +230,15 @@
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
@@ -268,27 +277,6 @@
     </ClInclude>
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementIdleState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementRunningState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementChargingState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementMovingState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +341,25 @@
     </Image>
     <Image Include="..\..\..\Start.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map0">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\Experience_Orb.gif">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\tiles.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\tiles - Legend.png">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
   </ItemGroup>
 </Project>

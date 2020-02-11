@@ -229,6 +229,15 @@
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="map0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\Experience_Orb.gif" />
+    <Image Include="sprites\tiles - Legend.png" />
+    <Image Include="sprites\tiles.png" />
+    <Image Include="sprites\tileset.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Image Include="..\..\..\Credits.png" />
     <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png" />
     <Image Include="..\..\..\Menu.png" />
