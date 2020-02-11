@@ -29,6 +29,22 @@
 //                  Constants
 //-----------------------------------------------
 // graphic images
+const char MAINMENU_IMAGE[] = "MainMenuBackground.png";
+const char CREDITS_BUTTON[] = "Credits.png";
+const char MENU_BUTTON[] = "Menu.png";
+const char QUIT_BUTTON[] = "Quit.png";
+const char RESUME_BUTTON[] = "Resume.png";
+const char START_BUTTON[] = "Start.png";
+
+const char PLAYER_DYING_IMAGE[] = "Player_Dying.png";
+const char PLAYER_JUMP_IMAGE[] = "Player_Jump.png";
+const char PLAYER_JUMP_SHOOT_IMAGE[] = "Player_Jump_Shooting.png";
+const char PLAYER_MELEE_IMAGE[] = "Player_Melee.png";
+const char PLAYER_MELEE_JUMP_IMAGE[] = "Player_Melee_Jump.png";
+const char PLAYER_RUN_IMAGE[] = "Player_Run.png";
+const char PLAYER_RUN_SHOOT_IMAGE[] = "Player_Run_Shooting.png";
+const char PLAYER_SHOOT_IMAGE[] = "Player_Shoot.png";
+const char PLAYER_SLIDE_IMAGE[] = "Player_Slide.png";
 
 // window
 const char CLASS_NAME[] = "Code::Convier";
