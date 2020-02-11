@@ -82,7 +82,13 @@
     <Filter Include="Resource Files\map">
       <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\States\Player">
+    <Filter Include="Header Files\States\Attack">
+      <UniqueIdentifier>{e59f343d-92e6-4a6d-9357-03bcaab5c67b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States\PlayerHealth">
+      <UniqueIdentifier>{3f436459-026d-4adc-af71-0083a6fc4b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States\PlayerMovement">
       <UniqueIdentifier>{e7687eb9-39d4-4e88-92d7-c5c569ccbfb0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -276,25 +282,43 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementChargingState.h">
-      <Filter>Header Files\States\Player</Filter>
+      <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementIdleState.h">
-      <Filter>Header Files\States\Player</Filter>
+      <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementMovingState.h">
-      <Filter>Header Files\States\Player</Filter>
+      <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementRunningState.h">
-      <Filter>Header Files\States\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementSystem.h">
-      <Filter>Header Files\System</Filter>
+      <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PlayerEntity.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeathState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReplenishingState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthIdleState.h">
+      <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

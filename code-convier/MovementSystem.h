@@ -16,4 +16,3 @@ namespace System {
 
 }
 
-// player jumps with a constant V value

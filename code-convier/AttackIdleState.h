@@ -3,6 +3,6 @@
 #include "Action.h"
 #include "State.h"
 
-class PlayerMovementChargingState : public FSM::State {
+class AttackIdleState : public FSM::State {
 	FSM::Action update(float frametime);
-}; 
+};

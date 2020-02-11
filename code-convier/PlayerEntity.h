@@ -2,8 +2,9 @@
 
 #include "Entity.h"
 #include "Manager.h"
-#include "PositionComponent.h"
 #include "PhysicsComponent.h"
+#include "TransformComponent.h"
+#include "HealthComponent.h"
 
 namespace Entity {
 

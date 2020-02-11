@@ -180,9 +180,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
+    <ClInclude Include="AttackIdleState.h" />
+    <ClInclude Include="AttackingState.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
+    <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="PlayerDeathState.h" />
     <ClInclude Include="ecsConstants.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="fsmConstants.h" />
@@ -199,6 +203,7 @@
     <ClInclude Include="GameRunningState.h" />
     <ClInclude Include="GameStateComponent.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="PlayerHealthIdleState.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="PlayerEntity.h" />
@@ -206,12 +211,13 @@
     <ClInclude Include="PlayerMovementIdleState.h" />
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementRunningState.h" />
-    <ClInclude Include="PlayerMovementSystem.h" />
+    <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="RenderSystem.h" />
+    <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
