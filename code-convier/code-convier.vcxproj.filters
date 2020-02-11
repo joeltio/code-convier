@@ -100,6 +100,15 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\PlayerMovement">
+      <UniqueIdentifier>{e40d56f7-52bf-4afb-9c68-3e73bc9a8d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Attack">
+      <UniqueIdentifier>{e198cafe-163d-4445-9951-c9a2f0bc701c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\PlayerHealth">
+      <UniqueIdentifier>{7b93894d-003a-404b-921c-58a64fe56ec2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonEntity.cpp">
@@ -188,6 +197,33 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementIdleState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementRunningState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementChargingState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementMovingState.cpp">
+      <Filter>Source Files\States\PlayerMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackIdleState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackingState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthIdleState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthReplenishingState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDeathState.cpp">
+      <Filter>Source Files\States\PlayerHealth</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
