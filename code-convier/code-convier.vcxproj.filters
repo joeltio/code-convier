@@ -109,6 +109,9 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Click">
+      <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AttackIdleState.cpp">
@@ -119,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="ButtonEntity.cpp">
       <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickingState.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="convier.cpp">
       <Filter>Source Files</Filter>
@@ -228,6 +228,12 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickingState.cpp">
+      <Filter>Source Files\States\Click</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -316,9 +322,6 @@
     </ClInclude>
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>Header Files\Entity</Filter>
@@ -431,6 +434,9 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenuEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -495,5 +501,25 @@
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
+    <Image Include="sprites\Experience_Orb.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sprites\tiles - Legend.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sprites\tiles.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map3.txt" />
+    <Text Include="map\map0.txt" />
+    <Text Include="map\map1.txt" />
+    <Text Include="map2.txt" />
+    <Text Include="map4.txt" />
+    <Text Include="map5.txt" />
   </ItemGroup>
 </Project>
