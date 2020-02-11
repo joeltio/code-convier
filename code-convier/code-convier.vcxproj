@@ -183,9 +183,11 @@
     <ClInclude Include="Action.h" />
     <ClInclude Include="AttackIdleState.h" />
     <ClInclude Include="AttackingState.h" />
+    <ClInclude Include="ButtonEntity.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
+    <ClInclude Include="ClickingState.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="PlayerDeathState.h" />
     <ClInclude Include="ecsConstants.h" />
@@ -238,7 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Credits.png" />
-    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png" />
     <Image Include="..\..\..\Menu.png" />
     <Image Include="..\..\..\Player spritesheets\Player_Dying.png" />
     <Image Include="..\..\..\Player spritesheets\Player_Idle.png" />
