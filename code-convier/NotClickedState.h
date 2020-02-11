@@ -4,6 +4,6 @@
 #include "State.h"
 #include "StateComponent.h"
 
-class GamePauseState : FSM::State {
+class NotClickedState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);
 };
