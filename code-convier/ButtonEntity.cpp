@@ -26,6 +26,12 @@ namespace Entity {
 
 		manager->addComponent<Component::Transform>(buttonId, transformComponent);
 
+		Component::ClickState clickStateComponent{
+			buttonId,
+			true, // isActive
+			Types::toTypeId<NotClickedState>()
+		};
+
 		return buttonId;
 	}
 }
