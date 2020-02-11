@@ -8,7 +8,7 @@
 
 namespace Entity {
 
-	class Button : public ECS::Entity {
+	class MainMenu : public ECS::Entity {
 	public:
 		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics);
 	};
