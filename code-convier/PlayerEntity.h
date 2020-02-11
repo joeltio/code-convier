@@ -2,6 +2,8 @@
 
 #include "Entity.h"
 #include "Manager.h"
+#include "graphics.h"
+#include "TextureComponent.h"
 #include "PhysicsComponent.h"
 #include "TransformComponent.h"
 #include "HealthComponent.h"
@@ -10,7 +12,7 @@ namespace Entity {
 
 	class Player : public ECS::Entity {
 	public:
-		static ECS::EntityIdType create(ECS::Manager* manager);
+		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics);
 	};
 
 }

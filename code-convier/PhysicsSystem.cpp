@@ -21,8 +21,8 @@ void Physics::update(float frameTime) {
 		// Calculate new position
 		physicsComponent.velocity += physicsComponent.acceleration * frameTime;
 		D3DXVECTOR2 offset = physicsComponent.velocity * frameTime;
-		transformComponent.x = offset.x;
-		transformComponent.y = offset.y;
+		transformComponent.x += offset.x;
+		transformComponent.y += offset.y;
 	}
 }
 

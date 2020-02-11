@@ -10,7 +10,7 @@ namespace Component {
 
 	struct Texture : public ECS::Component {
 		public:
-			bool visible = false;
+			bool visible = true;
 
 			UINT totalWidth = 0;
 			UINT totalHeight = 0;
