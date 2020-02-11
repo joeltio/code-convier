@@ -492,6 +492,16 @@
     <Image Include="Quit.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\Experience_Orb.gif">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\tiles.png">
+      <Filter>Resource Files\sprite</Filter>
     <Image Include="Resume.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
@@ -501,5 +511,25 @@
     <Image Include="MainMenuBackground.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map\map0.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\map1.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map2.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map3.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map4.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map5.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
   </ItemGroup>
 </Project>
