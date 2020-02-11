@@ -29,7 +29,8 @@
 //                  Constants
 //-----------------------------------------------
 // graphic images
-const char MAINMENU_IMAGE[] = "MainMenuBackground.png";
+const char MAINMENU_IMAGE[] = "MainMenu.png";
+const char PAUSEMENU_IMAGE[] = "PauseMenu.png";
 const char CREDITS_BUTTON[] = "Credits.png";
 const char MENU_BUTTON[] = "Menu.png";
 const char QUIT_BUTTON[] = "Quit.png";
@@ -46,6 +47,14 @@ const char PLAYER_RUN_IMAGE[] = "Player_Run.png";
 const char PLAYER_RUN_SHOOT_IMAGE[] = "Player_Run_Shooting.png";
 const char PLAYER_SHOOT_IMAGE[] = "Player_Shoot.png";
 const char PLAYER_SLIDE_IMAGE[] = "Player_Slide.png";
+
+//Enemy
+const char SKELETON_ATTACK_IMAGE[] = "Skeleton_Attack.png";
+const char SKELETON_DEAD_IMAGE[] = "Skeleton_Dead.png";
+const char SKELETON_HIT_IMAGE[] = "Skeleton_Hit.png";
+const char SKELETON_IDLE_IMAGE[] = "Skeleton_Idle.png";
+const char SKELETON_REACT_IMAGE[] = "Skeleton_React.png";
+const char SKELETON_WALK_IMAGE[] = "Skeleton_Walk.png";
 
 // window
 const char CLASS_NAME[] = "Code::Convier";
