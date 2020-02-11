@@ -14,6 +14,12 @@
     <Filter Include="Header Files\ECS">
       <UniqueIdentifier>{eb4b8f1e-c3bd-4c4e-9163-ea0495a76392}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{8e46328c-8573-4df8-a9f7-a0feebf01d36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{cb43fca0-80f0-4fd8-9422-628f3feab2e7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\FSM">
       <UniqueIdentifier>{aa731301-7f52-431d-8762-c91f3e7dc863}</UniqueIdentifier>
     </Filter>
@@ -33,6 +39,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Background">
+      <UniqueIdentifier>{7ef6f92c-7e65-4e4a-8984-a6c6880f63dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Button">
+      <UniqueIdentifier>{43cac398-5a13-46f4-a1f6-454420c9e44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Player">
+      <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -42,6 +57,9 @@
     </Filter>
     <Filter Include="Source Files\ECS">
       <UniqueIdentifier>{450a48d2-651c-4189-b6aa-678584d7f8fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{61c71b4b-0751-41b4-ad6e-3d3fc306a1ea}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\FSM">
       <UniqueIdentifier>{3367818c-1212-4c82-a54f-7c9cd7253579}</UniqueIdentifier>
@@ -81,11 +99,29 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameCreateLevelState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDestroyLevelState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="GameMenuState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePauseState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayerDeathState.cpp">
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameReducer.cpp">
       <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRunningState.cpp">
+      <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
@@ -95,6 +131,12 @@
     </ClCompile>
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reducer.tpp">
+      <Filter>Source Files\FSM</Filter>
     </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -146,14 +188,35 @@
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameCreateLevelState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDataComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDestroyLevelState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameMenuState.h">
       <Filter>Header Files\States\Game</Filter>
     </ClInclude>
+    <ClInclude Include="GamePauseState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayerDeathState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
     <ClInclude Include="GameReducer.h">
       <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRunningState.h">
+      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameStateComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -167,7 +230,19 @@
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="PrepareGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="QuitGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="Reducer.h">
@@ -175,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowCreditsAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files\FSM</Filter>
@@ -214,6 +292,56 @@
     <None Include="typeUtil.tpp">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Credits.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\gothicvania-cemetery-files\gothicvania-cemetery-files\PNG\Environment\mainmenu.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="..\..\..\Menu.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Dying.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Idle.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Jump.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Jump_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Melee.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Melee_Jump.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Run.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Run_Shooting.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Shoot.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Player spritesheets\Player_Slide.png">
+      <Filter>Resource Files\Player</Filter>
+    </Image>
+    <Image Include="..\..\..\Quit.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Resume.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="..\..\..\Start.png">
+      <Filter>Resource Files\Button</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="map0">

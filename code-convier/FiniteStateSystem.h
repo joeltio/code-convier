@@ -8,6 +8,7 @@
 #include "Manager.h"
 #include "Store.h"
 #include "State.h"
+#include "GameEntity.h"
 
 namespace System {
 	class FiniteState : public ECS::System {

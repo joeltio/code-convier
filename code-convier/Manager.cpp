@@ -94,6 +94,13 @@ void Manager::releaseAll() {
 	}
 	this->components.clear();
 
+	// Clean up deleted queues
+	for (auto kv : this->deletedComponents)
+	{
+		SAFE_DELETE(kv.second);
+	}
+	this->deletedComponents.clear();
+
 	// Clean up entityComponents
 	for (auto kv : this->entityComponents)
 	{

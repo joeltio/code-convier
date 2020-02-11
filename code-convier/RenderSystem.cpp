@@ -12,7 +12,7 @@ namespace System {
 			this->manager->getComponents<Component::Texture>();
 
 		// Get the game state entity
-		Component::GameState gameState = this->manager->getComponents<Component::GameState>()->at(0);
+		Component::GameData gameState = this->manager->getComponents<Component::GameData>()->at(0);
 
 		for (Component::Texture textureComponent : *componentsPtr)
 		{
