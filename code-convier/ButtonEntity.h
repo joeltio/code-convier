@@ -14,7 +14,16 @@ namespace Entity {
 
 	class Button : public ECS::Entity {
 		public:
-			static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics, const char* buttonSprite, std::string buttonText, float x, float y );
+			static ECS::EntityIdType create(
+				ECS::Manager* manager,
+				Graphics* graphics,
+				const char* buttonSprite,
+				std::string buttonText,
+				float x,
+				float y,
+				bool centerX,
+				bool centerY
+			);
 	};
 
 }

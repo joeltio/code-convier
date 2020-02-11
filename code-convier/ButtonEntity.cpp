@@ -2,7 +2,16 @@
 
 namespace Entity {
 
-	ECS::EntityIdType Button::create(ECS::Manager* manager, Graphics* graphics, const char* buttonSprite, std::string buttonText, float x, float y) {
+	ECS::EntityIdType Button::create(
+		ECS::Manager* manager,
+		Graphics* graphics,
+		const char* buttonSprite,
+		std::string buttonText,
+		float x,
+		float y,
+		bool centerX,
+		bool centerY
+	) {
 
 		ECS::EntityIdType buttonId = manager->createEntity<Button>();
 
@@ -23,6 +32,14 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 		transformComponent.x = x;
 		transformComponent.y = y;
+		if (centerX)
+		{
+			transformComponent.x = GAME_WIDTH / 2 - textureComponent.totalWidth / 2;
+		}
+		if (centerY)
+		{
+			transformComponent.y = GAME_HEIGHT / 2 - textureComponent.totalHeight / 2;
+		}
 
 		manager->addComponent<Component::Transform>(buttonId, transformComponent);
 
@@ -31,6 +48,8 @@ namespace Entity {
 			true, // isActive
 			Types::toTypeId<NotClickedState>()
 		};
+
+		manager->addComponent<Component::ClickState>(buttonId, clickStateComponent);
 
 		return buttonId;
 	}
