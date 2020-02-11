@@ -281,7 +281,7 @@
     <Image Include="..\..\..\Resume.png" />
     <Image Include="..\..\..\Start.png" />
     <Image Include="Credits.png" />
-    <Image Include="MainMenuBackground.png" />
+    <Image Include="MainMenu.png" />
     <Image Include="Menu.png" />
     <Image Include="Player_Dying.png" />
     <Image Include="Player_Idle.png" />
