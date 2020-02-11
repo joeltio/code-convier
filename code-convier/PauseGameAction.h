@@ -6,5 +6,5 @@
 const std::string PAUSE_GAME_ACTION = "PAUSE_GAME_ACTION";
 
 struct PauseGameAction : public FSM::Action {
-	std::string type = PAUSE_GAME_ACTION;
+	PauseGameAction(): FSM::Action(PAUSE_GAME_ACTION) {}
 };
