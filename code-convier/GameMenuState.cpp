@@ -31,7 +31,7 @@ void GameMenuState::exit(Component::State state) {
 	{
 		this->manager->removeEntity<Entity::MainMenu>(mainMenuEntityId);
 	}
-	
+
 	// Destroy menu buttons
 	std::unordered_set<ECS::EntityIdType> butttonEntityIds = *this->manager->getEntities<Entity::Button>();
 	for (ECS::EntityIdType butttonEntityId : butttonEntityIds)

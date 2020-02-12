@@ -20,11 +20,11 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)
 	{
 		// Retrieve the components for the current state type
-		std::vector<Component::State>* componentsPtr =
-			(std::vector<Component::State>*) this->manager->getComponents(stateComponentTypeId);
+		auto retrieverPair = this->manager->getComponents(stateComponentTypeId);
 
-		for (Component::State& stateComp : *componentsPtr)
+		for (size_t i = 0; i < retrieverPair.first; i++)
 		{
+			Component::State& stateComp = *((Component::State*) retrieverPair.second(i));
 			this->states.at(stateComp.state)->initialize(manager, graphics, input);
 			this->states.at(stateComp.state)->enter(stateComp);
 		}
@@ -35,13 +35,19 @@ void FiniteState::update(float frameTime) {
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)
 	{
 		// Retrieve the components for the current state type
-		std::vector<Component::State>* componentsPtr =
-			(std::vector<Component::State>*) this->manager->getComponents(stateComponentTypeId);
+		auto retrieverPair = this->manager->getComponents(stateComponentTypeId);
 
-		for (Component::State& stateComp : *componentsPtr)
+		for (size_t i = 0; i < retrieverPair.first; i++)
 		{
+			Component::State& stateComp = *((Component::State*) retrieverPair.second(i));
+			if (!stateComp.isActive)
+			{
+				continue;
+			}
+
 			FSM::Action action = this->states.at(stateComp.state)->update(frameTime, stateComp);
 			action.dispatcherEntityId = stateComp.entityId;
+
 			if (action.type != FSM::NO_ACTION) {
 				this->store->dispatchAction(action);
 			}
@@ -53,11 +59,12 @@ void FiniteState::render() {
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)
 	{
 		// Retrieve the components for the current state type
-		std::vector<Component::State>* componentsPtr =
-			(std::vector<Component::State>*) this->manager->getComponents(stateComponentTypeId);
+		auto retrieverPair = this->manager->getComponents(stateComponentTypeId);
 
-		for (Component::State& stateComp : *componentsPtr)
+		for (size_t i = 0; i < retrieverPair.first; i++)
 		{
+			Component::State& stateComp = *((Component::State*) retrieverPair.second(i));
+
 			FSM::Action action = this->states.at(stateComp.state)->render(stateComp);
 			action.dispatcherEntityId = stateComp.entityId;
 			if (action.type != FSM::NO_ACTION) {
