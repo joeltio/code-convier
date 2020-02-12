@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <queue>
 #include <typeindex>
+#include <functional>
 
 #include "constants.h"
 #include "typeUtil.h"
@@ -22,6 +23,8 @@ class Manager {
 		std::unordered_map<Types::TypeId, std::unordered_set<EntityIdType>*> entityFamilies;
 		// Component -> vector<Component>*
 		std::unordered_map<Types::TypeId, void*> components;
+		// Component -> (size, retriever)
+		std::unordered_map<Types::TypeId, std::pair<int, std::function<Component* (size_t)>>> componentRetriever;
 		// EntityId -> ComponentType -> vector index
 		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>*> entityComponents;
 		// Map of queues of components which have been deleted
@@ -39,7 +42,7 @@ class Manager {
 		Entity* getEntity(EntityIdType id);
 		std::unordered_set<EntityIdType>* getEntities(Types::TypeId entityType);
 		template<typename ComponentType> std::vector<ComponentType>* getComponents();
-		std::vector<Component>* getComponents(Types::TypeId componentTypeId);
+		std::pair<int, std::function<Component* (size_t)>> getComponents(Types::TypeId componentTypeId);
 		template<typename ComponentType> ComponentType& getEntityComponent(EntityIdType id);
 		template<typename EntityType> std::unordered_set<EntityIdType>* getEntities();
 		template<typename ComponentType> bool entityHasComponent(EntityIdType id);
