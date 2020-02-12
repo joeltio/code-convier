@@ -7,6 +7,9 @@ void GameCreditsState::enter(Component::State state) {
 
 
 FSM::Action GameCreditsState::update(float frameTime, Component::State state) {
+	if (this->input->anyKeyPressed()) {
+		return PrepareMenuAction();
+	}
 	return FSM::NoAction();
 }
 

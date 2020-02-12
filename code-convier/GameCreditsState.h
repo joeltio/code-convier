@@ -8,6 +8,8 @@
 #include "CreditsEntity.h"
 
 #include "TextureComponent.h"
+#include "PrepareMenuAction.h"
+
 
 class GameCreditsState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);
