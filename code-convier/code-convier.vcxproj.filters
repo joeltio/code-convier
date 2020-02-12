@@ -97,6 +97,9 @@
     <Filter Include="Source Files\States\Attack">
       <UniqueIdentifier>{e198cafe-163d-4445-9951-c9a2f0bc701c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Click">
+      <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\States\Game">
       <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
     </Filter>
@@ -123,8 +126,14 @@
     <ClCompile Include="AttackingState.cpp">
       <Filter>Source Files\States\Attack</Filter>
     </ClCompile>
+    <ClCompile Include="AugmentationSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="ButtonEntity.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickingState.cpp">
+      <Filter>Source Files\States\Click</Filter>
     </ClCompile>
     <ClCompile Include="convier.cpp">
       <Filter>Source Files</Filter>
@@ -171,8 +180,14 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="NotClickedState.cpp">
+      <Filter>Source Files\States\Click</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -231,18 +246,6 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickingState.cpp">
-      <Filter>Source Files\States\Click</Filter>
-    </ClCompile>
-    <ClCompile Include="AugmentationSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="NotClickedState.cpp">
-      <Filter>Source Files\States\Click</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -259,6 +262,12 @@
     </ClInclude>
     <ClInclude Include="AttackingState.h">
       <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="AugmentationComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AugmentationSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="ButtonEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -332,8 +341,20 @@
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="JumpingComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="NotClickedState.h">
+      <Filter>Header Files\States\Click</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseGameAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -401,6 +422,9 @@
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="PrepareMenuAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="QuitGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
@@ -409,6 +433,9 @@
     </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="ResumeGameAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="ShowCreditsAction.h">
       <Filter>Header Files\Actions</Filter>
@@ -440,30 +467,6 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="JumpingComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="AugmentationComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="AugmentationSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="PauseGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PrepareMenuAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="ResumeGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="NotClickedState.h">
-      <Filter>Header Files\States\Click</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -485,6 +488,9 @@
     </Image>
     <Image Include="Menu.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="PauseMenu.png">
+      <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Player_Dying.png">
       <Filter>Resource Files\Player</Filter>
@@ -522,11 +528,23 @@
     <Image Include="Resume.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
-    <Image Include="Start.png">
-      <Filter>Resource Files\Button</Filter>
+    <Image Include="Skeleton_Attack.png">
+      <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="sprites\tileset.png">
-      <Filter>Resource Files\sprite</Filter>
+    <Image Include="Skeleton_Dead.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Skeleton_Hit.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Skeleton_Idle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Skeleton_React.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Skeleton_Walk.png">
+      <Filter>Resource Files</Filter>
     </Image>
     <Image Include="sprites\Experience_Orb.gif">
       <Filter>Resource Files\sprite</Filter>
@@ -537,29 +555,11 @@
     <Image Include="sprites\tiles.png">
       <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="Skeleton_Attack.png">
-      <Filter>Resource Files\Enemy</Filter>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="Skeleton_Dead.png">
-      <Filter>Resource Files\Enemy</Filter>
-    </Image>
-    <Image Include="Skeleton_Hit.png">
-      <Filter>Resource Files\Enemy</Filter>
-    </Image>
-    <Image Include="Skeleton_Idle.png">
-      <Filter>Resource Files\Enemy</Filter>
-    </Image>
-    <Image Include="Skeleton_React.png">
-      <Filter>Resource Files\Enemy</Filter>
-    </Image>
-    <Image Include="Skeleton_Walk.png">
-      <Filter>Resource Files\Enemy</Filter>
-    </Image>
-    <Image Include="PauseMenu.png">
-      <Filter>Resource Files\Background</Filter>
-    </Image>
-    <Image Include="MainMenu.png">
-      <Filter>Resource Files\Background</Filter>
+    <Image Include="Start.png">
+      <Filter>Resource Files\Button</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

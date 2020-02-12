@@ -1,6 +1,6 @@
 #include "PlayerMovementMovingState.h"
 
-FSM::Action PlayerMovementMovingState::update(float frametime, Component::State stateComponent) 
+FSM::Action PlayerMovementMovingState::update(float frametime, Component::State stateComponent)
 {
 	ECS::EntityIdType referenceId = stateComponent.entityId; // for use later
 
@@ -25,5 +25,5 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		}
 	}
 
-	return FSM::Action();
+	return FSM::NoAction();
 }

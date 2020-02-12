@@ -23,5 +23,5 @@ FSM::Action PlayerMovementRunningState::update(float frametime, Component::State
 		}
 	}
 
-	return FSM::Action();
+	return FSM::NoAction();
 }

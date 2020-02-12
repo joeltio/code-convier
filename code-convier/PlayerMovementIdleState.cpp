@@ -5,5 +5,5 @@ FSM::Action PlayerMovementIdleState::update(float frameTime) {
 	if (!input->anyKeyPressed()) {
 		return FSM::NoAction();
 	}
-	return FSM::Action();
+	return FSM::NoAction();
 }

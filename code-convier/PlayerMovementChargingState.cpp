@@ -1,6 +1,6 @@
 #include "PlayerMovementChargingState.h"
 
-FSM::Action PlayerMovementChargingState::update(float frametime, Component::State stateComponent) 
+FSM::Action PlayerMovementChargingState::update(float frametime, Component::State stateComponent)
 {
 	// mutually exclusive with running and walking
 	if (input->isKeyDown('K')) // charge
@@ -11,5 +11,5 @@ FSM::Action PlayerMovementChargingState::update(float frametime, Component::Stat
 		healthComponent.health -= CHARGE_HEALTH_TICK;
 	}
 
-	return FSM::Action();
+	return FSM::NoAction();
 }

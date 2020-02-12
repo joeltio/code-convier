@@ -48,7 +48,6 @@ template<typename ComponentType> ComponentType& Manager::getEntityComponent(Enti
 	);
 
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
-	std::unordered_map<Types::TypeId, int> a = *this->entityComponents.at(id);
 	int componentIndex = this->entityComponents.at(id)->at(componentTypeId);
 	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
 	return (ComponentType&) componentVectorPtr->at(componentIndex);
