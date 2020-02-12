@@ -15,4 +15,9 @@ FSM::Action GameCreditsState::update(float frameTime, Component::State state) {
 
 void GameCreditsState::exit(Component::State state) {
 	// Destroy Credits background
+	std::unordered_set<ECS::EntityIdType>* creditsEntityIds = this->manager->getEntities<Entity::Credits>();
+	for (ECS::EntityIdType creditsEntityId : *creditsEntityIds)
+	{
+		this->manager->removeEntity<Entity::Credits>(creditsEntityId);
+	}
 }

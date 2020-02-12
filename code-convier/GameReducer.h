@@ -8,12 +8,26 @@
 
 // Actions this reducer handles
 #include "PrepareGameAction.h"
+#include "PauseGameAction.h"
+#include "PrepareMenuAction.h"
+#include "QuitGameAction.h"
+#include "ShowCreditsAction.h"
+#include "ResumeGameAction.h"
 
 // States that this reducer hanndles
 #include "GameCreateLevelState.h"
+#include "GameCreditsState.h"
+#include "GameMenuState.h"
+#include "GamePauseState.h"
+#include "GameRunningState.h"
 
 static std::string ACCEPTED_ACTIONS[] = {
-	PREPARE_GAME_ACTION
+	PREPARE_GAME_ACTION,
+	PAUSE_GAME_ACTION,
+	PREPARE_MENU_ACTION,
+	QUIT_GAME_ACTION,
+	SHOW_CREDITS_ACTION,
+	RESUME_GAME_ACTION
 };
 
 class GameReducer : public FSM::Reducer {

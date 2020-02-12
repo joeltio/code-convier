@@ -26,6 +26,15 @@ FSM::Action GameMenuState::update(float frameTime, Component::State state) {
 
 void GameMenuState::exit(Component::State state) {
 	// Destroy menu background
-
+	std::unordered_set<ECS::EntityIdType>* mainMenuEntityIds = this->manager->getEntities<Entity::MainMenu>();
+	for (ECS::EntityIdType mainMenuEntityId : *mainMenuEntityIds)
+	{
+		this->manager->removeEntity<Entity::MainMenu>(mainMenuEntityId);
+	}
 	// Destroy menu buttons
+	std::unordered_set<ECS::EntityIdType>* butttonEntityIds = this->manager->getEntities<Entity::Button>();
+	for (ECS::EntityIdType butttonEntityId : *butttonEntityIds)
+	{
+		this->manager->removeEntity<Entity::Button>(butttonEntityId);
+	}
 }
