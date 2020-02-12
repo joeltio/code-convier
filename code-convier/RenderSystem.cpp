@@ -16,8 +16,8 @@ namespace System {
 
 		for (Component::Texture textureComponent : *componentsPtr)
 		{
-			// Ignore non-visible components
-			if (!textureComponent.visible) {
+			// Ignore non-visible and inactive components
+			if (!textureComponent.visible || !textureComponent.isActive) {
 				continue;
 			}
 
