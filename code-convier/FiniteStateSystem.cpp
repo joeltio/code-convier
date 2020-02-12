@@ -11,6 +11,10 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 	// Create the store
 	this->store = new FSM::Store(manager, this->states);
 	// Register the reducers
+	for (FSM::Reducer* reducer : ENABLED_REDUCERS)
+	{
+		this->store->registerReducer(reducer);
+	}
 
 	// Initialize the store first
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)

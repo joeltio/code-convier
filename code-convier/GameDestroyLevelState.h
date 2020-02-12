@@ -3,6 +3,6 @@
 #include "Action.h"
 #include "State.h"
 
-class GameDestroyLevelState : FSM::State {
+class GameDestroyLevelState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);
 };

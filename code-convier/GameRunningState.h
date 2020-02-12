@@ -6,6 +6,6 @@
 
 #include "PauseGameAction.h"
 
-class GameRunningState : FSM::State {
+class GameRunningState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);
 };

@@ -22,14 +22,14 @@ FSM::Action GamePauseState::update(float frameTime, Component::State state) {
 
 void GamePauseState::exit(Component::State state) {
 	// Destroy Pause menu background
-	std::unordered_set<ECS::EntityIdType>* pauseMenuEntityIds = this->manager->getEntities<Entity::PauseMenu>();
-	for (ECS::EntityIdType pauseMenuEntityId : *pauseMenuEntityIds)
+	std::unordered_set<ECS::EntityIdType> pauseMenuEntityIds = *this->manager->getEntities<Entity::PauseMenu>();
+	for (ECS::EntityIdType pauseMenuEntityId : pauseMenuEntityIds)
 	{
 		this->manager->removeEntity<Entity::PauseMenu>(pauseMenuEntityId);
 	}
 	// Destroy Pause menu buttons
-	std::unordered_set<ECS::EntityIdType>* butttonEntityIds = this->manager->getEntities<Entity::Button>();
-	for (ECS::EntityIdType butttonEntityId : *butttonEntityIds)
+	std::unordered_set<ECS::EntityIdType> butttonEntityIds = *this->manager->getEntities<Entity::Button>();
+	for (ECS::EntityIdType butttonEntityId : butttonEntityIds)
 	{
 		this->manager->removeEntity<Entity::Button>(butttonEntityId);
 	}
