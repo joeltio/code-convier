@@ -112,6 +112,9 @@
     <Filter Include="Source Files\States\Click">
       <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Enemy">
+      <UniqueIdentifier>{f9426b6a-9bcb-4b48-bbf5-a9a602b33354}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AttackIdleState.cpp">
@@ -236,6 +239,9 @@
     </ClCompile>
     <ClCompile Include="AugmentationSystem.cpp">
       <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="NotClickedState.cpp">
+      <Filter>Source Files\States\Click</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -446,6 +452,18 @@
     <ClInclude Include="AugmentationSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="PauseGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PrepareMenuAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ResumeGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="NotClickedState.h">
+      <Filter>Header Files\States\Click</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -464,9 +482,6 @@
   <ItemGroup>
     <Image Include="Credits.png">
       <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="MainMenu.png">
-      <Filter>Resource Files\Background</Filter>
     </Image>
     <Image Include="Menu.png">
       <Filter>Resource Files\Button</Filter>
@@ -521,6 +536,30 @@
     </Image>
     <Image Include="sprites\tiles.png">
       <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="Skeleton_Attack.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Dead.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Hit.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Idle.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_React.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="Skeleton_Walk.png">
+      <Filter>Resource Files\Enemy</Filter>
+    </Image>
+    <Image Include="PauseMenu.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="MainMenu.png">
+      <Filter>Resource Files\Background</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
