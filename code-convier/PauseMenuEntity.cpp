@@ -9,7 +9,7 @@ namespace Entity {
 		Component::Texture textureComponent = Component::Texture();
 		if (!textureComponent.loadTexture(graphics, PAUSEMENU_IMAGE))
 		{
-			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Main Menu entity texture"));
+			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Pause Menu entity texture"));
 		}
 		textureComponent.visible = true;
 
