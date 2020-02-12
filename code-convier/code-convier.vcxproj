@@ -156,11 +156,13 @@
     <ClCompile Include="ButtonEntity.cpp" />
     <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="convier.cpp" />
+    <ClCompile Include="CreditsEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClCompile Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameCreateLevelState.cpp" />
+    <ClCompile Include="GameCreditsState.cpp" />
     <ClCompile Include="GameDestroyLevelState.cpp" />
     <ClCompile Include="GameMenuState.cpp" />
     <ClCompile Include="GamePauseState.cpp" />
@@ -204,6 +206,8 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
     <ClInclude Include="ClickingState.h" />
+    <ClInclude Include="CreditsEntity.h" />
+    <ClInclude Include="GameCreditsState.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="NotClickedState.h" />
@@ -271,6 +275,7 @@
     <Text Include="map\start.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="CreditsBackground.png" />
     <Image Include="MainMenu.png" />
     <Image Include="PauseMenu.png" />
     <Image Include="Skeleton_Attack.png" />

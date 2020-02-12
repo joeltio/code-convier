@@ -31,6 +31,8 @@
 // graphic images
 const char MAINMENU_IMAGE[] = "MainMenu.png";
 const char PAUSEMENU_IMAGE[] = "PauseMenu.png";
+const char CREDITSBACKGROUND_IMAGE[] = "CreditsBackground.png";
+
 const char CREDITS_BUTTON[] = "Credits.png";
 const char MENU_BUTTON[] = "Menu.png";
 const char QUIT_BUTTON[] = "Quit.png";

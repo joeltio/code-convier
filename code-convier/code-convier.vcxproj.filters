@@ -246,6 +246,12 @@
     <ClCompile Include="PauseMenuEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="CreditsEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCreditsState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -470,6 +476,12 @@
     <ClInclude Include="PauseMenuEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="CreditsEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCreditsState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -565,6 +577,9 @@
       <Filter>Resource Files\Background</Filter>
     </Image>
     <Image Include="MainMenu.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="CreditsBackground.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
   </ItemGroup>
