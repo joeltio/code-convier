@@ -11,6 +11,15 @@ namespace Entity {
 		transformComponent.scale = 2;
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 
+		// add the staticCollidable component
+		Component::StaticCollidable collidable = Component::StaticCollidable();
+		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (id )
+			{
+
+			}
+		};
+
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
 		switch (type)

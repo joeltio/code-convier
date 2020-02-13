@@ -26,6 +26,7 @@ namespace Entity {
 			{
 				throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading solid tile entity texture"));
 			}
+			textureComponent.zIndex = 2;
 			break;
 		case('$'):
 			if (!textureComponent.loadTexture(graphics, DOOR_IMAGE))

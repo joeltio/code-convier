@@ -7,6 +7,7 @@
 
 #include "TransformComponent.h"
 #include "TextureComponent.h"
+#include "StaticCollidableComponent.h"
 
 namespace Entity {
 
