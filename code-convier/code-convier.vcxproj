@@ -150,11 +150,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
+    <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
+    <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AttackIdleState.cpp" />
     <ClCompile Include="AttackingState.cpp" />
     <ClCompile Include="AugmentationSystem.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
+    <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
+    <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
     <ClCompile Include="ClickingState.cpp" />
+    <ClCompile Include="CollidableComponent.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="CreditsEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -174,6 +181,7 @@
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="NotClickedState.cpp" />
+    <ClCompile Include="OBBOBBCollisionStrategy.cpp" />
     <ClCompile Include="PauseMenuEntity.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
@@ -193,15 +201,25 @@
     <ClCompile Include="SystemRunner.cpp" />
     <ClCompile Include="TextureComponent.cpp" />
     <ClCompile Include="typeUtil.cpp" />
+    <ClCompile Include="vectorUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBAABBCollisionStrategy.h" />
+    <ClInclude Include="AABBCircleCollisionStrategy.h" />
+    <ClInclude Include="AABBOBBCollisionStrategy.h" />
     <ClInclude Include="Action.h" />
     <ClInclude Include="AttackIdleState.h" />
     <ClInclude Include="AttackingState.h" />
     <ClInclude Include="AugmentationComponent.h" />
     <ClInclude Include="AugmentationSystem.h" />
     <ClInclude Include="ButtonEntity.h" />
+    <ClInclude Include="CircleCircleCollisionStrategy.h" />
+    <ClInclude Include="CircleOBBCollisionStrategy.h" />
+    <ClInclude Include="CollidableComponent.h" />
+    <ClInclude Include="CollisionStrategy.h" />
+    <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="CollisionType.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="convier.h" />
@@ -211,6 +229,7 @@
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="NotClickedState.h" />
+    <ClInclude Include="OBBOBBCollisionStrategy.h" />
     <ClInclude Include="PauseGameAction.h" />
     <ClInclude Include="PauseMenuEntity.h" />
     <ClInclude Include="PlayerDeathState.h" />
@@ -251,6 +270,7 @@
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
+    <ClInclude Include="StaticCollidableComponent.h" />
     <ClInclude Include="Store.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemRunner.h" />
@@ -258,6 +278,7 @@
     <ClInclude Include="TextureComponent.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="typeUtil.h" />
+    <ClInclude Include="vectorUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp" />

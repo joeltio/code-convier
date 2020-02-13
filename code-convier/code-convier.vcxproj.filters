@@ -8,6 +8,9 @@
     <Filter Include="Header Files\Actions">
       <UniqueIdentifier>{3dcdb413-ba66-4a27-8e9f-f1b4e7735b36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CollisionUtil">
+      <UniqueIdentifier>{69af52c9-fe8a-4ff0-a749-324ef9a2732e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\Component">
       <UniqueIdentifier>{ef381933-3baf-4aad-8d6e-edfc2f8e8c12}</UniqueIdentifier>
     </Filter>
@@ -57,6 +60,9 @@
     <Filter Include="Resource Files\Button">
       <UniqueIdentifier>{43cac398-5a13-46f4-a1f6-454420c9e44c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Enemy">
+      <UniqueIdentifier>{f9426b6a-9bcb-4b48-bbf5-a9a602b33354}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files\map">
       <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
     </Filter>
@@ -75,6 +81,9 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\CollisionUtil">
+      <UniqueIdentifier>{afc9652c-d4c0-4428-b1ea-ec6252c333b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Component">
       <UniqueIdentifier>{9e8cda42-7798-4312-8b1a-23b8e3ce98cc}</UniqueIdentifier>
@@ -97,6 +106,9 @@
     <Filter Include="Source Files\States\Attack">
       <UniqueIdentifier>{e198cafe-163d-4445-9951-c9a2f0bc701c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Click">
+      <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\States\Game">
       <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
     </Filter>
@@ -109,25 +121,49 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\States\Click">
-      <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Enemy">
-      <UniqueIdentifier>{f9426b6a-9bcb-4b48-bbf5-a9a602b33354}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AABBAABBCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBCircleCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBOBBCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
     <ClCompile Include="AttackIdleState.cpp">
       <Filter>Source Files\States\Attack</Filter>
     </ClCompile>
     <ClCompile Include="AttackingState.cpp">
       <Filter>Source Files\States\Attack</Filter>
     </ClCompile>
+    <ClCompile Include="AugmentationSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="ButtonEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="CircleCircleCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleOBBCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickingState.cpp">
+      <Filter>Source Files\States\Click</Filter>
+    </ClCompile>
+    <ClCompile Include="CollidableComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="convier.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditsEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
@@ -142,6 +178,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameCreateLevelState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCreditsState.cpp">
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameDestroyLevelState.cpp">
@@ -171,8 +210,20 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="NotClickedState.cpp">
+      <Filter>Source Files\States\Click</Filter>
+    </ClCompile>
+    <ClCompile Include="OBBOBBCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenuEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -228,32 +279,23 @@
     <ClCompile Include="typeUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="vectorUtil.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickingState.cpp">
-      <Filter>Source Files\States\Click</Filter>
-    </ClCompile>
-    <ClCompile Include="AugmentationSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="NotClickedState.cpp">
-      <Filter>Source Files\States\Click</Filter>
-    </ClCompile>
-    <ClCompile Include="PauseMenuEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="CreditsEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="GameCreditsState.cpp">
-      <Filter>Source Files\States\Game</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBAABBCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBCircleCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBOBBCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
     <ClInclude Include="Action.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
@@ -269,11 +311,35 @@
     <ClInclude Include="AttackingState.h">
       <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
+    <ClInclude Include="AugmentationComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AugmentationSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="ButtonEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="CircleCircleCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleOBBCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
     <ClInclude Include="ClickingState.h">
       <Filter>Header Files\States\Click</Filter>
+    </ClInclude>
+    <ClInclude Include="CollidableComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionType.h">
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Header Files\ECS</Filter>
@@ -283,6 +349,9 @@
     </ClInclude>
     <ClInclude Include="convier.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditsEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="ecsConstants.h">
       <Filter>Header Files</Filter>
@@ -297,6 +366,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameCreateLevelState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCreditsState.h">
       <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameDataComponent.h">
@@ -341,8 +413,26 @@
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="JumpingComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="NotClickedState.h">
+      <Filter>Header Files\States\Click</Filter>
+    </ClInclude>
+    <ClInclude Include="OBBOBBCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenuEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -410,6 +500,9 @@
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="PrepareMenuAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="QuitGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
@@ -419,6 +512,9 @@
     <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="ResumeGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="ShowCreditsAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
@@ -426,6 +522,9 @@
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
     <ClInclude Include="StateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticCollidableComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="Store.h">
@@ -449,38 +548,8 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="JumpingComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="AugmentationComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="AugmentationSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="PauseGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PrepareMenuAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="ResumeGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="NotClickedState.h">
-      <Filter>Header Files\States\Click</Filter>
-    </ClInclude>
-    <ClInclude Include="PauseMenuEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="CreditsEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCreditsState.h">
-      <Filter>Header Files\States\Game</Filter>
+    <ClInclude Include="vectorUtil.h">
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -501,8 +570,17 @@
     <Image Include="Credits.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
+    <Image Include="CreditsBackground.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="MainMenu.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
     <Image Include="Menu.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="PauseMenu.png">
+      <Filter>Resource Files\Background</Filter>
     </Image>
     <Image Include="Player_Dying.png">
       <Filter>Resource Files\Player</Filter>
@@ -540,21 +618,6 @@
     <Image Include="Resume.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
-    <Image Include="Start.png">
-      <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="sprites\tileset.png">
-      <Filter>Resource Files\sprite</Filter>
-    </Image>
-    <Image Include="sprites\Experience_Orb.gif">
-      <Filter>Resource Files\sprite</Filter>
-    </Image>
-    <Image Include="sprites\tiles - Legend.png">
-      <Filter>Resource Files\sprite</Filter>
-    </Image>
-    <Image Include="sprites\tiles.png">
-      <Filter>Resource Files\sprite</Filter>
-    </Image>
     <Image Include="Skeleton_Attack.png">
       <Filter>Resource Files\Enemy</Filter>
     </Image>
@@ -573,14 +636,20 @@
     <Image Include="Skeleton_Walk.png">
       <Filter>Resource Files\Enemy</Filter>
     </Image>
-    <Image Include="PauseMenu.png">
-      <Filter>Resource Files\Background</Filter>
+    <Image Include="sprites\Experience_Orb.gif">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="MainMenu.png">
-      <Filter>Resource Files\Background</Filter>
+    <Image Include="sprites\tiles - Legend.png">
+      <Filter>Resource Files\sprite</Filter>
     </Image>
-    <Image Include="CreditsBackground.png">
-      <Filter>Resource Files\Background</Filter>
+    <Image Include="sprites\tiles.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="sprites\tileset.png">
+      <Filter>Resource Files\sprite</Filter>
+    </Image>
+    <Image Include="Start.png">
+      <Filter>Resource Files\Button</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

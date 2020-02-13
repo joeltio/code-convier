@@ -19,7 +19,7 @@ std::unordered_set<EntityIdType>* Manager::getEntities(Types::TypeId entityType)
 	return this->entityFamilies.at(entityType);
 }
 
-std::pair<int, std::function<Component* (size_t)>> Manager::getComponents(Types::TypeId componentTypeId) {
+std::pair<size_t, std::function<Component* (size_t)>> Manager::getComponents(Types::TypeId componentTypeId) {
 	return this->componentRetriever.at(componentTypeId);
 }
 
