@@ -211,6 +211,7 @@
     <ClInclude Include="AABBCircleCollisionStrategy.h" />
     <ClInclude Include="AABBOBBCollisionStrategy.h" />
     <ClInclude Include="Action.h" />
+    <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="AttackIdleState.h" />
     <ClInclude Include="AttackingState.h" />
     <ClInclude Include="AugmentationComponent.h" />

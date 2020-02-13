@@ -118,6 +118,10 @@ const int PLAYER_HEALTH = 100;
 const int HEALTH_TICK = 3;
 const int RUNNING_HEATLH_TICK = 4;
 const int CHARGE_HEALTH_TICK = 2;
+const int AUGMENTATED_HEAL = 1;
+const float AUGMENTATED_COOLDOWN_REDUCTION = 0.5f;
+const int AUGMENTATED_DAMAGE_MULTIPLIER = 0.5f;
+const float AUGMENTATED_SPEED_MULTIPLIER = 0.1f;
 const float ENEMY_SPEED = 100.0f;
 
 // key mappings
