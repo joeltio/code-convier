@@ -10,6 +10,9 @@
 #include "graphics.h"
 #include "Manager.h"
 #include "TextureComponent.h"
+#include "SolidTileEntity.h"
+#include "DecorativeTileEntity.h"
+#include "ResumeGameAction.h"
 
 class GameCreateLevelState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);

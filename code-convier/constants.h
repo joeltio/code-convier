@@ -60,6 +60,28 @@ const char SKELETON_IDLE_IMAGE[] = "Skeleton_Idle.png";
 const char SKELETON_REACT_IMAGE[] = "Skeleton_React.png";
 const char SKELETON_WALK_IMAGE[] = "Skeleton_Walk.png";
 
+//Tile
+const char JAIL_IMAGE[] = "./sprites/jail.png";
+const char DOOR_IMAGE[] = "./sprites/door.png";
+const char PLATFORM_START_IMAGE[] = "./sprites/{.png";
+const char PLATFORM1_IMAGE[] = "./sprites/1.png";
+const char PLATFORM2_IMAGE[] = "./sprites/2.png";
+const char PLATFORM3_IMAGE[] = "./sprites/3.png";
+const char PLATFORM4_IMAGE[] = "./sprites/4.png";
+const char PLATFORM_END_IMAGE[] = "./sprites/}.png";
+const char BACKGROUND_TILE_IMAGE[] = "./sprites/background.png";
+const char NORMAL_WALL_IMAGE[] = "./sprites/C wall.png";
+const char LEFT_WALL_IMAGE[] = "./sprites/CL wall.png";
+const char RIGHT_WALL_IMAGE[] = "./sprites/CR wall.png";
+const char BOTTOM_WALL_IMAGE[] = "./sprites/TC wall.png";
+const char TOP_WALL_IMAGE[] = "./sprites/BC wall.png";
+const char TOP_LEFT_CORNER_IMAGE[] = "./sprites/BR wall.png";
+const char TOP_RIGHT_CORNER_IMAGE[] = "./sprites/BL wall.png";
+const char BOTTOM_LEFT_CORNER_IMAGE[] = "./sprites/TR wall.png";
+const char BOTTOM_RIGHT_CORNER_IMAGE[] = "./sprites/TL wall.png";
+
+
+
 // window
 const char CLASS_NAME[] = "Code::Convier";
 const char GAME_TITLE[] = "Code::Convier";
@@ -78,11 +100,11 @@ const float FRAME_RATE = 200.0f;               // the target frame rate (frames/
 const float MIN_FRAME_RATE = 10.0f;             // the minimum frame rate
 const float MIN_FRAME_TIME = 1.0f / FRAME_RATE;   // minimum desired time for 1 frame
 const float MAX_FRAME_TIME = 1.0f / MIN_FRAME_RATE; // maximum time used in calculations
-const int levelWidth = 50;
-const int levelHeight = 12;
-const int tileHeight = 48;
-const int tileWidth = 48;
 const int mapFragment = 3;
+const int levelWidth = mapFragment + 40;
+const int levelHeight = 12;
+const int tileHeight = 64;
+const int tileWidth = 64;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 

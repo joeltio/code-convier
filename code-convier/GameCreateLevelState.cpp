@@ -65,12 +65,6 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 			std::swap(gamemap[i], gamemap[d]);
 		}
 	}
-	//Form game level
-	std::string gameLevel;
-	for (size_t i = 0; i < gamemap.size(); i++)
-	{
-		gameLevel += gamemap[i];
-	}
 	//Store game level in temp map file
 	std::ofstream tempMap("./map/temp.txt", std::ofstream::out | std::ofstream::trunc);
 	for (size_t i = 0; i < gamemap.size(); i++)
@@ -86,15 +80,89 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 	}
 	tempMap.close();
 	//Generate level
-	for (size_t y = 0; y < gamemap.size(); y++)
-	{
-		for (size_t x = 0; x < gamemap[y].size(); x++)
+	std::vector<std::string> level;
+	std::ifstream gamelevel;
+	gamelevel.open("./map/temp.txt");
+	while (gamelevel) {
+		std::string line;
+		std::getline(gamelevel, line);
+		if (line != "")
 		{
-			if (gamemap[y][x] == 'P') {
-				ECS::EntityIdType playerId = Entity::Player::create(this->manager, this->graphics, ((float) x * tileWidth), ((float) y * tileHeight));
+			level.push_back(line);
+		}
+	}
+	int playerX;
+	int playerY;
+	for (size_t y = 0; y < level.size(); y++)
+	{
+		for (size_t x = 0; x < level[y].size(); x++)
+		{
+			switch (level[y][x])
+			{
+			case('.'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '.');
+				break;
+			case('-'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '-');
+				break;
+			case('_'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '_');
+				break;
+			case('/'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '/');
+				break;
+			case('\\'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '\\');
+				break;
+			case('('):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '(');
+				break;
+			case(')'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ')');
+				break;
+			case('<'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '<');
+				break;
+			case('>'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '>');
+				break;
+			case('{'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '{');
+				break;
+			case('}'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '}');
+				break;
+			case('1'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '1');
+				break;
+			case('2'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '2');
+				break;
+			case('3'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '3');
+				break;
+			case('4'):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '4');
+				break;
+			case(' '):
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
+				break;
+			case('*'):
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '*');
+				break;
+			case('$'):
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '$');
+				break;
+			case('P'):
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
+				playerX = x;
+				playerY = y;
+				break;
+			default:
+				break;
 			}
 		}
 	}
-
-	return FSM::NoAction();
+	Entity::Player::create(this->manager, this->graphics, ((float)playerX* tileWidth), ((float)playerY* tileHeight));
+	return ResumeGameAction();
 }

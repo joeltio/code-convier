@@ -164,6 +164,7 @@
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="CreditsEntity.cpp" />
+    <ClCompile Include="DecorativeTileEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClCompile Include="FiniteStateSystem.h" />
@@ -196,6 +197,7 @@
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="SolidTileEntity.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="System.cpp" />
@@ -227,6 +229,7 @@
     <ClInclude Include="convier.h" />
     <ClInclude Include="ClickingState.h" />
     <ClInclude Include="CreditsEntity.h" />
+    <ClInclude Include="DecorativeTileEntity.h" />
     <ClInclude Include="GameCreditsState.h" />
     <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
@@ -272,6 +275,7 @@
     <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ResumeGameAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
+    <ClInclude Include="SolidTileEntity.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
     <ClInclude Include="StaticCollidableComponent.h" />
@@ -312,9 +316,8 @@
     <Image Include="Skeleton_React.png" />
     <Image Include="Skeleton_Walk.png" />
     <Image Include="sprites\Experience_Orb.gif" />
-    <Image Include="sprites\tiles - Legend.png" />
     <Image Include="sprites\tiles.png" />
-    <Image Include="sprites\tileset.png" />
+    <Image Include="sprites\background.png" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Credits.png" />
