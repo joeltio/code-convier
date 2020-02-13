@@ -39,6 +39,16 @@ namespace Entity {
 		}
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
 
+		Component::StaticCollidable collidable = Component::StaticCollidable();
+		float width = textureComponent.totalWidth * transformComponent.scale;
+		float height = textureComponent.totalHeight * transformComponent.scale;
+		collidable.corners.push_back(D3DXVECTOR2(x, y));
+		collidable.corners.push_back(D3DXVECTOR2(x + width, y));
+		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
+		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
+		collidable.collisionType = CollisionUtil::CollisionType::AABB;
+		manager->addComponent<Component::StaticCollidable>(entityId, collidable);
+
 		return entityId;
 	}
 }
