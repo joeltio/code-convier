@@ -5,6 +5,8 @@
 #include "graphics.h"
 #include "constants.h"
 
+#include "PlayerEntity.h"
+
 #include "TransformComponent.h"
 #include "TextureComponent.h"
 #include "StaticCollidableComponent.h"
