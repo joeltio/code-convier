@@ -4,7 +4,7 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 
 	//Create rng map
 	std::vector<int> maplist;
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < mapFragment; i++)
 	{
 		int id = rand()%5 + 1;
 		maplist.push_back(id);
@@ -12,7 +12,7 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 	//Open starting map file
 	std::vector<std::string> startmap;
 	std::ifstream start;
-	start.open(".\map\start.txt");
+	start.open("./map/start.txt");
 	while (start) {
 		std::string line;
 		std::getline(start, line);
@@ -32,20 +32,26 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 		}
 		rng.push_back(rngmap);
 	}
-	//Put everything together into 1 map
-	/*for (size_t i = 0; i < rng.size(); i++)
+	//Rearange randomized map using another vector
+	std::vector<int> arrange;
+	for (size_t i = 0; i < rng.size(); i++)
 	{
-		
-		for (size_t x = 0; x < rng[i].size(); x++)
-		{
-
+		int order = (int)(i / levelHeight) + mapFragment * (i % levelHeight);
+		arrange.push_back(order);
+	}
+	for (size_t i = 0, d; i < rng.size(); i++)
+	{
+		for (d = arrange[i]; d < i; d = arrange[d]);
+		if (d == i) while (d = arrange[d], d != i) {
+			std::swap(rng[i], rng[d]);
 		}
 	}
-	for (size_t i = 0; i < levelHeight; i++)
+	//Form game level
+	/*for (size_t i = 0; i < rng.size(); i++)
 	{
 
 	}*/
-
+	
 	for (size_t y = 0; y < startmap.size(); y++)
 	{
 		for (size_t x = 0; x < startmap[y].size(); x++)
