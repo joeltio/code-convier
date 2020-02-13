@@ -75,9 +75,6 @@
     <Filter Include="Resource Files\Player">
       <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\sprite">
-      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\sprites">
       <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
