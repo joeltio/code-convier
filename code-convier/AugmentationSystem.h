@@ -1,6 +1,12 @@
 #pragma once
 
 #include "System.h"
+#include "PlayerEntity.h"
+#include "AugmentationComponent.h"
+#include "PhysicsComponent.h"
+#include "HealthComponent.h"
+#include "AttackComponent.h"
+#include <unordered_set>
 
 namespace System {
 

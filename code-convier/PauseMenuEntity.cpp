@@ -11,7 +11,7 @@ namespace Entity {
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Pause Menu entity texture"));
 		}
-		textureComponent.visible = true;
+		textureComponent.zIndex = 3;
 
 		manager->addComponent<Component::Texture>(pauseMenuId, textureComponent);
 

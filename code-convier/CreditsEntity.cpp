@@ -11,7 +11,7 @@ namespace Entity {
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Credits background entity texture"));
 		}
-		textureComponent.visible = true;
+		textureComponent.zIndex = 3;
 
 		manager->addComponent<Component::Texture>(creditsId, textureComponent);
 

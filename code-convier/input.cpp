@@ -113,7 +113,7 @@ void Input::keyIn(WPARAM wParam)
 		charIn = wParam;                    // save last char entered
 	}
 
-	if ((char)wParam == '\r')               // if return    
+	if ((char)wParam == '\r')               // if return
 		newLine = true;                     // start new line
 }
 
