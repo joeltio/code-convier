@@ -161,6 +161,7 @@
     <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
     <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="CollidableComponent.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="CreditsEntity.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -217,6 +218,7 @@
     <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="CollidableComponent.h" />
     <ClInclude Include="CollisionStrategy.h" />
+    <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />

@@ -156,6 +156,9 @@
     <ClCompile Include="CollidableComponent.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="convier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -331,6 +334,9 @@
     </ClInclude>
     <ClInclude Include="CollisionStrategy.h">
       <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="CollisionType.h">
       <Filter>Header Files\CollisionUtil</Filter>
