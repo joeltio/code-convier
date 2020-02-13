@@ -11,7 +11,7 @@ namespace Entity {
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Main Menu entity texture"));
 		}
-		textureComponent.zIndex = 0;
+		textureComponent.zIndex = 3;
 
 		manager->addComponent<Component::Texture>(mainMenuId, textureComponent);
 

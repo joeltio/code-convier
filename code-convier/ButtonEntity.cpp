@@ -20,7 +20,7 @@ namespace Entity {
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading button entity texture"));
 		}
-		textureComponent.visible = true;
+		textureComponent.zIndex = 4;
 
 		manager->addComponent<Component::Texture>(buttonId, textureComponent);
 
