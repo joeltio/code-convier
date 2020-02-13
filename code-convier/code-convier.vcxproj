@@ -171,7 +171,6 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameCreateLevelState.cpp" />
     <ClCompile Include="GameCreditsState.cpp" />
-    <ClCompile Include="GameDestroyLevelState.cpp" />
     <ClCompile Include="GameMenuState.cpp" />
     <ClCompile Include="GamePauseState.cpp" />
     <ClCompile Include="GamePlayerDeathState.cpp" />
@@ -245,7 +244,6 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="GameCreateLevelState.h" />
     <ClInclude Include="GameDataComponent.h" />
-    <ClInclude Include="GameDestroyLevelState.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="GameMenuState.h" />

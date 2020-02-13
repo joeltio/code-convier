@@ -9,6 +9,7 @@
 #include "TransformComponent.h"
 #include "HealthComponent.h"
 #include "JumpingComponent.h"
+#include "CollidableComponent.h"
 
 namespace Entity {
 
