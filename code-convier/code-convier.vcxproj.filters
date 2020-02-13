@@ -674,5 +674,8 @@
     <Text Include="map\start.txt">
       <Filter>Resource Files\map</Filter>
     </Text>
+    <Text Include="map\end.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
   </ItemGroup>
 </Project>

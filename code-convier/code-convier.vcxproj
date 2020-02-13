@@ -287,6 +287,7 @@
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="map\end.txt" />
     <Text Include="map\map0.txt" />
     <Text Include="map\map1.txt" />
     <Text Include="map\map2.txt" />
