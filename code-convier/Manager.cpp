@@ -19,7 +19,22 @@ std::unordered_set<EntityIdType>* Manager::getEntities(Types::TypeId entityType)
 	return this->entityFamilies.at(entityType);
 }
 
-std::pair<size_t, std::function<Component* (size_t)>> Manager::getComponents(Types::TypeId componentTypeId) {
+std::vector<Component>* Manager::getComponents(Types::TypeId componentTypeId) {
+	if (this->components.find(componentTypeId) == this->components.end())
+	{
+		// Add an empty vector with the componentType if it does not exist
+		std::vector<Component>* componentVector = new std::vector<Component>();
+		std::pair<Types::TypeId, std::vector<Component>*> emptyRecord
+			(componentTypeId, componentVector);
+		this->components.insert(emptyRecord);
+	}
+
+	return (std::vector<Component>*) this->components.at(componentTypeId);
+}
+
+std::pair<size_t, std::function<Component* (std::vector<Component>*, size_t)>> Manager::getComponentRetriever(
+	Types::TypeId componentTypeId
+) {
 	return this->componentRetriever.at(componentTypeId);
 }
 
@@ -31,8 +46,10 @@ void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 		Types::TypeId componentType = componentPair.first;
 
 		// Retrieve the component
+		std::vector<Component>* componentsPtr = this->getComponents(componentType);
 		int componentIndex = this->entityComponents.at(id)->at(componentType);
-		Component* component = this->componentRetriever.at(componentType).second(componentIndex);
+		Component* component = this->componentRetriever.at(componentType).second(
+			componentsPtr, componentIndex);
 
 		// Deactivate the component
 		component->isActive = false;
