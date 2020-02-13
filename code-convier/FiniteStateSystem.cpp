@@ -16,7 +16,13 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 		this->store->registerReducer(reducer);
 	}
 
-	// Initialize the store first
+	// Initialize all the states
+	for (auto statePair : this->states)
+	{
+		statePair.second->initialize(this->manager, this->graphics, this->input);
+	}
+
+	// Run enter on all the existing state components
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)
 	{
 		// Retrieve the components for the current state type
@@ -25,7 +31,6 @@ void FiniteState::initialize(ECS::Manager* manager, Graphics* graphics, Input* i
 		for (size_t i = 0; i < retrieverPair.first; i++)
 		{
 			Component::State& stateComp = *((Component::State*) retrieverPair.second(i));
-			this->states.at(stateComp.state)->initialize(manager, graphics, input);
 			this->states.at(stateComp.state)->enter(stateComp);
 		}
 	}
