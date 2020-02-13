@@ -338,6 +338,9 @@
     <ClInclude Include="CollidableComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="collisionConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="CollisionStrategy.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
@@ -684,6 +687,9 @@
       <Filter>Resource Files\map</Filter>
     </Text>
     <Text Include="map\start.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
+    <Text Include="map\end.txt">
       <Filter>Resource Files\map</Filter>
     </Text>
   </ItemGroup>
