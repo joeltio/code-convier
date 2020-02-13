@@ -177,6 +177,7 @@
     <ClCompile Include="GameReducer.cpp" />
     <ClCompile Include="GameRunningState.cpp" />
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="HealthbarEntity.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
@@ -227,6 +228,7 @@
     <ClInclude Include="ClickingState.h" />
     <ClInclude Include="CreditsEntity.h" />
     <ClInclude Include="GameCreditsState.h" />
+    <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="NotClickedState.h" />
@@ -300,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="CreditsBackground.png" />
+    <Image Include="Healthbar.png" />
     <Image Include="MainMenu.png" />
     <Image Include="PauseMenu.png" />
     <Image Include="Skeleton_Attack.png" />
