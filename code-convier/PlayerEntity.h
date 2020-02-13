@@ -9,6 +9,8 @@
 #include "TransformComponent.h"
 #include "HealthComponent.h"
 #include "JumpingComponent.h"
+#include "AttackComponent.h"
+#include "AugmentationComponent.h"
 
 namespace Entity {
 
