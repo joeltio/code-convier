@@ -12,7 +12,7 @@ namespace CollisionUtil {
 				(target == this->sourceType && source == this->targetType));
 	}
 
-	bool CircleOBBCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
+	bool CircleOBBCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {
 		// Determine which is circle and which is OBB
 		Component::Collidable* circle = &source;
 		Component::Collidable* obb = &target;

@@ -11,7 +11,7 @@ namespace CollisionUtil {
 		return (source == this->sourceType && target == this->targetType);
 	}
 
-	bool AABBAABBCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
+	bool AABBAABBCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {
 		return !(
 			// source on the left or right of target
 			source.corners[1].x < target.corners[0].x || target.corners[1].x < source.corners[0].x ||

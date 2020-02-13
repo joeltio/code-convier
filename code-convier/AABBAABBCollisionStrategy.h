@@ -10,7 +10,7 @@ namespace CollisionUtil {
 			~AABBAABBCollisionStrategy() {};
 
 			bool isUseable(CollisionType source, CollisionType target);
-			bool isColliding(Component::Collidable source, Component::Collidable target);
+			bool isColliding(Component::Collidable& source, Component::Collidable& target);
 	};
 
 }

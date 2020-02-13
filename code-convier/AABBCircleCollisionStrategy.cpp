@@ -12,7 +12,7 @@ namespace CollisionUtil {
 				(target == this->sourceType && source == this->targetType));
 	}
 
-	bool AABBCircleCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
+	bool AABBCircleCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {
 		// Determine which is circle and which is aabb
 		Component::Collidable* circle = &source;
 		Component::Collidable* aabb = &target;

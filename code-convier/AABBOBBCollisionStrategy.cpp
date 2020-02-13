@@ -12,7 +12,7 @@ namespace CollisionUtil {
 				(target == this->sourceType && source == this->targetType));
 	}
 
-	bool AABBOBBCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
+	bool AABBOBBCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {
 		// Note that this strategy uses the same code as OBBOBB
 
 		// Calculate source normals

@@ -11,7 +11,7 @@ namespace CollisionUtil {
 		return (source == this->sourceType && target == this->targetType);
 	}
 
-	bool OBBOBBCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
+	bool OBBOBBCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {
 		// Calculate source normals
 		D3DXVECTOR2 sourceXNormal = source.corners[1] - source.corners[0];
 		D3DXVECTOR2 sourceYNormal = source.corners[2] - source.corners[0];

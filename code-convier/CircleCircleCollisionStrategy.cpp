@@ -11,7 +11,7 @@ namespace CollisionUtil {
 		return (source == this->sourceType && target == this->targetType);
 	}
 
-	bool CircleCircleCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
+	bool CircleCircleCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {
 		// Find the difference between the centers
 		D3DXVECTOR2 centerDiff = source.getCenter() - target.getCenter();
 
