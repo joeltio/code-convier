@@ -178,6 +178,7 @@
     <ClCompile Include="GameReducer.cpp" />
     <ClCompile Include="GameRunningState.cpp" />
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="HealthbarEntity.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
@@ -219,6 +220,7 @@
     <ClInclude Include="CircleCircleCollisionStrategy.h" />
     <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="CollidableComponent.h" />
+    <ClInclude Include="collisionConstants.h" />
     <ClInclude Include="CollisionStrategy.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CollisionType.h" />
@@ -229,6 +231,7 @@
     <ClInclude Include="CreditsEntity.h" />
     <ClInclude Include="DecorativeTileEntity.h" />
     <ClInclude Include="GameCreditsState.h" />
+    <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="NotClickedState.h" />
@@ -267,6 +270,7 @@
     <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="renderConstants.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ResumeGameAction.h" />
@@ -302,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="CreditsBackground.png" />
+    <Image Include="Healthbar.png" />
     <Image Include="MainMenu.png" />
     <Image Include="PauseMenu.png" />
     <Image Include="Skeleton_Attack.png" />

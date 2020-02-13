@@ -39,6 +39,8 @@ const char QUIT_BUTTON[] = "Quit.png";
 const char RESUME_BUTTON[] = "Resume.png";
 const char START_BUTTON[] = "Start.png";
 
+const char HEALTHBAR_IMAGE[] = "Healthbar.png";
+
 const char PLAYER_IMAGE[] = "Player_Idle.png";
 const char PLAYER_DYING_IMAGE[] = "Player_Dying.png";
 const char PLAYER_JUMP_IMAGE[] = "Player_Jump.png";

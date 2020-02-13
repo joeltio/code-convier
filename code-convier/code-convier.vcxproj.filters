@@ -118,6 +118,9 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\HUD">
+      <UniqueIdentifier>{6356c15f-6dbb-4dd8-9599-3ce750ddc1f0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files\sprites">
       <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
@@ -291,6 +294,9 @@
     <ClCompile Include="DecorativeTileEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="HealthbarEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -337,6 +343,9 @@
     </ClInclude>
     <ClInclude Include="CollidableComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="collisionConstants.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CollisionStrategy.h">
       <Filter>Header Files\CollisionUtil</Filter>
@@ -515,6 +524,9 @@
     <ClInclude Include="Reducer.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
+    <ClInclude Include="renderConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
@@ -561,6 +573,9 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="DecorativeTileEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthbarEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>
@@ -657,11 +672,17 @@
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
+    <Image Include="Healthbar.png">
+      <Filter>Resource Files\HUD</Filter>
+    </Image>
     <Image Include="sprites\background.png">
       <Filter>Resource Files\sprites</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="map\end.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
     <Text Include="map\map0.txt">
       <Filter>Resource Files\map</Filter>
     </Text>
@@ -681,9 +702,6 @@
       <Filter>Resource Files\map</Filter>
     </Text>
     <Text Include="map\start.txt">
-      <Filter>Resource Files\map</Filter>
-    </Text>
-    <Text Include="map\end.txt">
       <Filter>Resource Files\map</Filter>
     </Text>
   </ItemGroup>
