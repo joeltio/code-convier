@@ -57,7 +57,7 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 		for (size_t x = 0; x < startmap[y].size(); x++)
 		{
 			if (startmap[y][x] == 'P') {
-				Entity::Player::create(manager, graphics, ((float) x * tileWidth), ((float) y * tileHeight));
+				ECS::EntityIdType playerId = Entity::Player::create(this->manager, this->graphics, ((float) x * tileWidth), ((float) y * tileHeight));
 			}
 		}
 	}
