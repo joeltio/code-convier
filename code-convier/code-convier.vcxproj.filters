@@ -124,6 +124,12 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States\EnemyHealth">
+      <UniqueIdentifier>{c4185ab1-ac89-4bfa-87e7-e8887d2ead33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\EnemyHealth">
+      <UniqueIdentifier>{47a3b6d7-f89b-4544-b83b-77e618e70b26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AABBAABBCollisionStrategy.cpp">
@@ -293,6 +299,15 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyHealthIdleState.cpp">
+      <Filter>Source Files\States\EnemyHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDeathState.cpp">
+      <Filter>Source Files\States\EnemyHealth</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -574,6 +589,15 @@
     </ClInclude>
     <ClInclude Include="AttackComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyHealthIdleState.h">
+      <Filter>Header Files\States\EnemyHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDeathState.h">
+      <Filter>Header Files\States\EnemyHealth</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
