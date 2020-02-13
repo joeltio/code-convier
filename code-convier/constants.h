@@ -80,6 +80,7 @@ const int levelWidth = 50;
 const int levelHeight = 12;
 const int tileHeight = 48;
 const int tileWidth = 48;
+const int mapFragment = 3;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
