@@ -19,7 +19,7 @@ namespace Entity {
 
 			}
 		};*/
-
+		  
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
 		switch (type)
