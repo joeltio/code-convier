@@ -75,9 +75,6 @@
     <Filter Include="Resource Files\sprite">
       <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\sprite">
-      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -120,6 +117,9 @@
     </Filter>
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\sprites">
+      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +284,12 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidTileEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DecorativeTileEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -551,6 +557,12 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
+    <ClInclude Include="SolidTileEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DecorativeTileEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -637,19 +649,16 @@
       <Filter>Resource Files\Enemy</Filter>
     </Image>
     <Image Include="sprites\Experience_Orb.gif">
-      <Filter>Resource Files\sprite</Filter>
-    </Image>
-    <Image Include="sprites\tiles - Legend.png">
-      <Filter>Resource Files\sprite</Filter>
+      <Filter>Resource Files\sprites</Filter>
     </Image>
     <Image Include="sprites\tiles.png">
-      <Filter>Resource Files\sprite</Filter>
-    </Image>
-    <Image Include="sprites\tileset.png">
-      <Filter>Resource Files\sprite</Filter>
+      <Filter>Resource Files\sprites</Filter>
     </Image>
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="sprites\background.png">
+      <Filter>Resource Files\sprites</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

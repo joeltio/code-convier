@@ -77,10 +77,10 @@ public:
 	virtual void update() = 0;
 
 	// Render graphics.
-	// Call graphics->spriteBegin();
-	//   draw sprites
-	// Call graphics->spriteEnd();
-	//   draw non-sprites
+	// Call graphics->spritesBegin();
+	//   draw spritess
+	// Call graphics->spritesEnd();
+	//   draw non-spritess
 	virtual void render() = 0;
 };
 

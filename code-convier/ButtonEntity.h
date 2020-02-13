@@ -17,7 +17,7 @@ namespace Entity {
 			static ECS::EntityIdType create(
 				ECS::Manager* manager,
 				Graphics* graphics,
-				const char* buttonSprite,
+				const char* buttonsprites,
 				std::string buttonText,
 				float x,
 				float y,
