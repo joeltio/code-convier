@@ -31,7 +31,7 @@ FSM::Action NotClickedState::update(float frameTime, Component::State state) {
 		else if (textComponent.buttonText == "Resume") {
 			return ResumeGameAction();
 		}
-		else {
+		else if (textComponent.buttonText == "Menu") {
 			return PrepareMenuAction();
 		}
 	}

@@ -10,7 +10,6 @@
 // States
 #include "GameCreateLevelState.h"
 #include "GameCreditsState.h"
-#include "GameDestroyLevelState.h"
 #include "GameMenuState.h"
 #include "GamePauseState.h"
 #include "GamePlayerDeathState.h"
@@ -35,7 +34,6 @@ const std::unordered_map<Types::TypeId, FSM::State*> TYPE_STATE_MAP({
 	{Types::toTypeId<GameMenuState>(), new GameMenuState()},
 	{Types::toTypeId<GameCreateLevelState>(), new GameCreateLevelState()},
 	{Types::toTypeId<GameCreditsState>(), new GameCreditsState()},
-	{Types::toTypeId<GameDestroyLevelState>(), new GameDestroyLevelState()},
 	{Types::toTypeId<GamePauseState>(), new GamePauseState()},
 	{Types::toTypeId<GamePlayerDeathState>(), new GamePlayerDeathState()},
 	{Types::toTypeId<GameRunningState>(), new GameRunningState()},
