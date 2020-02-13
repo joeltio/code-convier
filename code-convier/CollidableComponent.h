@@ -14,7 +14,7 @@ namespace Component {
 
 	struct Collidable : public ECS::Component {
 		float radius;
-		// Top left, top right, bottom right, bottom left
+		// Top left, top right, bottom right, bottom left. Circles only have 1 corner
 		std::vector<D3DXVECTOR2> corners;
 
 		CollisionUtil::CollisionType collisionType;
@@ -31,6 +31,11 @@ namespace Component {
 			[](ECS::Manager* manager, ECS::EntityIdType entityId) {};
 
 		D3DXVECTOR2 getCenter();
+
+		// Gets the minimum value this collidable has for the axis.
+		// 0 - x, 1 - y, 2 - z
+		float getMinExtent(char axis);
+		float getMaxExtent(char axis);
 	};
 
 }

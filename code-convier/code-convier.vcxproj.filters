@@ -332,6 +332,9 @@
     <ClInclude Include="CollidableComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="collisionConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="CollisionStrategy.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
