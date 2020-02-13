@@ -25,7 +25,7 @@ void GameReducer::reduce(
 
 		FSM::Reducer::changeState<GameCreateLevelState>(states, gameState);
 	}
-	else if (action.type == PAUSE_GAME_ACTION) 
+	else if (action.type == PAUSE_GAME_ACTION)
 	{
 		// Change the state of the game entity
 		ECS::EntityIdType gameEntityId = *manager->getEntities<Entity::Game>()->begin();
@@ -33,7 +33,7 @@ void GameReducer::reduce(
 
 		FSM::Reducer::changeState<GamePauseState>(states, gameState);
 	}
-	else if (action.type == PREPARE_MENU_ACTION) 
+	else if (action.type == PREPARE_MENU_ACTION)
 	{
 		// Change the state of the game entity
 		ECS::EntityIdType gameEntityId = *manager->getEntities<Entity::Game>()->begin();
@@ -49,7 +49,7 @@ void GameReducer::reduce(
 
 		FSM::Reducer::changeState<GameRunningState>(states, gameState);
 	}
-	else if (action.type == QUIT_GAME_ACTION) 
+	else if (action.type == QUIT_GAME_ACTION)
 	{
 		PostQuitMessage(0);
 	}
