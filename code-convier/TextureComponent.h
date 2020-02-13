@@ -14,6 +14,9 @@ namespace Component {
 
 			UINT totalWidth = 0;
 			UINT totalHeight = 0;
+			// Which layer to render on. Avoid large values as it will slow down the
+			// render system
+			char zIndex = 1;
 
 			RECT viewableRect;
 

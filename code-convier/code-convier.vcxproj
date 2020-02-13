@@ -265,6 +265,7 @@
     <ClInclude Include="QuitGameAction.h" />
     <ClInclude Include="Reducer.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="renderConstants.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ResumeGameAction.h" />

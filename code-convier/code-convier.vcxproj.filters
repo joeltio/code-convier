@@ -512,6 +512,9 @@
     <ClInclude Include="Reducer.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
+    <ClInclude Include="renderConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
@@ -656,6 +659,9 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="map\end.txt">
+      <Filter>Resource Files\map</Filter>
+    </Text>
     <Text Include="map\map0.txt">
       <Filter>Resource Files\map</Filter>
     </Text>
@@ -675,9 +681,6 @@
       <Filter>Resource Files\map</Filter>
     </Text>
     <Text Include="map\start.txt">
-      <Filter>Resource Files\map</Filter>
-    </Text>
-    <Text Include="map\end.txt">
       <Filter>Resource Files\map</Filter>
     </Text>
   </ItemGroup>
