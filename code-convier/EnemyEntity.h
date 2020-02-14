@@ -10,6 +10,7 @@
 #include "HealthComponent.h"
 #include "JumpingComponent.h"
 #include "CollidableComponent.h"
+#include "LineOfSightComponent.h"
 #include "AttackComponent.h"
 #include "AugmentationComponent.h"
 #include "AnimatableComponent.h"

@@ -174,11 +174,16 @@
     <ClCompile Include="EnemyDeathState.cpp" />
     <ClCompile Include="EnemyEntity.cpp" />
     <ClCompile Include="EnemyHealthIdleState.cpp" />
+    <ClCompile Include="EnemyMovementChaseState.cpp" />
+    <ClCompile Include="EnemyMovementIdleState.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClInclude Include="ChargingPlayerMovementAction.h" />
     <ClInclude Include="CircleLineCollisionStrategy.h" />
+    <ClInclude Include="EnemyAIComponent.h" />
     <ClInclude Include="EnemyAISystem.h" />
+    <ClInclude Include="EnemyMovementChaseState.h" />
+    <ClInclude Include="EnemyMovementIdleState.h" />
     <ClInclude Include="EnergyOrbEntity.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
@@ -192,6 +197,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="HealthbarEntity.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="LineOfSightComponent.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="NotClickedState.cpp" />

@@ -44,6 +44,11 @@ namespace Entity {
 		collidableComponent.corners.push_back(D3DXVECTOR2(x, y + height));
 		manager->addComponent<Component::Collidable>(enemyEntityId, collidableComponent);
 
+		// add line of sight component
+		Component::LineOfSight lineOfSightComponent = Component::LineOfSight();
+		lineOfSightComponent.setEntityPos(x, y);
+		manager->addComponent<Component::LineOfSight>(enemyEntityId, lineOfSightComponent);
+
 		// add the attack component
 		Component::Attack attackComponent = Component::Attack();
 		attackComponent.attackDamage = ENEMY_ATTACK_DAMAGE;

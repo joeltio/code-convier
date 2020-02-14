@@ -27,12 +27,10 @@ namespace System {
 				this->manager->getEntityComponent<Component::Transform>(losComponent.entityId);
 
 			// Set the start point to the current entity's position
-			losComponent.corners[0].x = transformComponent.x;
-			losComponent.corners[0].y = transformComponent.y;
+			losComponent.setEntityPos(transformComponent.x, transformComponent.y);
 
 			// Set the end point to the player's position
-			losComponent.corners[1].x = playerTransformComponent.x;
-			losComponent.corners[1].y = playerTransformComponent.y;
+			losComponent.setTargetPos(playerTransformComponent.x, playerTransformComponent.y);
 		}
 	}
 }
