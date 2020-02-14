@@ -24,6 +24,16 @@ namespace Entity {
 		}
 		manager->addComponent<Component::Texture>(enemyEntityId, textureComponent);
 
+		// add animation component
+		Component::Animatable animatableComponent = Component::Animatable();
+		animatableComponent.columns = 11;
+		animatableComponent.rows = 1;
+		animatableComponent.startFrame = 1;
+		animatableComponent.endFrame = 11;
+		animatableComponent.currentFrame = 1;
+		animatableComponent.frameDelay = 1000;
+		manager->addComponent<Component::Animatable>(enemyEntityId, animatableComponent);
+
 		// add the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
 		float width = textureComponent.totalWidth * transformComponent.scale;
