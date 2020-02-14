@@ -79,6 +79,8 @@ const char TOP_LEFT_CORNER_IMAGE[] = "./sprites/BR wall.png";
 const char TOP_RIGHT_CORNER_IMAGE[] = "./sprites/BL wall.png";
 const char BOTTOM_LEFT_CORNER_IMAGE[] = "./sprites/TR wall.png";
 const char BOTTOM_RIGHT_CORNER_IMAGE[] = "./sprites/TL wall.png";
+const char SOLID_TILES[] = ".-_/\\{}()<>1234";
+const char DECORATIVE_TILES[] = " *$";
 
 // Energy Orb
 const char XP_1_IMAGE[] = "./sprites/XP-Yellow.png";
@@ -131,6 +133,7 @@ const float ENEMY_SPEED = 100.0f;
 const int ENEMY_HEALTH = 40;
 const float ENEMY_ATTACK_DAMAGE = 6.0f;
 const float ENEMY_ATTACK_COOLDOWN = 1.5f;
+const int ENEMY_COUNT = 20;
 
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used

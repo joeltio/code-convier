@@ -2,6 +2,10 @@
 
 //on enter
 void GameCreateLevelState::enter(Component::State state) {
+
+	std::string decoTiles = DECORATIVE_TILES;
+	std::string solidTiles = SOLID_TILES;
+
 	//Create rng map
 	std::vector<int> maplist;
 	for (size_t i = 0; i < mapFragment; i++)
@@ -97,74 +101,56 @@ void GameCreateLevelState::enter(Component::State state) {
 	{
 		for (size_t x = 0; x < level[y].size(); x++)
 		{
-			switch (level[y][x])
+			if (solidTiles.find(level[y][x]) != std::string::npos)
 			{
-			case('.'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '.');
-				break;
-			case('-'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '-');
-				break;
-			case('_'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '_');
-				break;
-			case('/'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '/');
-				break;
-			case('\\'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '\\');
-				break;
-			case('('):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '(');
-				break;
-			case(')'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ')');
-				break;
-			case('<'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '<');
-				break;
-			case('>'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '>');
-				break;
-			case('{'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '{');
-				break;
-			case('}'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '}');
-				break;
-			case('1'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '1');
-				break;
-			case('2'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '2');
-				break;
-			case('3'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '3');
-				break;
-			case('4'):
-				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '4');
-				break;
-			case(' '):
+				Entity::SolidTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), level[y][x]);
+			}
+			else if (level[y][x] == ' ')
+			{
 				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
-				break;
-			case('*'):
-				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
-				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '*');
-				break;
-			case('$'):
+			}
+			else if (level[y][x] == '*') {
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x* tileWidth), ((float)y* tileHeight), ' ');
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x* tileWidth), ((float)y* tileHeight), '*');
+			}
+			else if (level[y][x] == '$')
+			{
 				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '$');
-				break;
-			case('P'):
-				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
+			}
+			else if (level[y][x] == 'P')
+			{
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x* tileWidth), ((float)y* tileHeight), ' ');
 				playerX = x;
 				playerY = y;
-				break;
-			default:
-				break;
 			}
 		}
 	}
 	Entity::Player::create(this->manager, this->graphics, ((float)playerX * tileWidth), ((float)playerY * tileHeight));
+
+	//spawn enermy
+	std::vector<std::vector<int>> enemyList;
+	while (enemyList.size() != ENEMY_COUNT)
+	{
+		int randomX = rand() % levelWidth;
+		int randomY = rand() % levelHeight;
+
+		if (randomY >= levelHeight - 2 || randomX <= 12)
+		{
+			continue;
+		}
+		char enemySpawnTop = level[randomY][randomX];
+		char enemySpawnBottom = level[randomY + 1][randomX];
+		char enemyOnBlock = level[randomY + 2][randomX];
+		
+		if (decoTiles.find(enemySpawnTop) != std::string::npos && decoTiles.find(enemySpawnBottom) != std::string::npos && solidTiles.find(enemyOnBlock) != std::string::npos)
+		{
+			std::vector<int> enemyPosition;
+			enemyPosition.push_back(randomX);
+			enemyPosition.push_back(randomY);
+			enemyList.push_back(enemyPosition);
+			Entity::Enemy::create(this->manager, this->graphics, ((float)randomX* tileWidth), ((float)randomY* tileHeight));
+		}
+	}
 }
 
 //on update
