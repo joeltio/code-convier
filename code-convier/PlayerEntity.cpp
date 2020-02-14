@@ -6,13 +6,14 @@ namespace Entity {
 
 		// add the physics component
 		Component::Physics physicsComponent = Component::Physics();
-		physicsComponent.acceleration.y = 9.81f;
+		physicsComponent.acceleration.y = 9.81f * 5;
 		manager->addComponent<Component::Physics>(entityId, physicsComponent);
 
 		// add the transform component
 		Component::Transform transformComponent = Component::Transform();
 		transformComponent.x = x;
 		transformComponent.y = y;
+		transformComponent.scale = 0.3;
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 
 		// add the health component
@@ -29,10 +30,20 @@ namespace Entity {
 		}
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
 
+		// add animation component
+		Component::Animatable animatableComponent = Component::Animatable();
+		animatableComponent.columns = 10;
+		animatableComponent.rows = 1;
+		animatableComponent.startFrame = 1;
+		animatableComponent.endFrame = 10;
+		animatableComponent.currentFrame = 1;
+		animatableComponent.frameDelay = 1000;
+		manager->addComponent<Component::Animatable>(entityId, animatableComponent);
+
 		// add the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
-		float width = textureComponent.totalWidth * transformComponent.scale;
-		float height = textureComponent.totalHeight * transformComponent.scale;
+		float width = textureComponent.totalWidth / animatableComponent.columns * transformComponent.scale;
+		float height = textureComponent.totalHeight / animatableComponent.rows * transformComponent.scale;
 		collidableComponent.corners.push_back(D3DXVECTOR2(x, y));
 		collidableComponent.corners.push_back(D3DXVECTOR2(x + width, y));
 		collidableComponent.corners.push_back(D3DXVECTOR2(x + width, y + height));

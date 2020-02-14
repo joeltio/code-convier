@@ -1,6 +1,6 @@
 #include "GameCreateLevelState.h"
 
-//on enter 
+//on enter
 void GameCreateLevelState::enter(Component::State state) {
 	//Create rng map
 	std::vector<int> maplist;
@@ -169,11 +169,10 @@ void GameCreateLevelState::enter(Component::State state) {
 
 //on update
 FSM::Action GameCreateLevelState::update(float frameTime, Component::State state) {
-	
-	return FSM::NoAction();
+	return ResumeGameAction();
 }
 
 //on exit
 void GameCreateLevelState::exit(Component::State state) {
-	
+
 }
