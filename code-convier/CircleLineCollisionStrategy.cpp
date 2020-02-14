@@ -1,10 +1,14 @@
 #include "CircleLineCollisionStrategy.h"
 
 namespace CollisionUtil {
+	CircleLineCollisionStrategy::CircleLineCollisionStrategy() {
+		this->sourceType = CollisionType::LINE;
+		this->targetType = CollisionType::CIRCLE;
+	}
 
 	bool CircleLineCollisionStrategy::isUseable(CollisionType source, CollisionType target) {
-		return ((source == CollisionType::CIRCLE && target == CollisionType::LINE) ||
-				(target == CollisionType::CIRCLE && source == CollisionType::LINE));
+		return ((source == this->sourceType && target == this->targetType) ||
+				(target == this->sourceType && source == this->targetType));
 	}
 
 	bool CircleLineCollisionStrategy::isColliding(Component::Collidable& source, Component::Collidable& target) {

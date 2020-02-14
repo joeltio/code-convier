@@ -231,9 +231,6 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LineOfSightComponent.cpp">
-      <Filter>Source Files\Component</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenuEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>

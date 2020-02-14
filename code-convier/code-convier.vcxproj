@@ -187,7 +187,6 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="HealthbarEntity.cpp" />
     <ClCompile Include="input.cpp" />
-    <ClCompile Include="LineOfSightComponent.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="NotClickedState.cpp" />

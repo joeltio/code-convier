@@ -2,6 +2,8 @@
 
 namespace CollisionUtil {
 
+	SquareLineCollisionStrategy::SquareLineCollisionStrategy() {}
+
 	bool SquareLineCollisionStrategy::isUseable(CollisionType source, CollisionType target) {
 		return ((source == CollisionType::AABB && target == CollisionType::LINE) ||
 				(source == CollisionType::OBB && target == CollisionType::LINE) ||

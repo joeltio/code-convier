@@ -4,6 +4,8 @@
 
 namespace Component {
 
-	struct StaticCollidable : public Collidable {};
+	struct StaticCollidable : public Collidable {
+		StaticCollidable(CollisionUtil::CollisionType _collisionType) : Collidable(_collisionType) {}
+	};
 
 }
