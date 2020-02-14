@@ -9,8 +9,7 @@ namespace Entity {
 		transformComponent.x = x;
 		transformComponent.y = y;
 		transformComponent.scale = 2;
-		manager->addComponent<Component::Transform>(entityId, transformComponent);
-
+		  
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
 		switch (type)
@@ -108,7 +107,60 @@ namespace Entity {
 		default:
 			break;
 		}
+
+		// add the staticCollidable component
+		Component::StaticCollidable collidable = Component::StaticCollidable();
+		float width = textureComponent.totalWidth * transformComponent.scale;
+		float height = textureComponent.totalHeight * transformComponent.scale;
+		collidable.corners.push_back(D3DXVECTOR2(x, y));
+		collidable.corners.push_back(D3DXVECTOR2(x + width, y));
+		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
+		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
+		collidable.collisionType = CollisionUtil::CollisionType::AABB;
+
+		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (manager->getEntity(id)->isSameType<Player>())
+			{
+				Component::Physics entityPhy = manager->getEntityComponent<Component::Physics>(id);
+				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
+				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
+				float entityWidth = entityTex.totalWidth * entityPos.scale;
+				float entityHeight = entityTex.totalHeight * entityPos.scale;
+
+				entityPhy.velocity[1] = 0;
+
+				std::vector<D3DXVECTOR2> corners = {
+					{(float)entityPos.x, (float)entityPos.y},
+					{(float)entityPos.x + entityWidth, (float)entityPos.y},
+					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
+					{(float)entityPos.x, (float)entityPos.y + entityHeight}
+				};
+			}
+		};
+
+		collidable.onStay = [entityId](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
+			if (manager->getEntity(id)->isSameType<Player>())
+			{
+				Component::Physics entityPhy = manager->getEntityComponent<Component::Physics>(id);
+				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
+				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
+				float entityWidth = entityTex.totalWidth * entityPos.scale;
+				float entityHeight = entityTex.totalHeight * entityPos.scale;
+
+				entityPhy.velocity[1] = 0;
+
+				std::vector<D3DXVECTOR2> corners = {
+					{(float)entityPos.x, (float)entityPos.y},
+					{(float)entityPos.x + entityWidth, (float)entityPos.y},
+					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
+					{(float)entityPos.x, (float)entityPos.y + entityHeight}
+				};
+			}
+		};
+
+		manager->addComponent<Component::Transform>(entityId, transformComponent);
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
+		manager->addComponent<Component::StaticCollidable>(entityId, collidable);
 
 		return entityId;
 	}

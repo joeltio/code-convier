@@ -38,16 +38,7 @@ template<typename ComponentType> std::vector<ComponentType>* Manager::getCompone
 
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 
-	if (this->components.find(componentTypeId) == this->components.end())
-	{
-		// Add an empty vector with the componentType if it does not exist
-		std::vector<Component>* componentVector = new std::vector<Component>();
-		std::pair<Types::TypeId, std::vector<Component>*> emptyRecord
-			(componentTypeId, componentVector);
-		this->components.insert(emptyRecord);
-	}
-
-	return (std::vector<ComponentType>*) this->components.at(componentTypeId);
+	return (std::vector<ComponentType>*) this->getComponents(componentTypeId);
 }
 
 template<typename ComponentType> ComponentType& Manager::getEntityComponent(EntityIdType id) {
@@ -142,15 +133,14 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	// Check if there is already a retriever
 	if (this->componentRetriever.find(componentTypeId) == this->componentRetriever.end())
 	{
-		std::pair<int, std::function<Component* (size_t)>> retriever =
-			std::make_pair(
-				0,
-				[this](size_t index) {
-					return &this->getComponents<ComponentType>()->at(index);
-				}
-			);
+		RETRIEVER_PAIR retrieverPair = std::make_pair(
+			0,
+			[](std::vector<Component>* componentsPtr, size_t index) {
+				return &(((std::vector<ComponentType>*) componentsPtr)->at(index));
+			}
+		);
 
-		auto record = std::make_pair(componentTypeId, retriever);
+		auto record = std::make_pair(componentTypeId, retrieverPair);
 		this->componentRetriever.insert(record);
 	}
 

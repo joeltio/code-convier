@@ -63,6 +63,9 @@
     <Filter Include="Resource Files\Enemy">
       <UniqueIdentifier>{f9426b6a-9bcb-4b48-bbf5-a9a602b33354}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\HUD">
+      <UniqueIdentifier>{6356c15f-6dbb-4dd8-9599-3ce750ddc1f0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files\map">
       <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
     </Filter>
@@ -72,7 +75,7 @@
     <Filter Include="Resource Files\Player">
       <UniqueIdentifier>{c5c2810a-1bb9-4ef0-b27e-813675a1e3fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\sprite">
+    <Filter Include="Resource Files\sprites">
       <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
@@ -118,11 +121,11 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\HUD">
-      <UniqueIdentifier>{6356c15f-6dbb-4dd8-9599-3ce750ddc1f0}</UniqueIdentifier>
+    <Filter Include="Header Files\States\EnemyHealth">
+      <UniqueIdentifier>{c4185ab1-ac89-4bfa-87e7-e8887d2ead33}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\sprites">
-      <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
+    <Filter Include="Source Files\States\EnemyHealth">
+      <UniqueIdentifier>{47a3b6d7-f89b-4544-b83b-77e618e70b26}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +171,9 @@
     <ClCompile Include="CreditsEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="DecorativeTileEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
@@ -184,9 +190,6 @@
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameCreditsState.cpp">
-      <Filter>Source Files\States\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="GameDestroyLevelState.cpp">
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameEntity.cpp">
@@ -209,6 +212,9 @@
     </ClCompile>
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthbarEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
@@ -264,6 +270,9 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="SolidTileEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="State.cpp">
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
@@ -288,14 +297,14 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SolidTileEntity.cpp">
+    <ClCompile Include="EnemyEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="DecorativeTileEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="EnemyHealthIdleState.cpp">
+      <Filter>Source Files\States\EnemyHealth</Filter>
     </ClCompile>
-    <ClCompile Include="HealthbarEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="EnemyDeathState.cpp">
+      <Filter>Source Files\States\EnemyHealth</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -368,6 +377,9 @@
     <ClInclude Include="CreditsEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="DecorativeTileEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="ecsConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -388,9 +400,6 @@
     </ClInclude>
     <ClInclude Include="GameDataComponent.h">
       <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="GameDestroyLevelState.h">
-      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -418,6 +427,9 @@
     </ClInclude>
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthbarEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="HealthComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -536,6 +548,9 @@
     <ClInclude Include="ShowCreditsAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="SolidTileEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files\FSM</Filter>
     </ClInclude>
@@ -569,17 +584,17 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="SolidTileEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="DecorativeTileEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthbarEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="AttackComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyHealthIdleState.h">
+      <Filter>Header Files\States\EnemyHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDeathState.h">
+      <Filter>Header Files\States\EnemyHealth</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -602,6 +617,9 @@
     </Image>
     <Image Include="CreditsBackground.png">
       <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Healthbar.png">
+      <Filter>Resource Files\HUD</Filter>
     </Image>
     <Image Include="MainMenu.png">
       <Filter>Resource Files\Background</Filter>
@@ -666,6 +684,9 @@
     <Image Include="Skeleton_Walk.png">
       <Filter>Resource Files\Enemy</Filter>
     </Image>
+    <Image Include="sprites\background.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
     <Image Include="sprites\Experience_Orb.gif">
       <Filter>Resource Files\sprites</Filter>
     </Image>
@@ -674,12 +695,6 @@
     </Image>
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
-    </Image>
-    <Image Include="Healthbar.png">
-      <Filter>Resource Files\HUD</Filter>
-    </Image>
-    <Image Include="sprites\background.png">
-      <Filter>Resource Files\sprites</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

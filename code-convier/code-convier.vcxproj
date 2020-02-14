@@ -165,13 +165,15 @@
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="CreditsEntity.cpp" />
     <ClCompile Include="DecorativeTileEntity.cpp" />
+    <ClCompile Include="EnemyDeathState.cpp" />
+    <ClCompile Include="EnemyEntity.cpp" />
+    <ClCompile Include="EnemyHealthIdleState.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClCompile Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameCreateLevelState.cpp" />
     <ClCompile Include="GameCreditsState.cpp" />
-    <ClCompile Include="GameDestroyLevelState.cpp" />
     <ClCompile Include="GameMenuState.cpp" />
     <ClCompile Include="GamePauseState.cpp" />
     <ClCompile Include="GamePlayerDeathState.cpp" />
@@ -231,6 +233,9 @@
     <ClInclude Include="ClickingState.h" />
     <ClInclude Include="CreditsEntity.h" />
     <ClInclude Include="DecorativeTileEntity.h" />
+    <ClInclude Include="EnemyDeathState.h" />
+    <ClInclude Include="EnemyEntity.h" />
+    <ClInclude Include="EnemyHealthIdleState.h" />
     <ClInclude Include="GameCreditsState.h" />
     <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
@@ -246,7 +251,6 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="GameCreateLevelState.h" />
     <ClInclude Include="GameDataComponent.h" />
-    <ClInclude Include="GameDestroyLevelState.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="GameMenuState.h" />

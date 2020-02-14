@@ -46,120 +46,96 @@ namespace System {
 	}
 
 	void Collision::updateSortedExtents(
-		std::vector<Component::Collidable>* collidables,
-		std::vector<Component::StaticCollidable>* staticCollidables
+		std::unordered_map<Types::TypeId, std::vector<ECS::Component>*>& componentsPtrMap,
+		std::unordered_map<Types::TypeId, ECS::RETRIEVER_PAIR>& retrieverMap,
+		std::function<float(Types::TypeId, ECS::Component*)> extentRetriever
 	) {
 		// Keep track of the new pairs to be inserted and removed
-		std::forward_list<std::tuple<bool, size_t, float>> toBeInserted;
+		std::forward_list<std::tuple<Types::TypeId, size_t, float>> toBeInserted;
 
 		// Keep track of highest index of components
-		int maxCollidableIndex = -1;
-		int maxStaticIndex = -1;
+		std::unordered_map<Types::TypeId, size_t> maxIndices;
+		for (auto retrieverMapPair : retrieverMap)
+		{
+			// Initialize with 0s
+			maxIndices.insert(std::make_pair(retrieverMapPair.first, 0));
+		}
 
 		// Find the new pairs to be inserted and delete removed components
-		for (auto iterator = this->sortedExtents.cbegin(); iterator != this->sortedExtents.cend(); iterator++)
+		size_t i = 0;
+		while (i < this->sortedExtents->size())
 		{
-			auto extentTriple = *iterator;
-			bool isStatic = std::get<0>(extentTriple);
+			auto& extentTriple = this->sortedExtents->at(i);
+			Types::TypeId type = std::get<0>(extentTriple);
 			size_t componentIndex = std::get<1>(extentTriple);
 			float storedExtent = std::get<2>(extentTriple);
 
-			// Check if the component had been deleted
-			if (isStatic)
+			// Update max component index
+			size_t& maxIndex = maxIndices.at(type);
+			if (componentIndex > maxIndex)
 			{
-				// Update max component index
-				if (componentIndex > maxStaticIndex)
-				{
-					maxStaticIndex = componentIndex;
-				}
-
-				// Get static collidable
-				Component::StaticCollidable& collidable = staticCollidables->at(componentIndex);
-				// Check if the component has been deleted (inactive)
-				if (!collidable.isActive)
-				{
-					this->sortedExtents.erase(iterator--);
-				}
-
-				// Check if the component's extents have changed
-				float currentExtent = collidable.getMinExtent(this->pruneAxis);
-				if (currentExtent != storedExtent)
-				{
-					this->sortedExtents.erase(iterator--);
-					std::get<2>(extentTriple) = currentExtent;
-					toBeInserted.push_front(extentTriple);
-				}
+				maxIndex = componentIndex;
 			}
-			else
+
+			// Retrieve component
+			auto& retrieverPair = retrieverMap.at(type);
+			ECS::Component* componentPtr = retrieverPair.second(componentsPtrMap.at(type), componentIndex);
+
+			// Check if the component has been deleted (inactive)
+			if (!componentPtr->isActive)
 			{
-				// Update max component index
-				if (componentIndex > maxCollidableIndex)
-				{
-					maxCollidableIndex = componentIndex;
-				}
-
-				// Get collidable
-				Component::Collidable& collidable = collidables->at(componentIndex);
-				// Check if the component has been deleted (inactive)
-				if (!collidable.isActive)
-				{
-					this->sortedExtents.erase(iterator--);
-				}
-
-				// Check if the component's extents have changed
-				float currentExtent = collidable.getMinExtent(this->pruneAxis);
-				if (currentExtent != storedExtent)
-				{
-					this->sortedExtents.erase(iterator--);
-					std::get<2>(extentTriple) = currentExtent;
-					toBeInserted.push_front(extentTriple);
-				}
+				this->sortedExtents->erase(this->sortedExtents->begin() + i);
+				i--;
 			}
+
+			// Check if component's contents have changed
+			float currentExtent = extentRetriever(type, componentPtr);
+			if (currentExtent != storedExtent)
+			{
+				this->sortedExtents->erase(this->sortedExtents->begin() + i);
+				i--;
+				storedExtent = currentExtent;
+				toBeInserted.push_front(extentTriple);
+			}
+
+			i++;
 		}
 
 		// Find any completely new components
-		if (maxCollidableIndex < collidables->size())
+		for (auto retrieverMapPair : retrieverMap)
 		{
-			for (size_t i = maxCollidableIndex + 1; i < collidables->size(); i++)
+			Types::TypeId type = retrieverMapPair.first;
+			ECS::RETRIEVER_PAIR& retrieverPair = retrieverMapPair.second;
+			if (maxIndices.at(type) < retrieverPair.first)
 			{
-				toBeInserted.push_front(std::tuple(
-					false,
-					i,
-					collidables->at(maxCollidableIndex).entityId
-				));
-			}
-		}
-
-		if (maxStaticIndex < staticCollidables->size())
-		{
-			for (size_t i = maxStaticIndex + 1; i < staticCollidables->size(); i++)
-			{
-				toBeInserted.push_front(std::tuple(
-					true,
-					i,
-					staticCollidables->at(maxCollidableIndex).entityId
-				));
+				for (size_t i = maxIndices.at(type) + 1; i < retrieverPair.first; i++)
+				{
+					ECS::Component* componentPtr = retrieverPair.second(componentsPtrMap.at(type), i);
+					toBeInserted.push_front(std::tuple(
+						type,
+						i,
+						extentRetriever(type, componentPtr)
+					));
+				}
 			}
 		}
 
 		// Insert new items
 		for (auto extentTriple : toBeInserted)
 		{
-			this->insertNewExtent(collidables, staticCollidables, extentTriple);
+			this->insertNewExtent(extentTriple);
 		}
 	}
 
 	void Collision::insertNewExtent(
-		std::vector<Component::Collidable>* collidables,
-		std::vector<Component::StaticCollidable>* staticCollidables,
-		std::tuple<bool, size_t, float>& newExtent
+		std::tuple<Types::TypeId, size_t, float>& newExtent
 	) {
 		float newMinX = std::get<2>(newExtent);
 
-		auto iterator = this->sortedExtents.cbegin();
-		for (iterator = this->sortedExtents.cbegin(); iterator != this->sortedExtents.cend(); iterator++)
+		size_t i;
+		for (i = 0; i < this->sortedExtents->size(); i++)
 		{
-			auto extentTriple = *iterator;
+			auto& extentTriple = this->sortedExtents->at(i);
 			float currentMinX = std::get<2>(extentTriple);
 			if (currentMinX > newMinX)
 			{
@@ -167,7 +143,7 @@ namespace System {
 			}
 		}
 
-		this->sortedExtents.insert(iterator, newExtent);
+		this->sortedExtents->insert(this->sortedExtents->begin() + i, newExtent);
 	}
 
 	void Collision::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
@@ -177,61 +153,83 @@ namespace System {
 		{
 			this->strategies.push_back(strategy);
 		}
+
+		this->sortedExtents = new std::vector<std::tuple<Types::TypeId, size_t, float>>();
+		// Reserve large amount of space for sortedExtents
+		this->sortedExtents->reserve(10000);
 	}
 
 	void Collision::update(float frameTime) {
-		// Get all collidable components
-		std::vector<Component::Collidable>* collidablesPtr =
-			this->manager->getComponents<Component::Collidable>();
-		std::vector<Component::StaticCollidable>* staticCollidablesPtr =
-			this->manager->getComponents<Component::StaticCollidable>();
+		// Keep track of componentsPtrs
+		std::unordered_map<Types::TypeId, std::vector<ECS::Component>*> componentsPtrMap = {
+			{Types::toTypeId<Component::Collidable>(),
+				this->manager->getComponents(Types::toTypeId<Component::Collidable>())},
+			{Types::toTypeId<Component::StaticCollidable>(),
+				this->manager->getComponents(Types::toTypeId<Component::StaticCollidable>())}
+		};
+
+		// Keep track of retrievers
+		std::unordered_map<Types::TypeId, ECS::RETRIEVER_PAIR> retrieverMap = {
+			{Types::toTypeId<Component::Collidable>(),
+				this->manager->getComponentRetriever(Types::toTypeId<Component::Collidable>())},
+			{Types::toTypeId<Component::StaticCollidable>(),
+				this->manager->getComponentRetriever(Types::toTypeId<Component::StaticCollidable>())}
+		};
 
 		// Update sorted extents
-		this->updateSortedExtents(collidablesPtr, staticCollidablesPtr);
+		char pruneAxis = this->pruneAxis;
+		this->updateSortedExtents(
+			componentsPtrMap,
+			retrieverMap,
+			[pruneAxis](Types::TypeId type, ECS::Component* component) {
+				if (Types::toTypeId<Component::Collidable>() == type)
+				{
+					return ((Component::Collidable*) component)->getMinExtent(pruneAxis);
+				}
+				else if (Types::toTypeId<Component::StaticCollidable>() == type)
+				{
+					return ((Component::StaticCollidable*) component)->getMinExtent(pruneAxis);
+				}
+			}
+		);
 
-		for (auto iterator = this->sortedExtents.cbegin(); iterator != this->sortedExtents.cend(); iterator++)
+		for (size_t i = 0; i < this->sortedExtents->size(); i++)
 		{
-			auto extentTriple = *iterator;
+			auto& extentTriple = this->sortedExtents->at(i);
+			Types::TypeId type = std::get<0>(extentTriple);
+			size_t componentIndex = std::get<1>(extentTriple);
 			float maxExtent = std::get<2>(extentTriple);
+			bool isStatic = type == Types::toTypeId<Component::StaticCollidable>();
 
 			// Iterate through subsequent elements
-			auto subItr = iterator;
-			subItr++;
-			for (subItr = subItr; subItr != this->sortedExtents.cend(); subItr++)
+			for (size_t j = i+1; j < this->sortedExtents->size(); j++)
 			{
-				auto subExtentTriple = *subItr;
+				auto& subExtentTriple = this->sortedExtents->at(j);
+				Types::TypeId& subType = std::get<0>(subExtentTriple);
+				size_t subComponentIndex = std::get<1>(extentTriple);
 				float subMinExtent = std::get<2>(subExtentTriple);
 
-				if (subMinExtent < maxExtent)
+				if (subMinExtent <= maxExtent)
 				{
 					// Following collidables will also not be colliding
 					break;
 				}
 
-				// If both are not static collidables
-				if (!(std::get<0>(extentTriple) && std::get<0>(subExtentTriple)))
+				// Ignore if both are static collidables
+				if (isStatic && type == subType)
 				{
-					Component::Collidable* a = NULL;
-					Component::Collidable* b = NULL;
-					if (std::get<0>(extentTriple))
-					{
-						a = &staticCollidablesPtr->at(std::get<1>(extentTriple));
-						b = &collidablesPtr->at(std::get<1>(subExtentTriple));
-					}
-					else if (std::get<0>(subExtentTriple))
-					{
-						a = &collidablesPtr->at(std::get<1>(extentTriple));
-						b = &staticCollidablesPtr->at(std::get<1>(subExtentTriple));
-					}
-					else
-					{
-						a = &collidablesPtr->at(std::get<1>(extentTriple));
-						b = &collidablesPtr->at(std::get<1>(subExtentTriple));
-					}
-
-					// Check for collision
-					this->handleCollision(*a, *b, frameTime);
+					continue;
 				}
+
+				std::vector<ECS::Component>* aComponentsPtr = componentsPtrMap.at(type);
+				std::vector<ECS::Component>* bComponentsPtr = componentsPtrMap.at(subType);
+				ECS::RETRIEVER_PAIR aRetrieverPair = retrieverMap.at(type);
+				ECS::RETRIEVER_PAIR bRetrieverPair = retrieverMap.at(subType);
+
+				Component::Collidable* a = (Component::Collidable*) aRetrieverPair.second(aComponentsPtr, componentIndex);
+				Component::Collidable* b = (Component::Collidable*) bRetrieverPair.second(bComponentsPtr, subComponentIndex);
+
+				this->handleCollision(*a, *b, frameTime);
 			}
 		}
 	}
@@ -242,5 +240,8 @@ namespace System {
 		{
 			SAFE_DELETE(strategy);
 		}
+
+		// Delete sortedExtents
+		SAFE_DELETE(this->sortedExtents);
 	}
 }

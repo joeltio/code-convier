@@ -120,9 +120,13 @@ const int RUNNING_HEATLH_TICK = 4;
 const int CHARGE_HEALTH_TICK = 2;
 const int AUGMENTATED_HEAL = 1;
 const float AUGMENTATED_COOLDOWN_REDUCTION = 0.5f;
-const int AUGMENTATED_DAMAGE_MULTIPLIER = 0.5f;
+const float AUGMENTATED_DAMAGE_MULTIPLIER = 0.5f;
 const float AUGMENTATED_SPEED_MULTIPLIER = 0.1f;
+
 const float ENEMY_SPEED = 100.0f;
+const int ENEMY_HEALTH = 40;
+const float ENEMY_ATTACK_DAMAGE = 6.0f;
+const float ENEMY_ATTACK_COOLDOWN = 1.5f;
 
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used

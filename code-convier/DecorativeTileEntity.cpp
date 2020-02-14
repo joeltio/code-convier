@@ -26,6 +26,7 @@ namespace Entity {
 			{
 				throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading solid tile entity texture"));
 			}
+			textureComponent.zIndex = 2;
 			break;
 		case('$'):
 			if (!textureComponent.loadTexture(graphics, DOOR_IMAGE))
@@ -37,6 +38,16 @@ namespace Entity {
 			break;
 		}
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
+
+		Component::StaticCollidable collidable = Component::StaticCollidable();
+		float width = textureComponent.totalWidth * transformComponent.scale;
+		float height = textureComponent.totalHeight * transformComponent.scale;
+		collidable.corners.push_back(D3DXVECTOR2(x, y));
+		collidable.corners.push_back(D3DXVECTOR2(x + width, y));
+		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
+		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
+		collidable.collisionType = CollisionUtil::CollisionType::AABB;
+		manager->addComponent<Component::StaticCollidable>(entityId, collidable);
 
 		return entityId;
 	}

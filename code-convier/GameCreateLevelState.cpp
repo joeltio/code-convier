@@ -1,12 +1,12 @@
 #include "GameCreateLevelState.h"
 
-FSM::Action GameCreateLevelState::update(float frameTime, Component::State state) {
-
+//on enter
+void GameCreateLevelState::enter(Component::State state) {
 	//Create rng map
 	std::vector<int> maplist;
 	for (size_t i = 0; i < mapFragment; i++)
 	{
-		int id = rand()%5 + 1;
+		int id = rand() % 5 + 1;
 		maplist.push_back(id);
 	}
 	//Open starting map file
@@ -69,7 +69,7 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 	std::ofstream tempMap("./map/temp.txt", std::ofstream::out | std::ofstream::trunc);
 	for (size_t i = 0; i < gamemap.size(); i++)
 	{
-		if (i%(mapFragment+2) == 0)
+		if (i % (mapFragment + 2) == 0)
 		{
 			tempMap << std::endl << gamemap[i];
 		}
@@ -148,6 +148,7 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
 				break;
 			case('*'):
+				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), ' ');
 				Entity::DecorativeTile::create(this->manager, this->graphics, ((float)x * tileWidth), ((float)y * tileHeight), '*');
 				break;
 			case('$'):
@@ -163,6 +164,15 @@ FSM::Action GameCreateLevelState::update(float frameTime, Component::State state
 			}
 		}
 	}
-	Entity::Player::create(this->manager, this->graphics, ((float)playerX* tileWidth), ((float)playerY* tileHeight));
+	Entity::Player::create(this->manager, this->graphics, ((float)playerX * tileWidth), ((float)playerY * tileHeight));
+}
+
+//on update
+FSM::Action GameCreateLevelState::update(float frameTime, Component::State state) {
 	return ResumeGameAction();
+}
+
+//on exit
+void GameCreateLevelState::exit(Component::State state) {
+
 }

@@ -9,13 +9,13 @@
 #include "TransformComponent.h"
 #include "HealthComponent.h"
 #include "JumpingComponent.h"
-#include "AnimatableComponent.h"
 #include "CollidableComponent.h"
 #include "AttackComponent.h"
+#include "AugmentationComponent.h"
 
 namespace Entity {
 
-	class Player : public ECS::Entity {
+	class Enemy : public ECS::Entity {
 	public:
 		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics, float x, float y);
 	};
