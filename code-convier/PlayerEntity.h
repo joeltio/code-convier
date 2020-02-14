@@ -12,7 +12,6 @@
 #include "AnimatableComponent.h"
 #include "CollidableComponent.h"
 #include "AttackComponent.h"
-#include "AugmentationComponent.h"
 
 namespace Entity {
 

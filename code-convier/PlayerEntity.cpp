@@ -59,10 +59,6 @@ namespace Entity {
 		Component::Jumping jumpingComponent = Component::Jumping();
 		manager->addComponent<Component::Jumping>(entityId, jumpingComponent);
 
-		// add the augmentation component, (might actually be shifted to the game)
-		Component::Augmentation augmentationComponent = Component::Augmentation();
-		manager->addComponent<Component::Augmentation>(entityId, augmentationComponent);
-
 		return entityId;
 	}
 }
