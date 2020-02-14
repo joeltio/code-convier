@@ -133,15 +133,14 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	// Check if there is already a retriever
 	if (this->componentRetriever.find(componentTypeId) == this->componentRetriever.end())
 	{
-		std::pair<int, std::function<Component* (std::vector<Component>* componentsPtr, size_t)>> retriever =
-			std::make_pair(
-				0,
-				[](std::vector<Component>* componentsPtr, size_t index) {
-					return &(((std::vector<ComponentType>*) componentsPtr)->at(index));
-				}
-			);
+		RETRIEVER_PAIR retrieverPair = std::make_pair(
+			0,
+			[](std::vector<Component>* componentsPtr, size_t index) {
+				return &(((std::vector<ComponentType>*) componentsPtr)->at(index));
+			}
+		);
 
-		auto record = std::make_pair(componentTypeId, retriever);
+		auto record = std::make_pair(componentTypeId, retrieverPair);
 		this->componentRetriever.insert(record);
 	}
 

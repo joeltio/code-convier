@@ -32,9 +32,18 @@ std::vector<Component>* Manager::getComponents(Types::TypeId componentTypeId) {
 	return (std::vector<Component>*) this->components.at(componentTypeId);
 }
 
-std::pair<size_t, std::function<Component* (std::vector<Component>*, size_t)>> Manager::getComponentRetriever(
+RETRIEVER_PAIR Manager::getComponentRetriever(
 	Types::TypeId componentTypeId
 ) {
+	if (this->getComponents(componentTypeId)->empty())
+	{
+		return std::make_pair(
+			0,
+			[](std::vector<Component>* componentsPtr, size_t index) -> Component* {
+				throw new std::out_of_range("There are no components to retrieve");
+			}
+		);
+	}
 	return this->componentRetriever.at(componentTypeId);
 }
 

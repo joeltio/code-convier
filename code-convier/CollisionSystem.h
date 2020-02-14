@@ -24,21 +24,20 @@ namespace System {
 			// Prune values using the x-axis
 			char pruneAxis = 0;
 
-			// [[isStatic, componentIndex, componentEntityId], ...]
-			std::list<std::tuple<bool, size_t, float>> sortedExtents;
+			// [[componentType, componentIndex, componentEntityId], ...]
+			std::vector<std::tuple<Types::TypeId, size_t, float>>* sortedExtents = NULL;
 			std::vector<CollisionUtil::CollisionStrategy*> strategies;
 			// Searches for a strategy to use to check for collision between a and b
 			bool colliding(Component::Collidable& a, Component::Collidable& b);
 			// Tests for collision and updates a and b accordingly
 			void handleCollision(Component::Collidable& a, Component::Collidable& b, float frameTime);
 			void updateSortedExtents(
-				std::vector<Component::Collidable>* collidables,
-				std::vector<Component::StaticCollidable>* staticCollidables
+				std::unordered_map<Types::TypeId, std::vector<ECS::Component>*>& componentsPtrMap,
+				std::unordered_map<Types::TypeId, ECS::RETRIEVER_PAIR>& retrieverMap,
+				std::function<float(Types::TypeId, ECS::Component*)> extentRetriever
 			);
 			void insertNewExtent(
-				std::vector<Component::Collidable>* collidables,
-				std::vector<Component::StaticCollidable>* staticCollidables,
-				std::tuple<bool, size_t, float>& newExtent
+				std::tuple<Types::TypeId, size_t, float>& newExtent
 			);
 
 		public:
