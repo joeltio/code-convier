@@ -186,15 +186,15 @@ namespace System {
 			componentsPtrMap,
 			retrieverMap,
 			[pruneAxis](Types::TypeId type, ECS::Component* component) {
-				if (Types::toTypeId<Component::Collidable>() == type)
+				if (Types::isSameType(Types::toTypeId<Component::Collidable>(), type))
 				{
 					return ((Component::Collidable*) component)->getMinExtent(pruneAxis);
 				}
-				else if (Types::toTypeId<Component::StaticCollidable>() == type)
+				else if (Types::isSameType(Types::toTypeId<Component::StaticCollidable>(), type))
 				{
 					return ((Component::StaticCollidable*) component)->getMinExtent(pruneAxis);
 				}
-				else if (Types::toTypeId<Component::LineOfSight>() == type)
+				else if (Types::isSameType(Types::toTypeId<Component::LineOfSight>(), type))
 				{
 					return ((Component::LineOfSight*) component)->getMinExtent(pruneAxis);
 				}
@@ -207,7 +207,7 @@ namespace System {
 			Types::TypeId type = std::get<0>(extentTriple);
 			size_t componentIndex = std::get<1>(extentTriple);
 			float maxExtent = std::get<2>(extentTriple);
-			bool isStatic = type == Types::toTypeId<Component::StaticCollidable>();
+			bool isStatic = Types::isSameType(type, Types::toTypeId<Component::StaticCollidable>());
 
 			// Iterate through subsequent elements
 			for (size_t j = i+1; j < this->sortedExtents->size(); j++)
@@ -224,7 +224,7 @@ namespace System {
 				}
 
 				// Ignore if both are static collidables
-				if (isStatic && type == subType)
+				if (isStatic && Types::isSameType(type, subType))
 				{
 					continue;
 				}
