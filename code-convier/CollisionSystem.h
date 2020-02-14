@@ -12,9 +12,9 @@
 #include "collisionConstants.h"
 #include "CollisionStrategy.h"
 
-#include "StaticCollidableComponent.h"
 #include "CollidableComponent.h"
 #include "StaticCollidableComponent.h"
+#include "LineOfSightComponent.h"
 #include "PhysicsComponent.h"
 
 namespace System {

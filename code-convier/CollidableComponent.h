@@ -30,6 +30,8 @@ namespace Component {
 		std::function<void(ECS::Manager * manager, ECS::EntityIdType entityId)> onExit =
 			[](ECS::Manager* manager, ECS::EntityIdType entityId) {};
 
+		Collidable(CollisionUtil::CollisionType _collisionType) { collisionType = _collisionType; }
+
 		D3DXVECTOR2 getCenter();
 
 		// Gets the minimum value this collidable has for the axis.

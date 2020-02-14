@@ -100,6 +100,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Profile>true</Profile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -113,6 +114,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Profile>true</Profile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -153,11 +155,13 @@
     <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
     <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
+    <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="AttackIdleState.cpp" />
     <ClCompile Include="AttackingState.cpp" />
     <ClCompile Include="AugmentationSystem.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
+    <ClCompile Include="CircleLineCollisionStrategy.cpp" />
     <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
     <ClCompile Include="ClickingState.cpp" />
     <ClCompile Include="CollidableComponent.cpp" />
@@ -170,7 +174,8 @@
     <ClCompile Include="EnemyHealthIdleState.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
-    <ClCompile Include="FiniteStateSystem.h" />
+    <ClInclude Include="CircleLineCollisionStrategy.h" />
+    <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameCreateLevelState.cpp" />
     <ClCompile Include="GameCreditsState.cpp" />
@@ -182,6 +187,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="HealthbarEntity.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="LineOfSightComponent.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="NotClickedState.cpp" />
@@ -200,6 +206,7 @@
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="SolidTileEntity.cpp" />
+    <ClCompile Include="SquareLineCollisionStrategy.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="System.cpp" />
@@ -220,6 +227,7 @@
     <ClInclude Include="AugmentationComponent.h" />
     <ClInclude Include="AugmentationSystem.h" />
     <ClInclude Include="ButtonEntity.h" />
+    <ClInclude Include="ChasePlayerAction.h" />
     <ClInclude Include="CircleCircleCollisionStrategy.h" />
     <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="CollidableComponent.h" />
@@ -240,6 +248,7 @@
     <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
+    <ClInclude Include="LineOfSightComponent.h" />
     <ClInclude Include="NotClickedState.h" />
     <ClInclude Include="OBBOBBCollisionStrategy.h" />
     <ClInclude Include="PauseGameAction.h" />
@@ -281,6 +290,7 @@
     <ClInclude Include="ResumeGameAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="SolidTileEntity.h" />
+    <ClInclude Include="SquareLineCollisionStrategy.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateComponent.h" />
     <ClInclude Include="StaticCollidableComponent.h" />

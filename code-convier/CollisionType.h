@@ -6,6 +6,7 @@ namespace CollisionUtil {
 		CIRCLE,
 		AABB,
 		OBB,
+		LINE
 	};
 
 }

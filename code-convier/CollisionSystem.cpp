@@ -165,7 +165,9 @@ namespace System {
 			{Types::toTypeId<Component::Collidable>(),
 				this->manager->getComponents(Types::toTypeId<Component::Collidable>())},
 			{Types::toTypeId<Component::StaticCollidable>(),
-				this->manager->getComponents(Types::toTypeId<Component::StaticCollidable>())}
+				this->manager->getComponents(Types::toTypeId<Component::StaticCollidable>())},
+			{Types::toTypeId<Component::LineOfSight>(),
+				this->manager->getComponents(Types::toTypeId<Component::LineOfSight>())}
 		};
 
 		// Keep track of retrievers
@@ -173,7 +175,9 @@ namespace System {
 			{Types::toTypeId<Component::Collidable>(),
 				this->manager->getComponentRetriever(Types::toTypeId<Component::Collidable>())},
 			{Types::toTypeId<Component::StaticCollidable>(),
-				this->manager->getComponentRetriever(Types::toTypeId<Component::StaticCollidable>())}
+				this->manager->getComponentRetriever(Types::toTypeId<Component::StaticCollidable>())},
+			{Types::toTypeId<Component::LineOfSight>(),
+				this->manager->getComponentRetriever(Types::toTypeId<Component::LineOfSight>())}
 		};
 
 		// Update sorted extents
@@ -189,6 +193,10 @@ namespace System {
 				else if (Types::toTypeId<Component::StaticCollidable>() == type)
 				{
 					return ((Component::StaticCollidable*) component)->getMinExtent(pruneAxis);
+				}
+				else if (Types::toTypeId<Component::LineOfSight>() == type)
+				{
+					return ((Component::LineOfSight*) component)->getMinExtent(pruneAxis);
 				}
 			}
 		);
