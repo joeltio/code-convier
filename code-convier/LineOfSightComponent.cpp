@@ -20,4 +20,11 @@ namespace Component {
 		return this->corners[1];
 	}
 
+	float LineOfSight::getSqDistance() {
+		float xDiff = this->corners[0].x - this->corners[1].x;
+		float yDiff = this->corners[0].y - this->corners[1].y;
+
+		return (xDiff * xDiff) + (yDiff * yDiff);
+	}
+
 }

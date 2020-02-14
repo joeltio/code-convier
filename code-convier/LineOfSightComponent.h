@@ -23,6 +23,8 @@ namespace Component {
 		void setTargetPos(float x, float y);
 		// Gets the position of where the line of sight is targeted at
 		D3DXVECTOR2& getTargetPos();
+
+		float getSqDistance();
 	};
 
 }

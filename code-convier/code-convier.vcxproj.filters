@@ -41,6 +41,9 @@
     <Filter Include="Header Files\States\EnemyHealth">
       <UniqueIdentifier>{c4185ab1-ac89-4bfa-87e7-e8887d2ead33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States\EnemyMovement">
+      <UniqueIdentifier>{70f50249-1777-4fb0-a1bd-e87727761d19}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\States\Game">
       <UniqueIdentifier>{935062c0-ac9c-41f2-a0c6-4d59fcf0a799}</UniqueIdentifier>
     </Filter>
@@ -118,6 +121,9 @@
     <Filter Include="Source Files\States\EnemyHealth">
       <UniqueIdentifier>{47a3b6d7-f89b-4544-b83b-77e618e70b26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\EnemyMovement">
+      <UniqueIdentifier>{5d4043f1-3a63-4042-8807-84240b5500fb}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\States\Game">
       <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
     </Filter>
@@ -194,6 +200,15 @@
     </ClCompile>
     <ClCompile Include="EnemyHealthIdleState.cpp">
       <Filter>Source Files\States\EnemyHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyMovementChaseState.cpp">
+      <Filter>Source Files\States\EnemyMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyMovementIdleState.cpp">
+      <Filter>Source Files\States\EnemyMovement</Filter>
+    </ClCompile>
+    <ClCompile Include="EnergyOrbEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
@@ -285,6 +300,9 @@
     <ClCompile Include="PlayerMovementReducer.cpp">
       <Filter>Source Files\Reducers</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMovementReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerMovementRunningState.cpp">
       <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
@@ -323,12 +341,6 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMovementReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
-    </ClCompile>
-    <ClCompile Include="EnergyOrbEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -425,6 +437,9 @@
     <ClInclude Include="ecsConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyAIComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="EnemyAISystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
@@ -436,6 +451,15 @@
     </ClInclude>
     <ClInclude Include="EnemyHealthIdleState.h">
       <Filter>Header Files\States\EnemyHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMovementChaseState.h">
+      <Filter>Header Files\States\EnemyMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMovementIdleState.h">
+      <Filter>Header Files\States\EnemyMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
@@ -492,6 +516,9 @@
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthRecoverComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="IdlePlayerMovementAction.h">
@@ -661,12 +688,6 @@
     </ClInclude>
     <ClInclude Include="WalkingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="EnergyOrbEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthRecoverComponent.h">
-      <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
