@@ -41,11 +41,12 @@ void FiniteState::update(float frameTime) {
 	for (Types::TypeId stateComponentTypeId : STATE_COMPONENT_TYPES)
 	{
 		// Retrieve the components for the current state type
-		std::vector<ECS::Component>* componentsPtr = this->manager->getComponents(stateComponentTypeId);
 		auto retrieverPair = this->manager->getComponentRetriever(stateComponentTypeId);
 
 		for (size_t i = 0; i < retrieverPair.first; i++)
 		{
+			// Retrieve the pointer to the vector of components each time in case the vector moves
+			std::vector<ECS::Component>* componentsPtr = this->manager->getComponents(stateComponentTypeId);
 			Component::State& stateComp = *((Component::State*) retrieverPair.second(componentsPtr, i));
 			if (!stateComp.isActive)
 			{
