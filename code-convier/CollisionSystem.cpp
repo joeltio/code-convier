@@ -19,7 +19,7 @@ namespace System {
 	void Collision::handleCollision(Component::Collidable& a, Component::Collidable& b, float frameTime) {
 		// Check if the entities are already colliding with each other
 		bool wasColliding =
-			a.collidingWith.find(b.entityId) != b.collidingWith.end();
+			a.collidingWith.find(b.entityId) != a.collidingWith.end();
 		bool isColliding = this->colliding(a, b);
 
 		// Update the "isColliding" and call functions
@@ -214,7 +214,7 @@ namespace System {
 			{
 				auto& subExtentTriple = this->sortedExtents->at(j);
 				Types::TypeId& subType = std::get<0>(subExtentTriple);
-				size_t subComponentIndex = std::get<1>(extentTriple);
+				size_t subComponentIndex = std::get<1>(subExtentTriple);
 				float subMinExtent = std::get<2>(subExtentTriple);
 
 				if (subMinExtent <= maxExtent)
