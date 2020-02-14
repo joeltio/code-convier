@@ -38,6 +38,8 @@ namespace Component {
 		// 0 - x, 1 - y, 2 - z
 		float getMinExtent(char axis);
 		float getMaxExtent(char axis);
+
+		void move(float x, float y);
 	};
 
 }

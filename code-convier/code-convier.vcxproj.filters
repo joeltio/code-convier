@@ -183,6 +183,9 @@
     <ClCompile Include="DecorativeTileEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyAISystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="EnemyDeathState.cpp">
       <Filter>Source Files\States\EnemyHealth</Filter>
     </ClCompile>
@@ -315,6 +318,9 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMovementReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
     <ClCompile Include="EnergyOrbEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -331,6 +337,12 @@
     </ClInclude>
     <ClInclude Include="Action.h">
       <Filter>Header Files\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatableComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="AttackComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -403,6 +415,9 @@
     </ClInclude>
     <ClInclude Include="ecsConstants.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAISystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="EnemyDeathState.h">
       <Filter>Header Files\States\EnemyHealth</Filter>
@@ -623,11 +638,23 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="AnimatableComponent.h">
+    <ClInclude Include="PlayerMovementReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementStateComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationSystem.h">
-      <Filter>Header Files\System</Filter>
+    <ClInclude Include="ChargingPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="WalkingPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="IdlePlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="EnergyOrbEntity.h">
       <Filter>Header Files\Entity</Filter>

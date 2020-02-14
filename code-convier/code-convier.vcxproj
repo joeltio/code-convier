@@ -170,12 +170,15 @@
     <ClCompile Include="convier.cpp" />
     <ClCompile Include="CreditsEntity.cpp" />
     <ClCompile Include="DecorativeTileEntity.cpp" />
+    <ClCompile Include="EnemyAISystem.cpp" />
     <ClCompile Include="EnemyDeathState.cpp" />
     <ClCompile Include="EnemyEntity.cpp" />
     <ClCompile Include="EnemyHealthIdleState.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
+    <ClInclude Include="ChargingPlayerMovementAction.h" />
     <ClInclude Include="CircleLineCollisionStrategy.h" />
+    <ClInclude Include="EnemyAISystem.h" />
     <ClInclude Include="EnergyOrbEntity.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
@@ -201,6 +204,7 @@
     <ClCompile Include="PlayerHealthReplenishingState.cpp" />
     <ClCompile Include="PlayerMovementChargingState.cpp" />
     <ClCompile Include="PlayerMovementIdleState.cpp" />
+    <ClCompile Include="PlayerMovementReducer.cpp" />
     <ClCompile Include="PlayerMovementRunningState.cpp" />
     <ClCompile Include="PlayerMovementMovingState.cpp" />
     <ClCompile Include="Reducer.tpp" />
@@ -217,6 +221,8 @@
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="vectorUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
+    <ClInclude Include="IdlePlayerMovementAction.h" />
+    <ClInclude Include="WalkingPlayerMovementAction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h" />
@@ -283,7 +289,9 @@
     <ClInclude Include="PlayerMovementChargingState.h" />
     <ClInclude Include="PlayerMovementIdleState.h" />
     <ClInclude Include="PlayerMovementMovingState.h" />
+    <ClInclude Include="PlayerMovementReducer.h" />
     <ClInclude Include="PlayerMovementRunningState.h" />
+    <ClInclude Include="PlayerMovementStateComponent.h" />
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="PrepareMenuAction.h" />
     <ClInclude Include="QuitGameAction.h" />
@@ -293,6 +301,7 @@
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ResumeGameAction.h" />
+    <ClInclude Include="RunningPlayerMovementAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="SolidTileEntity.h" />
     <ClInclude Include="SquareLineCollisionStrategy.h" />

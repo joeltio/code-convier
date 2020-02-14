@@ -6,6 +6,7 @@
 #include "graphics.h"
 #include "input.h"
 #include "PhysicsComponent.h"
+#include "CollidableComponent.h"
 #include "TransformComponent.h"
 
 namespace System {

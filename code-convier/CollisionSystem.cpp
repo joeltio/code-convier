@@ -53,12 +53,12 @@ namespace System {
 		// Keep track of the new pairs to be inserted and removed
 		std::forward_list<std::tuple<Types::TypeId, size_t, float>> toBeInserted;
 
-		// Keep track of highest index of components
-		std::unordered_map<Types::TypeId, size_t> maxIndices;
+		// Determine the size of the components vectors
+		std::unordered_map<Types::TypeId, size_t> compSize;
 		for (auto retrieverMapPair : retrieverMap)
 		{
 			// Initialize with 0s
-			maxIndices.insert(std::make_pair(retrieverMapPair.first, 0));
+			compSize.insert(std::make_pair(retrieverMapPair.first, 0));
 		}
 
 		// Find the new pairs to be inserted and delete removed components
@@ -71,10 +71,10 @@ namespace System {
 			float storedExtent = std::get<2>(extentTriple);
 
 			// Update max component index
-			size_t& maxIndex = maxIndices.at(type);
-			if (componentIndex > maxIndex)
+			size_t& maxSize = compSize.at(type);
+			if (componentIndex >= maxSize)
 			{
-				maxIndex = componentIndex;
+				maxSize = componentIndex + 1;
 			}
 
 			// Retrieve component
@@ -106,9 +106,9 @@ namespace System {
 		{
 			Types::TypeId type = retrieverMapPair.first;
 			ECS::RETRIEVER_PAIR& retrieverPair = retrieverMapPair.second;
-			if (maxIndices.at(type) < retrieverPair.first)
+			if (compSize.at(type) < retrieverPair.first)
 			{
-				for (size_t i = maxIndices.at(type) + 1; i < retrieverPair.first; i++)
+				for (size_t i = compSize.at(type); i < retrieverPair.first; i++)
 				{
 					ECS::Component* componentPtr = retrieverPair.second(componentsPtrMap.at(type), i);
 					toBeInserted.push_front(std::tuple(
@@ -186,15 +186,15 @@ namespace System {
 			componentsPtrMap,
 			retrieverMap,
 			[pruneAxis](Types::TypeId type, ECS::Component* component) {
-				if (Types::toTypeId<Component::Collidable>() == type)
+				if (Types::isSameType(Types::toTypeId<Component::Collidable>(), type))
 				{
 					return ((Component::Collidable*) component)->getMinExtent(pruneAxis);
 				}
-				else if (Types::toTypeId<Component::StaticCollidable>() == type)
+				else if (Types::isSameType(Types::toTypeId<Component::StaticCollidable>(), type))
 				{
 					return ((Component::StaticCollidable*) component)->getMinExtent(pruneAxis);
 				}
-				else if (Types::toTypeId<Component::LineOfSight>() == type)
+				else if (Types::isSameType(Types::toTypeId<Component::LineOfSight>(), type))
 				{
 					return ((Component::LineOfSight*) component)->getMinExtent(pruneAxis);
 				}
@@ -206,25 +206,38 @@ namespace System {
 			auto& extentTriple = this->sortedExtents->at(i);
 			Types::TypeId type = std::get<0>(extentTriple);
 			size_t componentIndex = std::get<1>(extentTriple);
-			float maxExtent = std::get<2>(extentTriple);
-			bool isStatic = type == Types::toTypeId<Component::StaticCollidable>();
+			// Get max extent
+			Component::Collidable* component =
+				(Component::Collidable*) retrieverMap.at(type).second(componentsPtrMap.at(type), componentIndex);
+			float maxExtent = component->getMaxExtent(this->pruneAxis);
+
+			bool isStatic = Types::isSameType(type, Types::toTypeId<Component::StaticCollidable>());
+
+			if (std::get<2>(extentTriple) < 551)
+			{
+				int x =3;
+			}
 
 			// Iterate through subsequent elements
 			for (size_t j = i+1; j < this->sortedExtents->size(); j++)
 			{
 				auto& subExtentTriple = this->sortedExtents->at(j);
 				Types::TypeId& subType = std::get<0>(subExtentTriple);
+				if (Types::isSameType(subType, Types::toTypeId<Component::Collidable>()))
+				{
+					int x = 3;
+				}
 				size_t subComponentIndex = std::get<1>(subExtentTriple);
 				float subMinExtent = std::get<2>(subExtentTriple);
 
-				if (subMinExtent <= maxExtent)
+				if (maxExtent <= subMinExtent)
 				{
 					// Following collidables will also not be colliding
 					break;
 				}
 
 				// Ignore if both are static collidables
-				if (isStatic && type == subType)
+				if (isStatic && Types::isSameType(type, subType))
 				{
 					continue;
 				}

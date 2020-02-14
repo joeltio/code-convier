@@ -48,4 +48,12 @@ namespace Component {
 		return max;
 	}
 
+	void Collidable::move(float x, float y) {
+		for (D3DXVECTOR2& corner : this->corners)
+		{
+			corner.x += x;
+			corner.y += y;
+		}
+	}
+
 }
