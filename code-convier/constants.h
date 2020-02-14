@@ -80,7 +80,11 @@ const char TOP_RIGHT_CORNER_IMAGE[] = "./sprites/BL wall.png";
 const char BOTTOM_LEFT_CORNER_IMAGE[] = "./sprites/TR wall.png";
 const char BOTTOM_RIGHT_CORNER_IMAGE[] = "./sprites/TL wall.png";
 
-
+// Energy Orb
+const char XP_1_IMAGE[] = "./sprites/XP-Yellow.png";
+const char XP_2_IMAGE[] = "./sprites/XP-Lime.png";
+const char XP_3_IMAGE[] = "./sprites/XP-Green.png";
+const char XP_4_IMAGE[] = "./sprites/XP-BrightGreen.png";
 
 // window
 const char CLASS_NAME[] = "Code::Convier";

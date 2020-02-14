@@ -120,7 +120,7 @@ namespace Entity {
 		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
-				Component::Physics entityPhy = manager->getEntityComponent<Component::Physics>(id);
+				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
 				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
 				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
 				float entityWidth = entityTex.totalWidth * entityPos.scale;
@@ -140,7 +140,7 @@ namespace Entity {
 		collidable.onStay = [entityId](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
-				Component::Physics entityPhy = manager->getEntityComponent<Component::Physics>(id);
+				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
 				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
 				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
 				float entityWidth = entityTex.totalWidth * entityPos.scale;

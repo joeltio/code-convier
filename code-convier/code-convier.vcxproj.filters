@@ -324,6 +324,12 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMovementReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
+    <ClCompile Include="EnergyOrbEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -655,6 +661,12 @@
     </ClInclude>
     <ClInclude Include="WalkingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthRecoverComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
