@@ -5,6 +5,7 @@
 #include "GameStateComponent.h"
 #include "GameDataComponent.h"
 #include "GameMenuState.h"
+#include "AugmentationComponent.h"
 
 namespace Entity {
 

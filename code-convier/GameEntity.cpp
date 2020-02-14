@@ -21,6 +21,9 @@ ECS::EntityIdType Game::create(ECS::Manager* manager) {
 
 	manager->addComponent<Component::GameData>(entityId, gameDataComponent);
 
+	Component::Augmentation augmentationComponent = Component::Augmentation();
+	manager->addComponent<Component::Augmentation>(entityId, augmentationComponent);
+
 	return entityId;
 }
 
