@@ -35,14 +35,13 @@ namespace Entity {
 		manager->addComponent<Component::Animatable>(enemyEntityId, animatableComponent);
 
 		// add the collidable component
-		Component::Collidable collidableComponent = Component::Collidable();
+		Component::Collidable collidableComponent = Component::Collidable(CollisionUtil::CollisionType::AABB);
 		float width = textureComponent.totalWidth * transformComponent.scale;
 		float height = textureComponent.totalHeight * transformComponent.scale;
 		collidableComponent.corners.push_back(D3DXVECTOR2(x, y));
 		collidableComponent.corners.push_back(D3DXVECTOR2(x + width, y));
 		collidableComponent.corners.push_back(D3DXVECTOR2(x + width, y + height));
 		collidableComponent.corners.push_back(D3DXVECTOR2(x, y + height));
-		collidableComponent.collisionType = CollisionUtil::CollisionType::AABB;
 		manager->addComponent<Component::Collidable>(enemyEntityId, collidableComponent);
 
 		// add the attack component

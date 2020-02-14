@@ -9,7 +9,7 @@ namespace Entity {
 		transformComponent.x = x;
 		transformComponent.y = y;
 		transformComponent.scale = 2;
-		  
+
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
 		switch (type)
@@ -109,14 +109,13 @@ namespace Entity {
 		}
 
 		// add the staticCollidable component
-		Component::StaticCollidable collidable = Component::StaticCollidable();
+		Component::StaticCollidable collidable = Component::StaticCollidable(CollisionUtil::CollisionType::AABB);
 		float width = textureComponent.totalWidth * transformComponent.scale;
 		float height = textureComponent.totalHeight * transformComponent.scale;
 		collidable.corners.push_back(D3DXVECTOR2(x, y));
 		collidable.corners.push_back(D3DXVECTOR2(x + width, y));
 		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
 		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
-		collidable.collisionType = CollisionUtil::CollisionType::AABB;
 
 		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Player>())
