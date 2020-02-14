@@ -18,11 +18,11 @@ namespace Component {
 		// temporary powerups
 		int damageAugmentation = 0;
 		// once the cooldown stored in the list hits 0, remove 1 from the number of augmentations
-		std::vector<int> damageCooldownTracker = {};
+		std::vector<float> damageCooldownTracker = {};
 		bool multiHitAugmentation = 0;
-		std::vector<int> multiHitCooldownTracker = {};
+		std::vector<float> multiHitCooldownTracker = {};
 		int energyHealAugmentation = 0;
-		std::vector<int> healCooldownTracker = {};
+		std::vector<float> healCooldownTracker = {};
 	};
 
 }
