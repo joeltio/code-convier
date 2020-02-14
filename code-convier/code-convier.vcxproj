@@ -176,6 +176,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClInclude Include="CircleLineCollisionStrategy.h" />
+    <ClInclude Include="EnergyOrbEntity.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameCreateLevelState.cpp" />
@@ -206,6 +207,7 @@
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="SolidTileEntity.cpp" />
+    <ClCompile Include="EnergyOrbEntity.cpp" />
     <ClCompile Include="SquareLineCollisionStrategy.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Store.cpp" />
@@ -249,6 +251,7 @@
     <ClInclude Include="GameCreditsState.h" />
     <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="HealthRecoverComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="LineOfSightComponent.h" />
     <ClInclude Include="NotClickedState.h" />
