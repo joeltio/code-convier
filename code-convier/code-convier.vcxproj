@@ -153,6 +153,7 @@
     <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
     <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
+    <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="AttackIdleState.cpp" />
     <ClCompile Include="AttackingState.cpp" />
     <ClCompile Include="AugmentationSystem.cpp" />
@@ -214,6 +215,8 @@
     <ClInclude Include="AABBCircleCollisionStrategy.h" />
     <ClInclude Include="AABBOBBCollisionStrategy.h" />
     <ClInclude Include="Action.h" />
+    <ClInclude Include="AnimatableComponent.h" />
+    <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="AttackIdleState.h" />
     <ClInclude Include="AttackingState.h" />
