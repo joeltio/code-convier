@@ -198,6 +198,8 @@ namespace System {
 				{
 					return ((Component::LineOfSight*) component)->getMinExtent(pruneAxis);
 				}
+
+				throw new std::exception("Unknown component type when retrieving collidable extent.");
 			}
 		);
 

@@ -237,6 +237,9 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LineOfSightComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
     <ClCompile Include="MainMenuEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -279,6 +282,9 @@
     <ClCompile Include="PlayerMovementMovingState.cpp">
       <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMovementReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerMovementRunningState.cpp">
       <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
@@ -317,9 +323,6 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMovementReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -364,6 +367,9 @@
     </ClInclude>
     <ClInclude Include="ButtonEntity.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargingPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="ChasePlayerAction.h">
       <Filter>Header Files\Actions</Filter>
@@ -482,6 +488,9 @@
     <ClInclude Include="HealthComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="IdlePlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -566,11 +575,17 @@
     <ClInclude Include="PlayerMovementMovingState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerMovementReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerMovementRunningState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementRunningState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementStateComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
@@ -591,6 +606,9 @@
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="ResumeGameAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="ShowCreditsAction.h">
@@ -635,22 +653,7 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerMovementReducer.h">
-      <Filter>Header Files\Reducers</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementStateComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="ChargingPlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="RunningPlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
     <ClInclude Include="WalkingPlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="IdlePlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>
