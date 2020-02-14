@@ -318,6 +318,9 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMovementReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -631,6 +634,24 @@
     </ClInclude>
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargingPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="WalkingPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="IdlePlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

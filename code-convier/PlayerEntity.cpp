@@ -59,6 +59,14 @@ namespace Entity {
 		Component::Jumping jumpingComponent = Component::Jumping();
 		manager->addComponent<Component::Jumping>(entityId, jumpingComponent);
 
+		// add the movement state component
+		Component::PlayerMovementState movementStateComponent = Component::PlayerMovementState {
+			entityId,
+			true,
+			Types::toTypeId<PlayerMovementIdleState>()
+		};
+		manager->addComponent<Component::PlayerMovementState>(entityId, movementStateComponent);
+
 		return entityId;
 	}
 }

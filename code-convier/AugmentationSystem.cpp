@@ -11,7 +11,7 @@ namespace System {
 		{
 			// get all components that are affected by the augmentations
 			std::vector<Component::Augmentation>* augmentationPtrs = manager->getComponents<Component::Augmentation>();
-			Component::Augmentation augmentationComponent = augmentationPtrs->at(0);
+			Component::Augmentation& augmentationComponent = augmentationPtrs->at(0);
 			Component::Health healthComponent = manager->getEntityComponent<Component::Health>(id);
 			Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(id);
 			Component::Attack attackComponent = manager->getEntityComponent<Component::Attack>(id);
