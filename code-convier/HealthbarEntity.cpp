@@ -17,6 +17,7 @@ namespace Entity {
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Healthbar entity texture"));
 		}
 		textureComponent.visible = true;
+		textureComponent.zIndex = 3;
 
 		// get the health component
 		std::unordered_set<ECS::EntityIdType>* playerEntityIds = manager->getEntities<Player>();
