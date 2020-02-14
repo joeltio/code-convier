@@ -13,7 +13,7 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 		transformComponent.x = x;
 		transformComponent.y = y;
-		transformComponent.scale = 0.3;
+		transformComponent.scale = 1;
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 
 		// add the health component
