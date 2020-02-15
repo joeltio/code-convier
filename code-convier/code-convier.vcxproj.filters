@@ -512,9 +512,6 @@
     <ClInclude Include="GameStateComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="graphics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="HealthbarEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -697,6 +694,9 @@
     </ClInclude>
     <ClInclude Include="WalkingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Resource Files\HUD</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
