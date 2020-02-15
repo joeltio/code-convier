@@ -124,9 +124,11 @@ namespace Entity {
 				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
 				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
 				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
+				Component::Collidable entityCol = manager->getEntityComponent<Component::Collidable>(id);
 				float entityWidth = entityTex.totalWidth * entityPos.scale;
 				float entityHeight = entityTex.totalHeight * entityPos.scale;
 
+				
 				entityPhy.velocity[1] = 0;
 
 				std::vector<D3DXVECTOR2> corners = {
@@ -135,6 +137,7 @@ namespace Entity {
 					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
 					{(float)entityPos.x, (float)entityPos.y + entityHeight}
 				};
+				entityCol.corners = corners;
 			}
 		};
 
@@ -144,6 +147,7 @@ namespace Entity {
 				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
 				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
 				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
+				Component::Collidable entityCol = manager->getEntityComponent<Component::Collidable>(id);
 				float entityWidth = entityTex.totalWidth * entityPos.scale;
 				float entityHeight = entityTex.totalHeight * entityPos.scale;
 
@@ -155,6 +159,8 @@ namespace Entity {
 					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
 					{(float)entityPos.x, (float)entityPos.y + entityHeight}
 				};
+				
+				entityCol.corners = corners;
 			}
 		};
 

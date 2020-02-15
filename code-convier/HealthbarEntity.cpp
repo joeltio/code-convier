@@ -1,13 +1,13 @@
 #include "HealthbarEntity.h"
 
 namespace Entity {
-	ECS::EntityIdType Healthbar::create(ECS::Manager* manager, Graphics* graphics, float x, float y) {
+	ECS::EntityIdType Healthbar::create(ECS::Manager* manager, Graphics* graphics) {
 		ECS::EntityIdType healthbarEntityId = manager->createEntity<Healthbar>();
 
 		// add the transform component
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.x = 10;
-		transformComponent.y = 10;
+		transformComponent.x = 0.05 * GAME_WIDTH;
+		transformComponent.y = 0.05 * GAME_HEIGHT;
 		manager->addComponent<Component::Transform>(healthbarEntityId, transformComponent);
 
 		// add the texture component
@@ -24,7 +24,7 @@ namespace Entity {
 		for (ECS::EntityIdType playerEntityId : *playerEntityIds)
 		{
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(playerEntityId);
-			textureComponent.viewableRect.right = healthComponent.health / PLAYER_HEALTH;
+			textureComponent.viewableRect.right = (healthComponent.health / PLAYER_HEALTH)*100;
 		}
 
 		manager->addComponent<Component::Texture>(healthbarEntityId, textureComponent);		
