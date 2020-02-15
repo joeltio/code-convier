@@ -38,11 +38,11 @@ FSM::Action NotClickedState::update(float frameTime, Component::State state) {
 		}
 		else if (textComponent.buttonText == "Increased Damage") {
 			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);
-			augmentationComponent.damageAugmentation += INCREASED_DAMAGE_AUGMENTATION;
+			augmentationComponent.damageAugmentation += AUGMENTATED_DAMAGE_MULTIPLIER;
 		}
 		else if (textComponent.buttonText == "Energy Efficient") {
 			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);
-			augmentationComponent.energyHealAugmentation += ENERGY_EFFICIENT_AUGMENTATION;
+			augmentationComponent.energyHealAugmentation += AUGMENTATED_HEAL;
 		}
 		else if (textComponent.buttonText == "MultiHit") {
 			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);
