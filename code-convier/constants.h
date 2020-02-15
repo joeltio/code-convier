@@ -32,6 +32,11 @@
 const char MAINMENU_IMAGE[] = "MainMenu.png";
 const char PAUSEMENU_IMAGE[] = "PauseMenu.png";
 const char CREDITSBACKGROUND_IMAGE[] = "CreditsBackground.png";
+const char TEMPORARY_AUGMENTATION_IMAGE[] = "TemporaryAugmentation.png";
+
+const char ENERGY_EFFICIENT_IMAGE[] = "EnergyEfficient.png";
+const char INCREASED_DAMAGE_IMAGE[] = "IncreasedDamage.png";
+const char MULTIHIT_IMAGE[] = "MultiHit.png";
 
 const char CREDITS_BUTTON[] = "Credits.png";
 const char MENU_BUTTON[] = "Menu.png";
@@ -115,6 +120,8 @@ const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
 const int BUTTON_MARGIN = 30;
+const int CARD_SIDE_MARGIN = 65;
+const int CARD_MARGIN = 87;
 
 const float PLAYER_SPEED = 100.0f;
 const float PLAYER_CHARGE_SPEED = 200.0f;
@@ -128,6 +135,9 @@ const int AUGMENTATED_HEAL = 1;
 const float AUGMENTATED_COOLDOWN_REDUCTION = 0.5f;
 const float AUGMENTATED_DAMAGE_MULTIPLIER = 0.5f;
 const float AUGMENTATED_SPEED_MULTIPLIER = 0.1f;
+
+const int INCREASED_DAMAGE_AUGMENTATION = 30;
+const int ENERGY_EFFICIENT_AUGMENTATION = 5;
 
 const float ENEMY_SPEED = 100.0f;
 const int ENEMY_HEALTH = 40;

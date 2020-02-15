@@ -136,6 +136,9 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Temporary Augmentations">
+      <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AABBAABBCollisionStrategy.cpp">
@@ -344,6 +347,12 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TemporaryAugmentationEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="GameAugmentationState.cpp">
+      <Filter>Source Files\States\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -698,6 +707,15 @@
     <ClInclude Include="WalkingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="TemporaryAugmentationEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GameAugmentationState.h">
+      <Filter>Header Files\States\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="PrepareTemporaryAugmentationAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -797,6 +815,18 @@
     </Image>
     <Image Include="Start.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="TemporaryAugmentation.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="IncreasedDamage.png">
+      <Filter>Resource Files\Temporary Augmentations</Filter>
+    </Image>
+    <Image Include="EnergyEfficient.png">
+      <Filter>Resource Files\Temporary Augmentations</Filter>
+    </Image>
+    <Image Include="MultiHit.png">
+      <Filter>Resource Files\Temporary Augmentations</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

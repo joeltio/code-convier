@@ -61,4 +61,12 @@ void GameReducer::reduce(
 
 		FSM::Reducer::changeState<GameCreditsState>(states, gameState);
 	}
+	else if (action.type == PREPARE_TEMPORARY_AUGMENTATION_ACTION)
+	{
+		// Change the state of the game entity
+		ECS::EntityIdType gameEntityId = *manager->getEntities<Entity::Game>()->begin();
+		Component::GameState& gameState = manager->getEntityComponent<Component::GameState>(gameEntityId);
+
+		FSM::Reducer::changeState<GameAugmentationState>(states, gameState);
+	}
 }
