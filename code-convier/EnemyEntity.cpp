@@ -52,8 +52,8 @@ namespace Entity {
 
 		// add the attack component
 		Component::Attack attackComponent = Component::Attack();
-		attackComponent.attackDamage = ENEMY_ATTACK_DAMAGE;
-		attackComponent.attackCooldownTimer = ENEMY_ATTACK_COOLDOWN;
+		attackComponent.damage = ENEMY_ATTACK_DAMAGE;
+		attackComponent.cooldown = ENEMY_ATTACK_COOLDOWN;
 		manager->addComponent<Component::Attack>(enemyEntityId, attackComponent);
 
 		return enemyEntityId;
