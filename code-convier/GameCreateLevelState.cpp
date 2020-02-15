@@ -150,6 +150,8 @@ void GameCreateLevelState::enter(Component::State state) {
 			enemyList.push_back(enemyPosition);
 			Entity::Enemy::create(this->manager, this->graphics, ((float)randomX* tileWidth), ((float)randomY* tileHeight));
 		}
+
+		Entity::Healthbar::create(this->manager, this->graphics);
 	}
 }
 

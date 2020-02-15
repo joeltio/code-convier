@@ -8,6 +8,7 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 		transformComponent.x = x;
 		transformComponent.y = y;
+		transformComponent.scale = 4;
 		manager->addComponent<Component::Transform>(enemyEntityId, transformComponent);
 
 		// add the health component

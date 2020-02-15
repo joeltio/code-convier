@@ -13,6 +13,7 @@
 #include "SolidTileEntity.h"
 #include "DecorativeTileEntity.h"
 #include "EnemyEntity.h"
+#include "HealthbarEntity.h"
 #include "ResumeGameAction.h"
 
 class GameCreateLevelState : public FSM::State {
