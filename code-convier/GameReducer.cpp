@@ -1,7 +1,7 @@
 #include "GameReducer.h"
 
 bool GameReducer::acceptsAction(FSM::Action& action) {
-	for (std::string acceptedAction : ACCEPTED_ACTIONS)
+	for (std::string acceptedAction : GAME_ACCEPTED_ACTIONS)
 	{
 		if (action.type == acceptedAction)
 		{

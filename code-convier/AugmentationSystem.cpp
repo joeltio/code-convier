@@ -21,17 +21,18 @@ namespace System {
 			Component::Attack& attackComponent = manager->getEntityComponent<Component::Attack>(id);
 			Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(id);
 
-			healthComponent.health += augmentationComponent.energyHealAugmentation * AUGMENTATED_HEAL;
-			attackComponent.damage += augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
-			attackComponent.cooldown -= augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
-			chargeComponent.damage += augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
-			chargeComponent.cooldown -= augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
+			// set as base values to ensure its not compounded
+			healthComponent.health = healthComponent.health + augmentationComponent.energyHealAugmentation * AUGMENTATED_HEAL;
+			attackComponent.damage = attackComponent.damage + augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
+			attackComponent.cooldown = attackComponent.cooldown - augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
+			chargeComponent.damage = chargeComponent.damage + augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
+			chargeComponent.cooldown = chargeComponent.cooldown - augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
 			if (augmentationComponent.multiHitAugmentation)
 			{
 				attackComponent.multiHits = true;
 			}
 
-			physicsComponent.velocity.x *= augmentationComponent.speedAugmentation * AUGMENTATED_SPEED_MULTIPLIER;
+			physicsComponent.velocity.x = physicsComponent.velocity.x * augmentationComponent.speedAugmentation * AUGMENTATED_SPEED_MULTIPLIER;
 		}
 
 		// applied on the last step of changing the player's values

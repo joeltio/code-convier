@@ -25,7 +25,7 @@
 #include "GameAugmentationState.h"
 #include "GamePlayerDeathState.h"
 
-static std::string ACCEPTED_ACTIONS[] = {
+static std::string GAME_ACCEPTED_ACTIONS[] = {
 	PREPARE_GAME_ACTION,
 	PAUSE_GAME_ACTION,
 	PREPARE_MENU_ACTION,
