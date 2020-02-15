@@ -118,40 +118,39 @@ namespace Entity {
 		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
 		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
 
-		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
-			if (manager->getEntity(id)->isSameType<Player>())
-			{
-				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
-				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
-				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
-				Component::Collidable entityCol = manager->getEntityComponent<Component::Collidable>(id);
-				float entityWidth = entityTex.totalWidth * entityPos.scale;
-				float entityHeight = entityTex.totalHeight * entityPos.scale;
-
-				
-				entityPhy.velocity[1] = 0;
-
-				std::vector<D3DXVECTOR2> corners = {
-					{(float)entityPos.x, (float)entityPos.y},
-					{(float)entityPos.x + entityWidth, (float)entityPos.y},
-					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
-					{(float)entityPos.x, (float)entityPos.y + entityHeight}
-				};
-				entityCol.corners = corners;
-			}
-		};
-
 		collidable.onStay = [entityId](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
-				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
-				Component::Transform entityPos = manager->getEntityComponent<Component::Transform>(id);
-				Component::Texture entityTex = manager->getEntityComponent<Component::Texture>(id);
-				Component::Collidable entityCol = manager->getEntityComponent<Component::Collidable>(id);
-				float entityWidth = entityTex.totalWidth * entityPos.scale;
-				float entityHeight = entityTex.totalHeight * entityPos.scale;
+				Component::Transform& entityPos = manager->getEntityComponent<Component::Transform>(id);
+				Component::Collidable& entityCol = manager->getEntityComponent<Component::Collidable>(id);
+				Component::StaticCollidable tileCol = manager->getEntityComponent<Component::StaticCollidable>(entityId);
+				float entityWidth = entityCol.corners[1][0] - entityCol.corners[0][0];
+				float entityHeight = entityCol.corners[2][1] - entityCol.corners[0][1];
 
-				entityPhy.velocity[1] = 0;
+				float xDiff = tileCol.getCenter()[0] - entityCol.getCenter()[0];
+				float yDiff = tileCol.getCenter()[1] - entityCol.getCenter()[1];
+				if (abs(yDiff) > abs(xDiff))
+				{
+					if (yDiff > 0)
+					{
+						entityPos.y = tileCol.corners[0][1] - entityHeight - 1;
+					}
+					else if (yDiff < 0)
+					{
+						entityPos.y = tileCol.corners[3][1] + 1;
+					}
+				}
+				else if (abs(xDiff) > abs(yDiff))
+				{
+					if (xDiff > 0)
+					{
+						entityPos.x = tileCol.corners[0][0] - entityWidth - 1;
+					}
+					else if (xDiff < 0)
+					{
+						entityPos.x = tileCol.corners[1][0] + 1;
+					}
+				}
 
 				std::vector<D3DXVECTOR2> corners = {
 					{(float)entityPos.x, (float)entityPos.y},

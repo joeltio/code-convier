@@ -56,7 +56,7 @@ namespace Entity {
 		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
-				Component::Health entityHP = manager->getEntityComponent<Component::Health>(id);
+				Component::Health& entityHP = manager->getEntityComponent<Component::Health>(id);
 				Component::HealthRecover orbEnergy = manager->getEntityComponent<Component::HealthRecover>(entityId);
 
 				entityHP.health += orbEnergy.health;
