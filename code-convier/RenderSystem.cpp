@@ -73,7 +73,7 @@ namespace System {
 			this->manager->getComponents<Component::Texture>();
 
 		// Get the game state entity
-		Component::GameData gameState = this->manager->getComponents<Component::GameData>()->at(0);
+		Component::GameState gameState = this->manager->getComponents<Component::GameState>()->at(0);
 
 		// Group the values by their z-index
 		std::forward_list<Component::Texture*> zIndexGroups[MAX_Z_INDEX];
