@@ -139,6 +139,12 @@
     <Filter Include="Resource Files\Temporary Augmentations">
       <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States\Orb">
+      <UniqueIdentifier>{5e36c0d5-dad0-47ec-8d2f-d6fbc90a35d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Orb">
+      <UniqueIdentifier>{cec8c820-033e-4b58-91cc-4df539b9047d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AABBAABBCollisionStrategy.cpp">
@@ -350,6 +356,12 @@
     </ClCompile>
     <ClCompile Include="GameAugmentationState.cpp">
       <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="EnergyOrbIdleState.cpp">
+      <Filter>Source Files\States\Orb</Filter>
+    </ClCompile>
+    <ClCompile Include="EnergyOrbHomingState.cpp">
+      <Filter>Source Files\States\Orb</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -623,9 +635,6 @@
     <ClInclude Include="PlayerMovementReducer.h">
       <Filter>Header Files\Reducers</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerMovementRunningState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerMovementStateComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -709,6 +718,21 @@
     </ClInclude>
     <ClInclude Include="ChargeComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbIdleState.h">
+      <Filter>Header Files\States\Orb</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbHomingState.h">
+      <Filter>Header Files\States\Orb</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbDetectPlayerAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

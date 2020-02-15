@@ -11,6 +11,7 @@
 #include "TextureComponent.h"
 #include "StaticCollidableComponent.h"
 #include "HealthRecoverComponent.h"
+#include "EnergyOrbStateComponent.h"
 
 namespace Entity {
 

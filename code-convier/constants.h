@@ -135,6 +135,8 @@ const int AUGMENTATED_HEAL = 1;
 const float AUGMENTATED_COOLDOWN_REDUCTION = 0.5f;
 const float AUGMENTATED_DAMAGE_MULTIPLIER = 0.5f;
 const float AUGMENTATED_SPEED_MULTIPLIER = 0.1f;
+const int ORB_DETECTION_RANGE = tileWidth * 5;
+const int ORB_ACCELERATION = PLAYER_SPEED * 1.5;
 
 const float ENEMY_SPEED = 100.0f;
 const int ENEMY_HEALTH = 40;

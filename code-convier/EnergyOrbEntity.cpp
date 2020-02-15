@@ -9,6 +9,11 @@ namespace Entity {
 		transformComponent.x = x;
 		transformComponent.y = y;
 
+		// add the physics component
+		Component::Physics physicsComponent = Component::Physics();
+		physicsComponent.acceleration[0] = 0;
+		physicsComponent.acceleration[1] = 0;
+
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
 		switch (rand() % 4) {
@@ -65,6 +70,15 @@ namespace Entity {
 			}
 		};
 
+		//add state component
+		Component::EnergyOrbState orbStateComponent = Component::EnergyOrbState{
+			entityId,
+			true,
+			Types::toTypeId<EnergyOrb>()
+		};
+
+		manager->addComponent<Component::Physics>(entityId, physicsComponent);
+		manager->addComponent<Component::EnergyOrbState>(entityId, orbStateComponent);
 		manager->addComponent<Component::HealthRecover>(entityId, HPRegenComponent);
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 		manager->addComponent<Component::Texture>(entityId, textureComponent);

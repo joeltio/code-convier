@@ -7,7 +7,7 @@ FSM::Action EnemyDeathState::update(float frametime, Component::State stateCompo
 	{
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(enemyEntityId);
 		Component::Texture& textureComponent = manager->getEntityComponent<Component::Texture>(enemyEntityId);
-		Component::Collidable& collidableComponent = manager->getEntityComponent<Component::Collidable>(enemyEntityId);
+		Component::Collidable collidableComponent = manager->getEntityComponent<Component::Collidable>(enemyEntityId);
 		if (healthComponent.health <= 0) {
 			//insert Enemy Death Action
 			textureComponent.loadTexture(graphics, SKELETON_DEAD_IMAGE);

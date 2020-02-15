@@ -176,6 +176,8 @@
     <ClCompile Include="EnemyHealthIdleState.cpp" />
     <ClCompile Include="EnemyMovementChaseState.cpp" />
     <ClCompile Include="EnemyMovementIdleState.cpp" />
+    <ClCompile Include="EnergyOrbHomingState.cpp" />
+    <ClCompile Include="EnergyOrbIdleState.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClInclude Include="ChargeComponent.h" />
@@ -186,6 +188,10 @@
     <ClInclude Include="EnemyMovementChaseState.h" />
     <ClInclude Include="EnemyMovementIdleState.h" />
     <ClInclude Include="EnergyOrbEntity.h" />
+    <ClInclude Include="EnergyOrbHomingState.h" />
+    <ClInclude Include="EnergyOrbIdleState.h" />
+    <ClInclude Include="EnergyOrbStateComponent.h" />
+    <ClInclude Include="EnergyOrbReducer.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameAugmentationState.cpp" />
@@ -235,6 +241,7 @@
     <ClInclude Include="HurtBoxComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
+    <ClInclude Include="OrbDetectPlayerAction.h" />
     <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
     <ClInclude Include="TemporaryAugmentationEntity.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
