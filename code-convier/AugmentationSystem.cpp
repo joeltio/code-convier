@@ -22,8 +22,8 @@ namespace System {
 			Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(id);
 
 			healthComponent.health += augmentationComponent.energyHealAugmentation * AUGMENTATED_HEAL;
-			attackComponent.attackDamage += augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
-			attackComponent.attackCooldownTimer -= augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
+			attackComponent.damage += augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
+			attackComponent.cooldown -= augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
 			chargeComponent.chargeDamage += augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
 			chargeComponent.chargeCooldownTimer -= augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
 			if (augmentationComponent.multiHitAugmentation)
