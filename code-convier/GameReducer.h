@@ -14,6 +14,7 @@
 #include "ShowCreditsAction.h"
 #include "ResumeGameAction.h"
 #include "PrepareTemporaryAugmentationAction.h"
+#include "PreparePlayerDeathAction.h"
 
 // States that this reducer hanndles
 #include "GameCreateLevelState.h"
@@ -22,6 +23,7 @@
 #include "GamePauseState.h"
 #include "GameRunningState.h"
 #include "GameAugmentationState.h"
+#include "GamePlayerDeathState.h"
 
 static std::string ACCEPTED_ACTIONS[] = {
 	PREPARE_GAME_ACTION,
@@ -30,7 +32,8 @@ static std::string ACCEPTED_ACTIONS[] = {
 	QUIT_GAME_ACTION,
 	SHOW_CREDITS_ACTION,
 	RESUME_GAME_ACTION,
-	PREPARE_TEMPORARY_AUGMENTATION_ACTION
+	PREPARE_TEMPORARY_AUGMENTATION_ACTION,
+	PREPARE_PLAYER_DEATH_ACTION
 };
 
 class GameReducer : public FSM::Reducer {

@@ -207,6 +207,7 @@
     <ClCompile Include="OBBOBBCollisionStrategy.cpp" />
     <ClCompile Include="PauseMenuEntity.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PlayerDeathScreenEntity.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
     <ClCompile Include="PlayerHealthIdleState.cpp" />
@@ -235,6 +236,8 @@
     <ClInclude Include="HurtBoxComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
+    <ClInclude Include="PlayerDeathScreenEntity.h" />
+    <ClInclude Include="PreparePlayerDeathAction.h" />
     <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
     <ClInclude Include="TemporaryAugmentationEntity.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
@@ -353,6 +356,7 @@
     <Image Include="MainMenu.png" />
     <Image Include="MultiHit.png" />
     <Image Include="PauseMenu.png" />
+    <Image Include="PlayerDeathScreen.png" />
     <Image Include="Skeleton_Attack.png" />
     <Image Include="Skeleton_Dead.png" />
     <Image Include="Skeleton_Hit.png" />
