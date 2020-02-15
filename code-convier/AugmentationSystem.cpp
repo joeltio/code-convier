@@ -24,8 +24,8 @@ namespace System {
 			healthComponent.health += augmentationComponent.energyHealAugmentation * AUGMENTATED_HEAL;
 			attackComponent.damage += augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
 			attackComponent.cooldown -= augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
-			chargeComponent.chargeDamage += augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
-			chargeComponent.chargeCooldownTimer -= augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
+			chargeComponent.damage += augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
+			chargeComponent.cooldown -= augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
 			if (augmentationComponent.multiHitAugmentation)
 			{
 				attackComponent.multiHits = true;
