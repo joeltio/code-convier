@@ -5,6 +5,7 @@
 #include "StateComponent.h"
 #include "TransformComponent.h"
 #include "TextureComponent.h"
+#include "AugmentationComponent.h"
 #include "TextComponent.h"
 #include "QuitGameAction.h"
 #include "ShowCreditsAction.h"

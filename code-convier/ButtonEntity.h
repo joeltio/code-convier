@@ -7,6 +7,7 @@
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 #include "TextComponent.h"
+#include "AugmentationComponent.h"
 #include "ClickStateComponent.h"
 #include "NotClickedState.h"
 

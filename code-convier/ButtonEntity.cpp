@@ -51,6 +51,10 @@ namespace Entity {
 
 		manager->addComponent<Component::ClickState>(buttonId, clickStateComponent);
 
+		Component::Augmentation augmentationComponent = Component::Augmentation();
+		
+		manager->addComponent<Component::Augmentation>(buttonId, augmentationComponent);
+
 		return buttonId;
 	}
 }

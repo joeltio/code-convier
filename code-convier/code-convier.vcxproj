@@ -187,6 +187,7 @@
     <ClInclude Include="EnergyOrbEntity.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="GameAugmentationState.cpp" />
     <ClCompile Include="GameCreateLevelState.cpp" />
     <ClCompile Include="GameCreditsState.cpp" />
     <ClCompile Include="GameMenuState.cpp" />
@@ -224,14 +225,18 @@
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="SystemRunner.cpp" />
+    <ClCompile Include="TemporaryAugmentationEntity.cpp" />
     <ClCompile Include="TextureComponent.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="vectorUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
+    <ClInclude Include="GameAugmentationState.h" />
     <ClInclude Include="GameLevelComponent.h" />
     <ClInclude Include="HurtBoxComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
+    <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
+    <ClInclude Include="TemporaryAugmentationEntity.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
   </ItemGroup>
   <ItemGroup>
@@ -344,8 +349,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="CreditsBackground.png" />
+    <Image Include="EnergyEfficient.png" />
     <Image Include="Healthbar.png" />
+    <Image Include="IncreasedDamage.png" />
     <Image Include="MainMenu.png" />
+    <Image Include="MultiHit.png" />
     <Image Include="PauseMenu.png" />
     <Image Include="Skeleton_Attack.png" />
     <Image Include="Skeleton_Dead.png" />
@@ -356,6 +364,7 @@
     <Image Include="sprites\Experience_Orb.gif" />
     <Image Include="sprites\tiles.png" />
     <Image Include="sprites\background.png" />
+    <Image Include="TemporaryAugmentation.png" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Credits.png" />

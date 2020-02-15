@@ -36,6 +36,18 @@ FSM::Action NotClickedState::update(float frameTime, Component::State state) {
 		else if (textComponent.buttonText == "Menu") {
 			action = PrepareMenuAction();
 		}
+		else if (textComponent.buttonText == "Increased Damage") {
+			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);
+			augmentationComponent.damageAugmentation += INCREASED_DAMAGE_AUGMENTATION;
+		}
+		else if (textComponent.buttonText == "Energy Efficient") {
+			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);
+			augmentationComponent.energyHealAugmentation += ENERGY_EFFICIENT_AUGMENTATION;
+		}
+		else if (textComponent.buttonText == "MultiHit") {
+			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);
+			augmentationComponent.multiHitAugmentation = true;
+		}
 	}
 
 	if (action.type != FSM::NO_ACTION)
