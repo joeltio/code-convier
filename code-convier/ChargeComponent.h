@@ -6,8 +6,9 @@ namespace Component {
 
 	struct Charge : public ECS::Component {
 	public:
-		int chargeDamage = 0;
-		float chargeCooldownTimer = 0.0f;
+		int damage = 0;
+		float cooldown = 0.0f;
+		float cooldownTimer = 0.0f;
 	};
 
 }
