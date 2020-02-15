@@ -707,6 +707,9 @@
     <ClInclude Include="graphics.h">
       <Filter>Resource Files\HUD</Filter>
     </ClInclude>
+    <ClInclude Include="ChargeComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">

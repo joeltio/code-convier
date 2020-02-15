@@ -29,7 +29,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	if (input->isKeyDown(LSHIFT_KEY))
 	{
 		// check for direction
-		if (input->isKeyDown('A')) // left
+		if (input->isKeyDown('A')) // left run
 		{
 			Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(stateComponent.entityId);
 			physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
@@ -37,7 +37,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 			healthComponent.health -= RUNNING_HEATLH_TICK;
 		}
 
-		else if (input->isKeyDown('D')) // right
+		else if (input->isKeyDown('D')) // right run
 		{
 			Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(stateComponent.entityId);
 			physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
@@ -53,8 +53,10 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * SCALE_FACTOR;
 		Component::Health healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		healthComponent.health -= CHARGE_HEALTH_TICK;
+		Component::Charge chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
+		chargeComponent.cooldownTimer = chargeComponent.cooldown;
+		return ChargingPlayerMovement();
 	}
-
 
 	return FSM::NoAction();
 }
