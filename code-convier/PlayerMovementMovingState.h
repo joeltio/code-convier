@@ -4,6 +4,7 @@
 #include "State.h"
 #include "PhysicsComponent.h"
 #include "JumpingComponent.h"
+#include "HealthComponent.h"
 
 // player jumps with a constant V value
 

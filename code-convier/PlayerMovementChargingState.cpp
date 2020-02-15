@@ -2,7 +2,6 @@
 
 FSM::Action PlayerMovementChargingState::update(float frametime, Component::State stateComponent)
 {
-	// mutually exclusive with running and walking
 	if (input->isKeyDown('K')) // charge
 	{
 		Component::Physics physicsComponent = manager->getEntityComponent<Component::Physics>(stateComponent.entityId);

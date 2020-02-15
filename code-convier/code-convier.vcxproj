@@ -213,7 +213,6 @@
     <ClCompile Include="PlayerMovementChargingState.cpp" />
     <ClCompile Include="PlayerMovementIdleState.cpp" />
     <ClCompile Include="PlayerMovementReducer.cpp" />
-    <ClCompile Include="PlayerMovementRunningState.cpp" />
     <ClCompile Include="PlayerMovementMovingState.cpp" />
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
@@ -304,7 +303,6 @@
     <ClInclude Include="PlayerMovementIdleState.h" />
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementReducer.h" />
-    <ClInclude Include="PlayerMovementRunningState.h" />
     <ClInclude Include="PlayerMovementStateComponent.h" />
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="PrepareMenuAction.h" />
@@ -315,7 +313,6 @@
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ResumeGameAction.h" />
-    <ClInclude Include="RunningPlayerMovementAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="SolidTileEntity.h" />
     <ClInclude Include="SquareLineCollisionStrategy.h" />

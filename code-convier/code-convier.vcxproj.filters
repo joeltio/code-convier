@@ -309,9 +309,6 @@
     <ClCompile Include="PlayerMovementReducer.cpp">
       <Filter>Source Files\Reducers</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerMovementRunningState.cpp">
-      <Filter>Source Files\States\PlayerMovement</Filter>
-    </ClCompile>
     <ClCompile Include="Reducer.tpp">
       <Filter>Source Files\FSM</Filter>
     </ClCompile>
@@ -629,9 +626,6 @@
     <ClInclude Include="PlayerMovementRunningState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerMovementRunningState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerMovementStateComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -654,9 +648,6 @@
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="ResumeGameAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="RunningPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="ShowCreditsAction.h">
