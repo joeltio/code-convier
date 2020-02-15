@@ -1,7 +1,7 @@
 #include "GameReducer.h"
 
 bool GameReducer::acceptsAction(FSM::Action& action) {
-	for (std::string acceptedAction : ACCEPTED_ACTIONS)
+	for (std::string acceptedAction : GAME_ACCEPTED_ACTIONS)
 	{
 		if (action.type == acceptedAction)
 		{
@@ -68,5 +68,13 @@ void GameReducer::reduce(
 		Component::GameState& gameState = manager->getEntityComponent<Component::GameState>(gameEntityId);
 
 		FSM::Reducer::changeState<GameAugmentationState>(states, gameState);
+	}
+	else if (action.type == PREPARE_PLAYER_DEATH_ACTION)
+	{
+		// Change the state of the game entity
+		ECS::EntityIdType gameEntityId = *manager->getEntities<Entity::Game>()->begin();
+		Component::GameState& gameState = manager->getEntityComponent<Component::GameState>(gameEntityId);
+
+		FSM::Reducer::changeState<GamePlayerDeathState>(states, gameState);
 	}
 }

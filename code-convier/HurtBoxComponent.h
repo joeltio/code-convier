@@ -4,6 +4,8 @@
 
 namespace Component {
 
-	struct HurtBox : Collidable {};
+	struct HurtBox : Collidable {
+		HurtBox() : Collidable(CollisionUtil::CollisionType::AABB) {}
+	};
 
 }

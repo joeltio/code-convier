@@ -2,9 +2,16 @@
 
 FSM::Action PlayerHealthIdleState::update(float frametime, Component::State stateComponent)
 {
-	// reduce the health of the player
-	Component::Health healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
-	healthComponent.health -= HEALTH_TICK;
+	std::unordered_set<ECS::EntityIdType> playerEntityIds = *this->manager->getEntities<Entity::Player>();
+	for (ECS::EntityIdType playerEntityId : playerEntityIds)
+	{
+		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(playerEntityId);
+		if (healthComponent.health <= 0) {
+			return PreparePlayerDeathAction();
+		}
 
+		// reduce the health of the player
+		healthComponent.health -= HEALTH_TICK;
+	}
 	return FSM::NoAction();
 }

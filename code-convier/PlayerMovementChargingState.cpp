@@ -12,6 +12,6 @@ FSM::Action PlayerMovementChargingState::update(float frametime, Component::Stat
 	}
 	else
 	{
-		return IdlePlayerMovement();
+		return WalkingPlayerMovement();
 	}
 }

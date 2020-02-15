@@ -77,11 +77,11 @@ bool doExtentsIntersect(std::pair<float, float>& a, std::pair<float, float>& b) 
 	);
 }
 
-std::pair<float, float> findVectorExtents(std::vector<D3DXVECTOR2> corners, D3DXVECTOR2 normal) {
+std::pair<float, float> findVectorExtents(std::vector<D3DXVECTOR2>& corners, D3DXVECTOR2& normal) {
 	float min = INFINITY;
 	float max = -INFINITY;
 
-	for (D3DXVECTOR2 corner : corners)
+	for (D3DXVECTOR2& corner : corners)
 	{
 		float projection = D3DXVec2Dot(&corner, &normal);
 

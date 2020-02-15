@@ -53,6 +53,7 @@ class Manager {
 		template<typename ComponentType> bool entityHasComponent(EntityIdType id);
 
 		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
+		template<typename ComponentType> void removeComponent(EntityIdType id);
 
 		// Removes entity and its components immediately
 		template<typename EntityType> void removeEntity(EntityIdType id);

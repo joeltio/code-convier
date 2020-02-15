@@ -15,6 +15,8 @@ namespace Component {
 		float initialDelayTimer = 0.0f;
 		// Whether the attack can hit multiple people
 		bool multiHits = false;
+		// Horizontal range of attack
+		int range = 0;
 	};
 
 }

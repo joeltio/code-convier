@@ -6,7 +6,6 @@
 #include "HealthComponent.h"
 #include "ChargeComponent.h"
 #include "WalkingPlayerMovementAction.h"
-#include "IdlePlayerMovementAction.h"
 
 class PlayerMovementChargingState : public FSM::State {
 	FSM::Action update(float frametime, Component::State stateComponent);

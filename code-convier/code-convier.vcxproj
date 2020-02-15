@@ -185,6 +185,8 @@
     <ClInclude Include="CircleLineCollisionStrategy.h" />
     <ClInclude Include="EnemyAIComponent.h" />
     <ClInclude Include="EnemyAISystem.h" />
+    <ClInclude Include="EnemyAttackAction.h" />
+    <ClInclude Include="SkeletonAttackState.h" />
     <ClInclude Include="EnemyMovementChaseState.h" />
     <ClInclude Include="EnemyMovementIdleState.h" />
     <ClInclude Include="EnergyOrbEntity.h" />
@@ -213,6 +215,9 @@
     <ClCompile Include="OBBOBBCollisionStrategy.cpp" />
     <ClCompile Include="PauseMenuEntity.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PlayerChargedIconEntity.cpp" />
+    <ClCompile Include="PlayerChargingIconEntity.cpp" />
+    <ClCompile Include="PlayerDeathScreenEntity.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
     <ClCompile Include="PlayerHealthIdleState.cpp" />
@@ -221,9 +226,12 @@
     <ClCompile Include="PlayerMovementIdleState.cpp" />
     <ClCompile Include="PlayerMovementReducer.cpp" />
     <ClCompile Include="PlayerMovementMovingState.cpp" />
+    <ClCompile Include="PlayerRunIconEntity.cpp" />
+    <ClCompile Include="PlayerRunningIconEntity.cpp" />
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="SkeletonAttackState.cpp" />
     <ClCompile Include="SolidTileEntity.cpp" />
     <ClCompile Include="EnergyOrbEntity.cpp" />
     <ClCompile Include="SquareLineCollisionStrategy.cpp" />
@@ -241,6 +249,12 @@
     <ClInclude Include="HurtBoxComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
+    <ClInclude Include="PlayerChargedIconEntity.h" />
+    <ClInclude Include="PlayerChargingIconEntity.h" />
+    <ClInclude Include="PlayerDeathScreenEntity.h" />
+    <ClInclude Include="PlayerRunIconEntity.h" />
+    <ClInclude Include="PlayerRunningIconEntity.h" />
+    <ClInclude Include="PreparePlayerDeathAction.h" />
     <ClInclude Include="OrbDetectPlayerAction.h" />
     <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
     <ClInclude Include="TemporaryAugmentationEntity.h" />
@@ -360,6 +374,11 @@
     <Image Include="MainMenu.png" />
     <Image Include="MultiHit.png" />
     <Image Include="PauseMenu.png" />
+    <Image Include="PlayerChargedIcon.png" />
+    <Image Include="PlayerChargingIcon.png" />
+    <Image Include="PlayerDeathScreen.png" />
+    <Image Include="PlayerRunIcon.png" />
+    <Image Include="PlayerRunningIcon.png" />
     <Image Include="Skeleton_Attack.png" />
     <Image Include="Skeleton_Dead.png" />
     <Image Include="Skeleton_Hit.png" />

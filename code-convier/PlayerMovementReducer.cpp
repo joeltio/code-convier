@@ -1,7 +1,7 @@
 #include "PlayerMovementReducer.h"
 
 bool PlayerMovementReducer::acceptsAction(FSM::Action& action) {
-	for (std::string acceptedAction : ACCEPTED_ACTIONS)
+	for (std::string acceptedAction : MOVEMENT_ACCEPTED_ACTIONS)
 	{
 		if (action.type == acceptedAction)
 		{
