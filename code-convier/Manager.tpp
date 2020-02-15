@@ -156,10 +156,10 @@ template<typename ComponentType> void Manager::removeComponent(EntityIdType id) 
 	ComponentType& component = componentVectorPtr->at(componentIndex);
 
 	// Deactivate the component
-	component->isActive = false;
+	component.isActive = false;
 
 	// Add the component to the queue of components to be reused
-	this->deletedComponents.at(componentType)->push(componentIndex);
+	this->deletedComponents.at(componentTypeId)->push(componentIndex);
 
 	// Remove the component from the entityComponents map
 	this->entityComponents.at(id)->erase(componentTypeId);
