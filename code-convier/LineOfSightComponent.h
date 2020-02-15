@@ -10,6 +10,7 @@ namespace Component {
 	struct LineOfSight : public Collidable {
 		LineOfSight() : Collidable(CollisionUtil::CollisionType::LINE) {
 			this->corners.push_back(D3DXVECTOR2(0.0f, 0.0f));
+			this->corners.push_back(D3DXVECTOR2(0.0f, 0.0f));
 		}
 
 		// Set the position of the entity that owns this line of sight component
