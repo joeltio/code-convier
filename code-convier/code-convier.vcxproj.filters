@@ -136,6 +136,9 @@
     <Filter Include="Resource Files\Temporary Augmentations">
       <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Icons">
+      <UniqueIdentifier>{151f56c5-5b83-451d-9cb6-d7f24a265042}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AABBAABBCollisionStrategy.cpp">
@@ -349,6 +352,18 @@
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="PlayerDeathScreenEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerChargingIconEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRunningIconEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRunIconEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerChargedIconEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
@@ -713,6 +728,18 @@
     <ClInclude Include="PreparePlayerDeathAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerChargedIconEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRunningIconEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerChargingIconEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRunIconEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -827,6 +854,18 @@
     </Image>
     <Image Include="PlayerDeathScreen.png">
       <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="PlayerRunIcon.png">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="PlayerChargedIcon.png">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="PlayerRunningIcon.png">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="PlayerChargingIcon.png">
+      <Filter>Resource Files\Icons</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
