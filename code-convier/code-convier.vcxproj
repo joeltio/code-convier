@@ -227,6 +227,7 @@
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="vectorUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
+    <ClInclude Include="GameLevelComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
   </ItemGroup>
