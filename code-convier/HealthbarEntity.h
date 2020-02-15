@@ -13,7 +13,7 @@ namespace Entity {
 
 	class Healthbar : public ECS::Entity {
 	public:
-		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics, float x, float y);
+		static ECS::EntityIdType create(ECS::Manager* manager, Graphics* graphics);
 	};
 
 }
