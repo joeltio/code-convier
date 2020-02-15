@@ -10,16 +10,12 @@ ECS::EntityIdType Game::create(ECS::Manager* manager) {
 		true, // isActive
 		Types::toTypeId<GameMenuState>()
 	};
+	gameStateComponent.renderRect.left = 0;
+	gameStateComponent.renderRect.right = GAME_WIDTH;
+	gameStateComponent.renderRect.top = 0;
+	gameStateComponent.renderRect.bottom = GAME_HEIGHT;
 
 	manager->addComponent<Component::GameState>(entityId, gameStateComponent);
-
-	Component::GameData gameDataComponent = Component::GameData();
-	gameDataComponent.renderRect.left = 0;
-	gameDataComponent.renderRect.right = GAME_WIDTH;
-	gameDataComponent.renderRect.top = 0;
-	gameDataComponent.renderRect.bottom = GAME_HEIGHT;
-
-	manager->addComponent<Component::GameData>(entityId, gameDataComponent);
 
 	Component::Augmentation augmentationComponent = Component::Augmentation();
 	manager->addComponent<Component::Augmentation>(entityId, augmentationComponent);

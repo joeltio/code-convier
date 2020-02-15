@@ -3,7 +3,6 @@
 #include "Entity.h"
 #include "Manager.h"
 #include "GameStateComponent.h"
-#include "GameDataComponent.h"
 #include "GameMenuState.h"
 #include "AugmentationComponent.h"
 
