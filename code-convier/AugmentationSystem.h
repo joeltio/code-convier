@@ -6,6 +6,7 @@
 #include "PhysicsComponent.h"
 #include "HealthComponent.h"
 #include "AttackComponent.h"
+#include "ChargeComponent.h"
 #include <unordered_set>
 
 namespace System {

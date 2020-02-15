@@ -8,6 +8,7 @@
 #include "CircleCircleCollisionStrategy.h"
 #include "CircleLineCollisionStrategy.h"
 #include "CircleOBBCollisionStrategy.h"
+#include "LineLineCollisionStrategy.h"
 #include "OBBOBBCollisionStrategy.h"
 #include "SquareLineCollisionStrategy.h"
 
@@ -19,6 +20,7 @@ static CollisionUtil::CollisionStrategy* COLLISION_STRATEGIES[] = {
 	new CollisionUtil::CircleCircleCollisionStrategy(),
 	new CollisionUtil::CircleLineCollisionStrategy(),
 	new CollisionUtil::CircleOBBCollisionStrategy(),
+	new CollisionUtil::LineLineCollisionStrategy(),
 	new CollisionUtil::OBBOBBCollisionStrategy(),
 	new CollisionUtil::SquareLineCollisionStrategy()
 };

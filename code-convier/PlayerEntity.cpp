@@ -55,6 +55,10 @@ namespace Entity {
 		// tune the values later on
 		manager->addComponent<Component::Attack>(entityId, attackComponent);
 
+		// add the charging component
+		Component::Charge chargeComponent = Component::Charge();
+		manager->addComponent<Component::Charge>(entityId, chargeComponent);
+
 		// add the Jumping component
 		Component::Jumping jumpingComponent = Component::Jumping();
 		manager->addComponent<Component::Jumping>(entityId, jumpingComponent);

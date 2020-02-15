@@ -8,6 +8,7 @@
 #include "PhysicsComponent.h"
 #include "TransformComponent.h"
 #include "HealthComponent.h"
+#include "ChargeComponent.h"
 #include "JumpingComponent.h"
 #include "AnimatableComponent.h"
 #include "CollidableComponent.h"
