@@ -67,7 +67,7 @@ namespace Entity {
 		Component::PlayerMovementState movementStateComponent = Component::PlayerMovementState {
 			entityId,
 			true,
-			Types::toTypeId<PlayerMovementIdleState>()
+			Types::toTypeId<PlayerMovementMovingState>()
 		};
 		manager->addComponent<Component::PlayerMovementState>(entityId, movementStateComponent);
 

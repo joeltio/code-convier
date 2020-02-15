@@ -209,6 +209,7 @@
     <ClCompile Include="OBBOBBCollisionStrategy.cpp" />
     <ClCompile Include="PauseMenuEntity.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PlayerDeathScreenEntity.cpp" />
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
     <ClCompile Include="PlayerHealthIdleState.cpp" />
@@ -216,7 +217,6 @@
     <ClCompile Include="PlayerMovementChargingState.cpp" />
     <ClCompile Include="PlayerMovementIdleState.cpp" />
     <ClCompile Include="PlayerMovementReducer.cpp" />
-    <ClCompile Include="PlayerMovementRunningState.cpp" />
     <ClCompile Include="PlayerMovementMovingState.cpp" />
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
@@ -239,6 +239,8 @@
     <ClInclude Include="HurtBoxComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
+    <ClInclude Include="PlayerDeathScreenEntity.h" />
+    <ClInclude Include="PreparePlayerDeathAction.h" />
     <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
     <ClInclude Include="TemporaryAugmentationEntity.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
@@ -308,7 +310,6 @@
     <ClInclude Include="PlayerMovementIdleState.h" />
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementReducer.h" />
-    <ClInclude Include="PlayerMovementRunningState.h" />
     <ClInclude Include="PlayerMovementStateComponent.h" />
     <ClInclude Include="PrepareGameAction.h" />
     <ClInclude Include="PrepareMenuAction.h" />
@@ -319,7 +320,6 @@
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="PlayerHealthReplenishingState.h" />
     <ClInclude Include="ResumeGameAction.h" />
-    <ClInclude Include="RunningPlayerMovementAction.h" />
     <ClInclude Include="ShowCreditsAction.h" />
     <ClInclude Include="SolidTileEntity.h" />
     <ClInclude Include="SquareLineCollisionStrategy.h" />
@@ -359,6 +359,7 @@
     <Image Include="MainMenu.png" />
     <Image Include="MultiHit.png" />
     <Image Include="PauseMenu.png" />
+    <Image Include="PlayerDeathScreen.png" />
     <Image Include="Skeleton_Attack.png" />
     <Image Include="Skeleton_Dead.png" />
     <Image Include="Skeleton_Hit.png" />

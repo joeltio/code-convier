@@ -33,6 +33,7 @@ const char MAINMENU_IMAGE[] = "MainMenu.png";
 const char PAUSEMENU_IMAGE[] = "PauseMenu.png";
 const char CREDITSBACKGROUND_IMAGE[] = "CreditsBackground.png";
 const char TEMPORARY_AUGMENTATION_IMAGE[] = "TemporaryAugmentation.png";
+const char PLAYER_DEATH_SCREEN_IMAGE[] = "PlayerDeathScreen.png";
 
 const char ENERGY_EFFICIENT_IMAGE[] = "EnergyEfficient.png";
 const char INCREASED_DAMAGE_IMAGE[] = "IncreasedDamage.png";

@@ -1,7 +1,7 @@
 #include "PlayerMovementReducer.h"
 
 bool PlayerMovementReducer::acceptsAction(FSM::Action& action) {
-	for (std::string acceptedAction : ACCEPTED_ACTIONS)
+	for (std::string acceptedAction : MOVEMENT_ACCEPTED_ACTIONS)
 	{
 		if (action.type == acceptedAction)
 		{
@@ -25,15 +25,6 @@ void PlayerMovementReducer::reduce(
 		Component::PlayerMovementState& movementState = manager->getEntityComponent<Component::PlayerMovementState>(playerEntityId);
 
 		FSM::Reducer::changeState<PlayerMovementMovingState>(states, movementState);
-	}
-
-	else if (action.type == RUNNING_PLAYER_MOVEMENT)
-	{
-		// Change the state of the player entity
-		ECS::EntityIdType playerEntityId = *manager->getEntities<Entity::Player>()->begin();
-		Component::PlayerMovementState& movementState = manager->getEntityComponent<Component::PlayerMovementState>(playerEntityId);
-
-		FSM::Reducer::changeState<PlayerMovementRunningState>(states, movementState);
 	}
 
 	else if (action.type == CHARGING_PLAYER_MOVEMENT)

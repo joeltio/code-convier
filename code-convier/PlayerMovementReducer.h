@@ -8,18 +8,15 @@
 
 #include "IdlePlayerMovementAction.h"
 #include "WalkingPlayerMovementAction.h"
-#include "RunningPlayerMovementAction.h"
 #include "ChargingPlayerMovementAction.h"
 
 #include "PlayerMovementIdleState.h"
 #include "PlayerMovementMovingState.h"
-#include "PlayerMovementRunningState.h"
 #include "PlayerMovementChargingState.h"
 
-static std::string ACCEPTED_ACTIONS[] = {
+static std::string MOVEMENT_ACCEPTED_ACTIONS[] = {
 	IDLE_PLAYER_MOVEMENT,
 	WALKING_PLAYER_MOVEMENT,
-	RUNNING_PLAYER_MOVEMENT,
 	CHARGING_PLAYER_MOVEMENT
 };
 

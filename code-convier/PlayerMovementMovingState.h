@@ -4,8 +4,11 @@
 #include "State.h"
 #include "PhysicsComponent.h"
 #include "JumpingComponent.h"
-
-// player jumps with a constant V value
+#include "HealthComponent.h"
+#include "ChargeComponent.h"
+#include "IdlePlayerMovementAction.h"
+#include "ChargingPlayerMovementAction.h"
+#include "WalkingPlayerMovementAction.h"
 
 class PlayerMovementMovingState : public FSM::State {
 	FSM::Action update(float frametime, Component::State stateComponent);

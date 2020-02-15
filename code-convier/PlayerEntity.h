@@ -14,7 +14,7 @@
 #include "CollidableComponent.h"
 #include "AttackComponent.h"
 #include "PlayerMovementStateComponent.h"
-#include "PlayerMovementIdleState.h"
+#include "PlayerMovementMovingState.h"
 
 namespace Entity {
 
