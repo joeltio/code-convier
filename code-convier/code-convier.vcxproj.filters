@@ -482,9 +482,6 @@
     <ClInclude Include="GameCreditsState.h">
       <Filter>Header Files\States\Game</Filter>
     </ClInclude>
-    <ClInclude Include="GameDataComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
     <ClInclude Include="GameEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -525,6 +522,9 @@
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="HealthRecoverComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="HurtBoxComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="IdlePlayerMovementAction.h">

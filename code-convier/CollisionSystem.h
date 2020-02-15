@@ -15,6 +15,7 @@
 #include "CollidableComponent.h"
 #include "StaticCollidableComponent.h"
 #include "LineOfSightComponent.h"
+#include "HurtBoxComponent.h"
 #include "PhysicsComponent.h"
 
 namespace System {

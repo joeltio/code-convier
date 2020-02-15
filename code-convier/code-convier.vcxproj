@@ -229,6 +229,7 @@
     <ClCompile Include="vectorUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
     <ClInclude Include="GameLevelComponent.h" />
+    <ClInclude Include="HurtBoxComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
@@ -279,7 +280,6 @@
     <ClInclude Include="fsmConstants.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="GameCreateLevelState.h" />
-    <ClInclude Include="GameDataComponent.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="GameMenuState.h" />

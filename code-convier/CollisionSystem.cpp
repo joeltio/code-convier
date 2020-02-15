@@ -167,7 +167,9 @@ namespace System {
 			{Types::toTypeId<Component::StaticCollidable>(),
 				this->manager->getComponents(Types::toTypeId<Component::StaticCollidable>())},
 			{Types::toTypeId<Component::LineOfSight>(),
-				this->manager->getComponents(Types::toTypeId<Component::LineOfSight>())}
+				this->manager->getComponents(Types::toTypeId<Component::LineOfSight>())},
+			{Types::toTypeId<Component::HurtBox>(),
+				this->manager->getComponents(Types::toTypeId<Component::HurtBox>())}
 		};
 
 		// Keep track of retrievers
@@ -177,7 +179,9 @@ namespace System {
 			{Types::toTypeId<Component::StaticCollidable>(),
 				this->manager->getComponentRetriever(Types::toTypeId<Component::StaticCollidable>())},
 			{Types::toTypeId<Component::LineOfSight>(),
-				this->manager->getComponentRetriever(Types::toTypeId<Component::LineOfSight>())}
+				this->manager->getComponentRetriever(Types::toTypeId<Component::LineOfSight>())},
+			{Types::toTypeId<Component::HurtBox>(),
+				this->manager->getComponentRetriever(Types::toTypeId<Component::HurtBox>())}
 		};
 
 		// Update sorted extents
@@ -197,6 +201,10 @@ namespace System {
 				else if (Types::isSameType(Types::toTypeId<Component::LineOfSight>(), type))
 				{
 					return ((Component::LineOfSight*) component)->getMinExtent(pruneAxis);
+				}
+				else if (Types::isSameType(Types::toTypeId<Component::HurtBox>(), type))
+				{
+					return ((Component::HurtBox*) component)->getMinExtent(pruneAxis);
 				}
 
 				throw new std::exception("Unknown component type when retrieving collidable extent.");
@@ -225,10 +233,6 @@ namespace System {
 			{
 				auto& subExtentTriple = this->sortedExtents->at(j);
 				Types::TypeId& subType = std::get<0>(subExtentTriple);
-				if (Types::isSameType(subType, Types::toTypeId<Component::Collidable>()))
-				{
-					int x = 3;
-				}
 				size_t subComponentIndex = std::get<1>(subExtentTriple);
 				float subMinExtent = std::get<2>(subExtentTriple);
 
