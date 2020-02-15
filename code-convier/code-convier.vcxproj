@@ -197,6 +197,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="HealthbarEntity.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="LineLineCollisionStrategy.cpp" />
     <ClCompile Include="LineOfSightComponent.cpp" />
     <ClCompile Include="MainMenuEntity.cpp" />
     <ClCompile Include="Manager.cpp" />
@@ -229,6 +230,7 @@
     <ClCompile Include="winmain.cpp" />
     <ClInclude Include="GameLevelComponent.h" />
     <ClInclude Include="IdlePlayerMovementAction.h" />
+    <ClInclude Include="LineLineCollisionStrategy.h" />
     <ClInclude Include="WalkingPlayerMovementAction.h" />
   </ItemGroup>
   <ItemGroup>

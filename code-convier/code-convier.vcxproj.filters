@@ -252,6 +252,9 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LineLineCollisionStrategy.cpp">
+      <Filter>Source Files\CollisionUtil</Filter>
+    </ClCompile>
     <ClCompile Include="LineOfSightComponent.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
@@ -488,6 +491,9 @@
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameLevelComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="GameMenuState.h">
       <Filter>Header Files\States\Game</Filter>
     </ClInclude>
@@ -529,6 +535,9 @@
     </ClInclude>
     <ClInclude Include="JumpingComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="LineLineCollisionStrategy.h">
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="LineOfSightComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -688,9 +697,6 @@
     </ClInclude>
     <ClInclude Include="WalkingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLevelComponent.h">
-      <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
