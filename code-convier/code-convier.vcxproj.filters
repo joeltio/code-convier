@@ -38,6 +38,9 @@
     <Filter Include="Header Files\States\Click">
       <UniqueIdentifier>{a339fbd0-958d-454f-b963-a3c704c9ca12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States\EnemyAttack">
+      <UniqueIdentifier>{515186eb-2342-4805-8a4e-f770640ff927}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\States\EnemyHealth">
       <UniqueIdentifier>{c4185ab1-ac89-4bfa-87e7-e8887d2ead33}</UniqueIdentifier>
     </Filter>
@@ -84,6 +87,9 @@
     <Filter Include="Resource Files\sprites">
       <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Temporary Augmentations">
+      <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -114,6 +120,9 @@
     </Filter>
     <Filter Include="Source Files\States\Click">
       <UniqueIdentifier>{92200056-6daf-494a-aee0-2b3f88fe6671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\EnemyAttack">
+      <UniqueIdentifier>{32cfb1b2-137e-46d5-9afd-4f5b5f43d602}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\States\EnemyHealth">
       <UniqueIdentifier>{47a3b6d7-f89b-4544-b83b-77e618e70b26}</UniqueIdentifier>
@@ -222,6 +231,9 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameAugmentationState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
     <ClCompile Include="GameCreateLevelState.cpp">
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
@@ -315,6 +327,9 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="SkeletonAttackState.cpp">
+      <Filter>Source Files\States\EnemyAttack</Filter>
+    </ClCompile>
     <ClCompile Include="SolidTileEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -333,6 +348,9 @@
     <ClCompile Include="SystemRunner.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="TemporaryAugmentationEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="TextureComponent.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
@@ -344,12 +362,6 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TemporaryAugmentationEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="GameAugmentationState.cpp">
-      <Filter>Source Files\States\Game</Filter>
     </ClCompile>
     <ClCompile Include="PlayerDeathScreenEntity.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -410,6 +422,9 @@
     <ClInclude Include="ButtonEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="ChargeComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="ChargingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
@@ -467,6 +482,9 @@
     <ClInclude Include="EnemyAISystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyAttackAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="EnemyDeathState.h">
       <Filter>Header Files\States\EnemyHealth</Filter>
     </ClInclude>
@@ -496,6 +514,9 @@
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameAugmentationState.h">
+      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameCreateLevelState.h">
       <Filter>Header Files\States\Game</Filter>
@@ -529,6 +550,9 @@
     </ClInclude>
     <ClInclude Include="GameStateComponent.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Resource Files\HUD</Filter>
     </ClInclude>
     <ClInclude Include="HealthbarEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -647,6 +671,9 @@
     <ClInclude Include="PrepareMenuAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
+    <ClInclude Include="PrepareTemporaryAugmentationAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="QuitGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
@@ -664,6 +691,9 @@
     </ClInclude>
     <ClInclude Include="ShowCreditsAction.h">
       <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonAttackState.h">
+      <Filter>Header Files\States\EnemyAttack</Filter>
     </ClInclude>
     <ClInclude Include="SolidTileEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -689,6 +719,9 @@
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="TemporaryAugmentationEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="TextComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -706,21 +739,6 @@
     </ClInclude>
     <ClInclude Include="WalkingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="TemporaryAugmentationEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="GameAugmentationState.h">
-      <Filter>Header Files\States\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="PrepareTemporaryAugmentationAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics.h">
-      <Filter>Resource Files\HUD</Filter>
-    </ClInclude>
-    <ClInclude Include="ChargeComponent.h">
-      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDeathScreenEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -762,14 +780,23 @@
     <Image Include="CreditsBackground.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
+    <Image Include="EnergyEfficient.png">
+      <Filter>Resource Files\Temporary Augmentations</Filter>
+    </Image>
     <Image Include="Healthbar.png">
       <Filter>Resource Files\HUD</Filter>
+    </Image>
+    <Image Include="IncreasedDamage.png">
+      <Filter>Resource Files\Temporary Augmentations</Filter>
     </Image>
     <Image Include="MainMenu.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
     <Image Include="Menu.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="MultiHit.png">
+      <Filter>Resource Files\Temporary Augmentations</Filter>
     </Image>
     <Image Include="PauseMenu.png">
       <Filter>Resource Files\Background</Filter>
@@ -842,15 +869,6 @@
     </Image>
     <Image Include="TemporaryAugmentation.png">
       <Filter>Resource Files\Background</Filter>
-    </Image>
-    <Image Include="IncreasedDamage.png">
-      <Filter>Resource Files\Temporary Augmentations</Filter>
-    </Image>
-    <Image Include="EnergyEfficient.png">
-      <Filter>Resource Files\Temporary Augmentations</Filter>
-    </Image>
-    <Image Include="MultiHit.png">
-      <Filter>Resource Files\Temporary Augmentations</Filter>
     </Image>
     <Image Include="PlayerDeathScreen.png">
       <Filter>Resource Files\Background</Filter>

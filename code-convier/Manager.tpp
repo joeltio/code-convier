@@ -147,4 +147,22 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	this->componentRetriever.at(componentTypeId).first = this->getComponents<ComponentType>()->size();
 }
 
+template<typename ComponentType> void Manager::removeComponent(EntityIdType id) {
+	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
+
+	// Retrieve the component
+	int componentIndex = this->entityComponents.at(id)->at(componentTypeId);
+	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
+	ComponentType& component = componentVectorPtr->at(componentIndex);
+
+	// Deactivate the component
+	component.isActive = false;
+
+	// Add the component to the queue of components to be reused
+	this->deletedComponents.at(componentTypeId)->push(componentIndex);
+
+	// Remove the component from the entityComponents map
+	this->entityComponents.at(id)->erase(componentTypeId);
+}
+
 }

@@ -183,6 +183,8 @@
     <ClInclude Include="CircleLineCollisionStrategy.h" />
     <ClInclude Include="EnemyAIComponent.h" />
     <ClInclude Include="EnemyAISystem.h" />
+    <ClInclude Include="EnemyAttackAction.h" />
+    <ClInclude Include="SkeletonAttackState.h" />
     <ClInclude Include="EnemyMovementChaseState.h" />
     <ClInclude Include="EnemyMovementIdleState.h" />
     <ClInclude Include="EnergyOrbEntity.h" />
@@ -223,6 +225,7 @@
     <ClCompile Include="Reducer.tpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="SkeletonAttackState.cpp" />
     <ClCompile Include="SolidTileEntity.cpp" />
     <ClCompile Include="EnergyOrbEntity.cpp" />
     <ClCompile Include="SquareLineCollisionStrategy.cpp" />
