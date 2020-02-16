@@ -4,6 +4,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 {
 	ECS::EntityIdType referenceId = stateComponent.entityId; // for use later
 	Component::Physics& physicsComponent = manager->getEntityComponent<Component::Physics>(referenceId);
+	Component::Transform& transformComponent = manager->getEntityComponent<Component::Transform>(referenceId);
 
 	// reset the velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
@@ -12,10 +13,12 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// check for player movement button clicks
 	if (input->isKeyDown('A')) // left
 	{
+		transformComponent.flipHorizontal = true;
 		physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR;
 	}
 	if (input->isKeyDown('D')) // right
 	{
+		transformComponent.flipHorizontal = false;
 		physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR;
 	}
 	if (input->isKeyDown('W')) // jump
@@ -35,12 +38,14 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		// check for direction
 		if (input->isKeyDown('A')) // left run
 		{
+			transformComponent.flipHorizontal = true;
 			physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
 			healthComponent.health -= RUNNING_HEATLH_TICK;
 		}
 
 		else if (input->isKeyDown('D')) // right run
 		{
+			transformComponent.flipHorizontal = false;
 			physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
 			healthComponent.health -= RUNNING_HEATLH_TICK;
 		}
@@ -49,6 +54,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// mutually exclusive with running and walking
 	if (input->isKeyDown('K')) // charge
 	{
+		transformComponent.flipHorizontal = true;
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
 

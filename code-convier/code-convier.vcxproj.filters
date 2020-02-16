@@ -162,12 +162,6 @@
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="AttackIdleState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackingState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
     <ClCompile Include="AugmentationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
@@ -251,9 +245,6 @@
     </ClCompile>
     <ClCompile Include="GamePlayerDeathState.cpp">
       <Filter>Source Files\States\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="GameReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
     <ClCompile Include="GameRunningState.cpp">
       <Filter>Source Files\States\Game</Filter>
@@ -372,6 +363,18 @@
     <ClCompile Include="PlayerRunningIconEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerAttackReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackIdleState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackingState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="GameReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -396,12 +399,6 @@
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="AttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackingState.h">
       <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
     <ClInclude Include="AttackingState.h">
@@ -745,6 +742,24 @@
     </ClInclude>
     <ClInclude Include="PlayerChargingIconEntity.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackingAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAtttackIdleAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
