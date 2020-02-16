@@ -7,6 +7,12 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 
 	ECS::EntityIdType gameID = *this->manager->getEntities<Entity::Game>()->begin();
 	Component::GameState& gameState = this->manager->getEntityComponent<Component::GameState>(gameID);
+	ECS::EntityIdType hpID = *this->manager->getEntities<Entity::Healthbar>()->begin();
+	Component::Transform& hpTransform = this->manager->getEntityComponent<Component::Transform>(hpID);
+	ECS::EntityIdType runIconID = *this->manager->getEntities<Entity::PlayerRunningIcon>()->begin();
+	Component::Transform& runIconTransform = this->manager->getEntityComponent<Component::Transform>(runIconID);
+	ECS::EntityIdType chargeIconID = *this->manager->getEntities<Entity::PlayerChargingIcon>()->begin();
+	Component::Transform& chargeIconTransform = this->manager->getEntityComponent<Component::Transform>(chargeIconID);
 
 	float xCenter = 0;
 	float yCenter = 0;
@@ -30,8 +36,16 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 	gameState.renderRect.top = offsetY;
 	gameState.renderRect.bottom = offsetY + GAME_HEIGHT;
 
+	hpTransform.x = offsetX + 0.05 * GAME_WIDTH;
+	runIconTransform.x = offsetX + 0.9 * GAME_WIDTH;
+	chargeIconTransform.x = offsetX + 0.8 * GAME_WIDTH;
+
 	if (gameState.renderRect.left < 0)
 	{
+
+		hpTransform.x = 0.05 * GAME_WIDTH;
+		runIconTransform.x = 0.9 * GAME_WIDTH;
+		chargeIconTransform.x = 0.8 * GAME_WIDTH;
 		gameState.renderRect.left = 0;
 		gameState.renderRect.right = GAME_WIDTH;
 	}
@@ -40,6 +54,9 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 	{
 		gameState.renderRect.right = levelWidth * tileWidth;
 		gameState.renderRect.left = gameState.renderRect.right - GAME_WIDTH;
+		hpTransform.x = gameState.renderRect.left + 0.05 * GAME_WIDTH;
+		runIconTransform.x = gameState.renderRect.left + 0.9 * GAME_WIDTH;
+		chargeIconTransform.x = gameState.renderRect.left + 0.8 * GAME_WIDTH;
 	}
 
 	if (gameState.renderRect.top < 0)

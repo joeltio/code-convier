@@ -25,6 +25,7 @@ namespace Entity {
 		animatableComponent.columns = 2;
 		animatableComponent.currentFrame = 1;
 		animatableComponent.rows = 1;
+		animatableComponent.startFrame = 1;
 		manager->addComponent<Component::Animatable>(playerRunningIconEntityId, animatableComponent);
 
 		return playerRunningIconEntityId;

@@ -10,7 +10,7 @@ void GameCreateLevelState::enter(Component::State state) {
 	std::vector<int> maplist;
 	for (size_t i = 0; i < mapFragment; i++)
 	{
-		int id = rand() % 5 + 1;
+		int id = rand() % 6;
 		maplist.push_back(id);
 	}
 	//Open starting map file
@@ -150,11 +150,10 @@ void GameCreateLevelState::enter(Component::State state) {
 			enemyList.push_back(enemyPosition);
 			Entity::Enemy::create(this->manager, this->graphics, ((float)randomX* tileWidth), ((float)randomY* tileHeight));
 		}
-
-		Entity::Healthbar::create(this->manager, this->graphics);
-		Entity::PlayerRunningIcon::create(this->manager, this->graphics, 0.9 * GAME_WIDTH, 0.025 * GAME_HEIGHT);
-		Entity::PlayerChargingIcon::create(this->manager, this->graphics, 0.8 * GAME_WIDTH, 0.025 * GAME_HEIGHT);
 	}
+	Entity::Healthbar::create(this->manager, this->graphics);
+	Entity::PlayerRunningIcon::create(this->manager, this->graphics, 0.9 * GAME_WIDTH, 0.025 * GAME_HEIGHT);
+	Entity::PlayerChargingIcon::create(this->manager, this->graphics, 0.8 * GAME_WIDTH, 0.025 * GAME_HEIGHT);
 }
 
 //on update
