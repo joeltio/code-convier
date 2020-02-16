@@ -61,7 +61,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// mutually exclusive with running and walking
 	if (input->isKeyDown('K')) // charge
 	{
-		transformComponent.flipHorizontal = true;
+		transformComponent.flipHorizontal = false;
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
 
