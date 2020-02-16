@@ -86,8 +86,9 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	if (input->isKeyDown('K')) // charge
 	{
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
+		chargeComponent.cooldownTimer -= frametime;
 		// ignore if the charge is still on cooldown
-		if (chargeComponent.cooldownTimer - frametime <= 0)
+		if (chargeComponent.cooldownTimer <= 0)
 		{
 			transformComponent.flipHorizontal = false;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);

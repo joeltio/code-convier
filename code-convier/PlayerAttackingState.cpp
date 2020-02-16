@@ -4,10 +4,10 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 
 	// Get the direction the entity is facing, using right as the benchmark
 	ECS::EntityIdType playerId = stateComponent.entityId;
-	Component::Transform transformComponent = manager->getEntityComponent<Component::Transform>(playerId);
-	Component::Texture textureComponent = manager->getEntityComponent<Component::Texture>(playerId);
-	Component::Animatable animatableComponent = manager->getEntityComponent<Component::Animatable>(playerId);
-	Component::Attack attackComponent = manager->getEntityComponent<Component::Attack>(playerId);
+	Component::Transform& transformComponent = manager->getEntityComponent<Component::Transform>(playerId);
+	Component::Texture& textureComponent = manager->getEntityComponent<Component::Texture>(playerId);
+	Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerId);
+	Component::Attack& attackComponent = manager->getEntityComponent<Component::Attack>(playerId);
 	int attackDirectionSign = (transformComponent.flipHorizontal) ? 1 : -1;
 
 	// Create the hitboxes, taking into account the direction
