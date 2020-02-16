@@ -36,7 +36,7 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 		transformComponent.y + playerHeight
 	));
 
-	// determine whether component should be destroyed on first impact
+	// determine whether component should be destroyed on first impact based on player's multi-hit abilities
 	if (!attackComponent.multiHits)
 	{
 		hitBoxComponent.onEnter = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id) {
