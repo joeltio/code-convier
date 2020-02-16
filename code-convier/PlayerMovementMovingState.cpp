@@ -19,7 +19,6 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		animatableComponent.startFrame = 1;
 	}
 
-
 	std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
 	for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
 	{

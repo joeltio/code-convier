@@ -62,7 +62,6 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 	
 	// reset the attack timer, and the sprite
 	attackComponent.cooldownTimer = attackComponent.cooldown;
-
 	textureComponent.zIndex = 2;
 	if (!textureComponent.loadTexture(graphics, PLAYER_IMAGE))
 	{
