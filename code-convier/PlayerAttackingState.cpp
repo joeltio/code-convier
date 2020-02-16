@@ -36,18 +36,30 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 		transformComponent.y + playerHeight
 	));
 
-	hitBoxComponent.onEnter = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id) {
-		// check for collision with enemy types and deal damage to them
-		if (manager->getEntity(id)->isSameType<Entity::Enemy>())
-		{
-			manager->getEntityComponent<Component::Health>(id).health -= attackComponent.damage;
-			if (!attackComponent.multiHits)
+	// determine whether component should be destroyed on first impact
+	if (!attackComponent.multiHits)
+	{
+		hitBoxComponent.onEnter = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id) {
+			// check for collision with enemy types and deal damage to them
+			if (manager->getEntity(id)->isSameType<Entity::Enemy>())
 			{
+				manager->getEntityComponent<Component::Health>(id).health -= attackComponent.damage;
 				manager->removeComponent<Component::HurtBox>(playerId);
 			}
-		}
-	};
-
+		};
+	}
+	else
+	{
+		hitBoxComponent.onStay = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
+			// check for collision with enemy types and deal damage to them
+			if (manager->getEntity(id)->isSameType<Entity::Enemy>())
+			{
+				manager->getEntityComponent<Component::Health>(id).health -= attackComponent.damage;
+				manager->removeComponent<Component::HurtBox>(playerId);
+			}
+		};
+	}
+	
 	// reset the attack timer
 	attackComponent.cooldownTimer = attackComponent.cooldown;
 
