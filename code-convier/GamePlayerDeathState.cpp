@@ -6,6 +6,9 @@ void GamePlayerDeathState::enter(Component::State state) {
 }
 
 FSM::Action GamePlayerDeathState::update(float frameTime, Component::State state) {
+	if (this->input->anyKeyPressed()) {
+		return PrepareMenuAction();
+	}
 	return FSM::NoAction();
 }
 
