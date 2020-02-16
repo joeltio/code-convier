@@ -21,10 +21,9 @@ FSM::Action EnemyMovementChaseState::update(float frameTime, Component::State st
 	}
 
 	// Check if the player and the enemy are on the same platform
-	// TODO: call Oscar's code
-	ECS::EntityIdType playerid = *this->manager->getEntities<Entity::Player>().begin();
-	Component::Transform enemyTrans = this->manager->getEntityComponent<Component::Transform>(state.entityId);
-	Component::Transform playerTrans = this->manager->getEntityComponent<Component::Transform>(playerId);
+	ECS::EntityIdType playerId = *this->manager->getEntities<Entity::Player>()->begin();
+	Component::Transform& enemyTrans = this->manager->getEntityComponent<Component::Transform>(state.entityId);
+	Component::Transform& playerTrans = this->manager->getEntityComponent<Component::Transform>(playerId);
 	Component::GameLevel gamelevel;
 	if (!gamelevel.isOnSamePlatform(enemyTrans.x, enemyTrans.y, playerTrans.x, playerTrans.y))
 	{
