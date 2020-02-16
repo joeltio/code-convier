@@ -5,5 +5,6 @@
 namespace Component {
 	struct GameState : public Component::State {
 		RECT renderRect;
+		const char* destinationState;
 	};
 }

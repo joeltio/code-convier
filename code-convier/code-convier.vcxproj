@@ -157,6 +157,7 @@
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
     <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
+    <ClCompile Include="GameDestroyLevelState.cpp" />
     <ClCompile Include="PlayerAttackIdleState.cpp" />
     <ClCompile Include="PlayerAttackingState.cpp" />
     <ClCompile Include="AugmentationSystem.cpp" />
@@ -184,9 +185,11 @@
     <ClInclude Include="ChargeComponent.h" />
     <ClInclude Include="ChargingPlayerMovementAction.h" />
     <ClInclude Include="CircleLineCollisionStrategy.h" />
+    <ClInclude Include="DestroyGameLevelAction.h" />
     <ClInclude Include="EnemyAIComponent.h" />
     <ClInclude Include="EnemyAISystem.h" />
     <ClInclude Include="EnemyAttackAction.h" />
+    <ClInclude Include="GameDestroyLevelState.h" />
     <ClInclude Include="PlayerAttackingAction.h" />
     <ClInclude Include="PlayerAttackReducer.h" />
     <ClInclude Include="PlayerAttackStateComponent.h" />
