@@ -57,6 +57,8 @@ namespace Entity {
 
 		// add the charging component
 		Component::Charge chargeComponent = Component::Charge();
+		chargeComponent.cooldown = 5;
+		chargeComponent.damage = 30;
 		manager->addComponent<Component::Charge>(entityId, chargeComponent);
 
 		// add the Jumping component

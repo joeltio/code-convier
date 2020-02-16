@@ -5,6 +5,10 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	ECS::EntityIdType referenceId = stateComponent.entityId; // for use later
 	Component::Physics& physicsComponent = manager->getEntityComponent<Component::Physics>(referenceId);
 
+	// reset the velocity in the state before checking for input
+	physicsComponent.velocity.x = 0;
+	physicsComponent.velocity.y = 0;
+
 	// check for player movement button clicks
 	if (input->isKeyDown('A')) // left
 	{
@@ -19,6 +23,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		// check if the entity is already jumping or not
 		if (!manager->getEntityComponent<Component::Jumping>(referenceId).isJumping)
 		{
+			// initial velocity, slowly decelerated by gravity
 			physicsComponent.velocity.y = JUMP_SPEED * SCALE_FACTOR;
 		}
 	}
