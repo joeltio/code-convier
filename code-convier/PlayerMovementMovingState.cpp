@@ -5,12 +5,13 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	ECS::EntityIdType referenceId = stateComponent.entityId; // for use later
 	Component::Physics& physicsComponent = manager->getEntityComponent<Component::Physics>(referenceId);
 	Component::Transform& transformComponent = manager->getEntityComponent<Component::Transform>(referenceId);
+	Component::Jumping& jumpingComponent = manager->getEntityComponent<Component::Jumping>(referenceId);
 
 	// reset the x velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
 
 	// check if the entity is already jumping or not
-	if (!manager->getEntityComponent<Component::Jumping>(referenceId).isJumping)
+	if (!jumpingComponent.isJumping)
 	{
 		// reset the y velocity if the player is not jumping
 		physicsComponent.velocity.y = 0;
@@ -18,6 +19,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		if (input->isKeyDown('W')) // jump
 		{
 			physicsComponent.velocity.y = JUMP_SPEED * SCALE_FACTOR;
+			jumpingComponent.isJumping = true;
 		}
 	}
 
@@ -64,7 +66,8 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	if (input->isKeyDown('K')) // charge
 	{
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
-		if (chargeComponent.cooldownTimer - frametime > 0)
+		// ignore if the charge is still on cooldown
+		if (chargeComponent.cooldownTimer - frametime < 0)
 		{
 			transformComponent.flipHorizontal = false;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
@@ -83,9 +86,8 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 
 			return ChargingPlayerMovement();
 		}
-		
-		// ignore if the charge is still on cooldown
 	}
 
 	return FSM::NoAction();
 }
+ 
