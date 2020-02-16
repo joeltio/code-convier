@@ -909,14 +909,14 @@
     <Image Include="TemporaryAugmentation.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
-    <Image Include="PlayerDeathScreen.png">
-      <Filter>Resource Files\Background</Filter>
-    </Image>
     <Image Include="ChargingSprite.png">
       <Filter>Resource Files\Icons</Filter>
     </Image>
     <Image Include="RunningSprite.png">
       <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="PlayerDeathScreen.png">
+      <Filter>Resource Files\Background</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

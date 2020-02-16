@@ -52,8 +52,9 @@ namespace System {
 	) {
 		// Keep track of the new triples to be inserted and removed
 		std::forward_list<std::tuple<Types::TypeId, size_t, float>> toBeInserted;
-		// Keep track of the triples to be reordered
-		std::forward_list<std::tuple<Types::TypeId, size_t, float>> toBeMoved;
+		// Keep track of the indices to be reordered
+		std::vector<size_t> toBeMoved;
+		toBeMoved.reserve(100);
 
 		// Determine the size of the components vectors
 		std::unordered_map<Types::TypeId, size_t> compSize;
@@ -95,9 +96,9 @@ namespace System {
 			if (currentExtent != storedExtent)
 			{
 				storedExtent = currentExtent;
-				toBeInserted.push_front(extentTriple);
-				this->sortedExtents->erase(this->sortedExtents->begin() + i);
-				i--;
+
+				// Move the component to the correct position later
+				toBeMoved.push_back(i);
 			}
 
 			i++;
@@ -122,30 +123,103 @@ namespace System {
 			}
 		}
 
+		// Reposition extents
+		this->repositionExtents(toBeMoved);
+
 		// Insert new items
 		for (auto extentTriple : toBeInserted)
 		{
-			this->insertNewExtent(extentTriple);
+			size_t index = this->findExtentInsertPos(extentTriple);
+			this->sortedExtents->insert(this->sortedExtents->begin() + index, extentTriple);
 		}
 	}
 
-	void Collision::insertNewExtent(
+	void Collision::repositionExtents(std::vector<size_t>& positions) {
+		for (size_t i = 0; i < positions.size(); i++)
+		{
+			size_t index = positions.at(i);
+			// For checking whether to skip the component
+			size_t otherPosIndex = i+1;
+			size_t otherPos = positions.at(i);
+			if (otherPosIndex < positions.size())
+			{
+				otherPos = positions.at(i+1);
+			}
+
+			// Search for where the extent belongs
+			auto newExtent = this->sortedExtents->at(index);
+			float newMinX = std::get<2>(newExtent);
+			bool found = false;
+			size_t targetPos;
+
+			for (targetPos = index; targetPos < this->sortedExtents->size(); targetPos++)
+			{
+				// Ignore the components to be moved
+				if (targetPos == otherPos)
+				{
+					otherPosIndex += 1;
+					if (otherPosIndex < positions.size())
+					{
+						otherPos = positions.at(otherPosIndex);
+					}
+					continue;
+				}
+
+				auto& extentTriple = this->sortedExtents->at(targetPos);
+				float currentMinX = std::get<2>(extentTriple);
+				if (currentMinX > newMinX)
+				{
+					found = true;
+					break;
+				}
+			}
+
+			if (!found)
+			{
+				targetPos++;
+			}
+
+			// Update the positions which will be affected after rotation
+			for (size_t j = i + 1; j < positions.size(); j++)
+			{
+				if (positions.at(j) < targetPos)
+				{
+					positions.at(j) += 1;
+				}
+				else
+				{
+					break;
+				}
+			}
+
+			if (index == targetPos)
+			{
+				return;
+			}
+
+			// Rotate
+			std::rotate<std::vector<std::tuple<Types::TypeId, size_t, float>>::iterator>(
+				this->sortedExtents->begin() + index,
+				this->sortedExtents->begin() + index + 1,
+				this->sortedExtents->begin() + targetPos
+			);
+		}
+	}
+
+	size_t Collision::findExtentInsertPos(
 		std::tuple<Types::TypeId, size_t, float>& newExtent
 	) {
 		float newMinX = std::get<2>(newExtent);
 
-		size_t i;
-		for (i = 0; i < this->sortedExtents->size(); i++)
+		for (size_t i = 0; i < this->sortedExtents->size(); i++)
 		{
 			auto& extentTriple = this->sortedExtents->at(i);
 			float currentMinX = std::get<2>(extentTriple);
 			if (currentMinX > newMinX)
 			{
-				break;
+				return i;
 			}
 		}
-
-		this->sortedExtents->insert(this->sortedExtents->begin() + i, newExtent);
 	}
 
 	void Collision::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
@@ -247,8 +321,8 @@ namespace System {
 
 				std::vector<ECS::Component>* aComponentsPtr = componentsPtrMap.at(type);
 				std::vector<ECS::Component>* bComponentsPtr = componentsPtrMap.at(subType);
-				ECS::RETRIEVER_PAIR aRetrieverPair = retrieverMap.at(type);
-				ECS::RETRIEVER_PAIR bRetrieverPair = retrieverMap.at(subType);
+				ECS::RETRIEVER_PAIR& aRetrieverPair = retrieverMap.at(type);
+				ECS::RETRIEVER_PAIR& bRetrieverPair = retrieverMap.at(subType);
 
 				Component::Collidable* a = (Component::Collidable*) aRetrieverPair.second(aComponentsPtr, componentIndex);
 				Component::Collidable* b = (Component::Collidable*) bRetrieverPair.second(bComponentsPtr, subComponentIndex);
