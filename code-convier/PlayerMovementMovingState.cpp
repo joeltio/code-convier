@@ -55,7 +55,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	}
 
 	// mutually exclusive with charging, and walking 
-	if (input->isKeyDown(VK_SHIFT))
+	if (input->isKeyDown(SHIFT_KEY))
 	{
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		// check for direction
