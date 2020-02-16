@@ -9,6 +9,7 @@
 #include "TransformComponent.h"
 #include "PauseGameAction.h"
 #include "HealthbarEntity.h"
+#include "DestroyGameLevelAction.h"
 
 class GameRunningState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);

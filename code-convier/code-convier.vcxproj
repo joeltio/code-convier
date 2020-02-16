@@ -205,7 +205,6 @@
     <ClInclude Include="EnergyOrbEntity.h" />
     <ClInclude Include="EnergyOrbHomingState.h" />
     <ClInclude Include="EnergyOrbIdleState.h" />
-    <ClInclude Include="EnergyOrbStateComponent.h" />
     <ClInclude Include="EnergyOrbReducer.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />
@@ -304,7 +303,6 @@
     <ClInclude Include="GameCreditsState.h" />
     <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
-    <ClInclude Include="HealthRecoverComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="LineOfSightComponent.h" />
     <ClInclude Include="NotClickedState.h" />

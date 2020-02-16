@@ -24,7 +24,7 @@ void PlayerAttackReducer::reduce(
 		ECS::EntityIdType playerId = *manager->getEntities<Entity::Player>()->begin();
 		Component::PlayerAttackState& attackState = manager->getEntityComponent<Component::PlayerAttackState>(playerId);
 
-		FSM::Reducer::changeState<PlayerAttackIdleState>(states, attackState);
+		FSM::Reducer::changeState<PlayerAttackingState>(states, attackState);
 	}
 
 	if (action.type == PLAYER_ATTACK_IDLE)
@@ -33,6 +33,6 @@ void PlayerAttackReducer::reduce(
 		ECS::EntityIdType playerId = *manager->getEntities<Entity::Player>()->begin();
 		Component::PlayerAttackState& attackState = manager->getEntityComponent<Component::PlayerAttackState>(playerId);
 
-		FSM::Reducer::changeState<PlayerAttackingState>(states, attackState);
+		FSM::Reducer::changeState<PlayerAttackIdleState>(states, attackState);
 	}
 }

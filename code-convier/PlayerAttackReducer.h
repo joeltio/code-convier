@@ -7,7 +7,7 @@
 #include "PlayerAttackStateComponent.h"
 
 #include "PlayerAttackingAction.h"
-#include "PlayerAtttackIdleAction.h"
+#include "PlayerAttackIdleAction.h"
 
 #include "PlayerAttackIdleState.h"
 #include "PlayerAttackingState.h"

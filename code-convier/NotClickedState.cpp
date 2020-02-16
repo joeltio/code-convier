@@ -34,7 +34,10 @@ FSM::Action NotClickedState::update(float frameTime, Component::State state) {
 			action = ResumeGameAction();
 		}
 		else if (textComponent.buttonText == "Menu") {
-			action = PrepareMenuAction();
+			ECS::EntityIdType gameId = *this->manager->getEntities<Entity::Game>()->begin();
+			Component::GameState& gameState = this->manager->getEntityComponent<Component::GameState>(gameId);
+			gameState.destinationState = TO_MAIN_MENU;
+			action = DestroyGameLevelAction();
 		}
 		else if (textComponent.buttonText == "Increased Damage") {
 			Component::Augmentation augmentationComponent = this->manager->getEntityComponent<Component::Augmentation>(state.entityId);

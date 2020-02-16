@@ -45,10 +45,6 @@ namespace Entity {
 			break;
 		}
 
-		// add the health recover component
-		Component::HealthRecover HPRegenComponent = Component::HealthRecover();
-		HPRegenComponent.health = energy;
-
 		// add the staticCollidable component
 		Component::StaticCollidable collidable = Component::StaticCollidable(CollisionUtil::CollisionType::AABB);
 		float width = textureComponent.totalWidth * transformComponent.scale;
@@ -58,13 +54,11 @@ namespace Entity {
 		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
 		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
 
-		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
+		collidable.onEnter = [entityId, energy](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
 				Component::Health& entityHP = manager->getEntityComponent<Component::Health>(id);
-				Component::HealthRecover orbEnergy = manager->getEntityComponent<Component::HealthRecover>(entityId);
-
-				entityHP.storedHealth += orbEnergy.health;
+				entityHP.storedHealth += energy;
 
 				manager->removeEntity<EnergyOrb>(entityId);
 			}
@@ -79,7 +73,6 @@ namespace Entity {
 
 		manager->addComponent<Component::Physics>(entityId, physicsComponent);
 		manager->addComponent<Component::EnergyOrbState>(entityId, orbStateComponent);
-		manager->addComponent<Component::HealthRecover>(entityId, HPRegenComponent);
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
 		manager->addComponent<Component::StaticCollidable>(entityId, collidable);

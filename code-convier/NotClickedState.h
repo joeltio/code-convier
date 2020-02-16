@@ -2,6 +2,8 @@
 
 #include "Action.h"
 #include "State.h"
+#include "GameEntity.h"
+
 #include "StateComponent.h"
 #include "TransformComponent.h"
 #include "TextureComponent.h"
@@ -13,6 +15,8 @@
 #include "PauseGameAction.h"
 #include "ResumeGameAction.h"
 #include "PrepareMenuAction.h"
+#include "GameStateComponent.h"
+#include "DestroyGameLevelAction.h"
 
 
 class NotClickedState : public FSM::State {

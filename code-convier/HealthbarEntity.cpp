@@ -24,7 +24,7 @@ namespace Entity {
 		for (ECS::EntityIdType playerEntityId : *playerEntityIds)
 		{
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(playerEntityId);
-			textureComponent.viewableRect.right = (healthComponent.health / PLAYER_HEALTH)*100;
+			textureComponent.viewableRect.right = (healthComponent.health / (float)PLAYER_HEALTH)*textureComponent.totalWidth;
 		}
 
 		manager->addComponent<Component::Texture>(healthbarEntityId, textureComponent);		

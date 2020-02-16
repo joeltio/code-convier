@@ -6,7 +6,7 @@ FSM::Action PlayerHealthIdleState::update(float frametime, Component::State stat
 	Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(playerId);
 
 	// reduce the health of the player first
-	healthComponent.health -= HEALTH_TICK;
+	healthComponent.health -= HEALTH_TICK * frametime;
 
 	// check for any replenished health so player does not die 
 	if (healthComponent.storedHealth > 0)

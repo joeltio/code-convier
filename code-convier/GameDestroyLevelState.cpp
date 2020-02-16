@@ -1,6 +1,15 @@
 #include "GameDestroyLevelState.h"
 
 void GameDestroyLevelState::enter(Component::State state) {
+	
+}
+
+void GameDestroyLevelState::exit(Component::State state) {
+
+}
+
+FSM::Action GameDestroyLevelState::update(float frametime, Component::State state) {
+
 	std::unordered_set<ECS::EntityIdType> solidTilesIds = *this->manager->getEntities<Entity::SolidTile>();
 	std::unordered_set<ECS::EntityIdType> decorateTilesIds = *this->manager->getEntities<Entity::DecorativeTile>();
 	std::unordered_set<ECS::EntityIdType> playerId = *this->manager->getEntities<Entity::Player>();
@@ -39,14 +48,13 @@ void GameDestroyLevelState::enter(Component::State state) {
 	}
 
 	Component::GameState gameState = this->manager->getEntityComponent<Component::GameState>(state.entityId);
-
-
-}
-
-void GameDestroyLevelState::exit(Component::State state) {
-
-}
-
-FSM::Action GameDestroyLevelState::update(float frametime, Component::State state) {
-	return FSM::NoAction();
+	
+	if (gameState.destinationState == TO_MAIN_MENU)
+	{
+		return PrepareMenuAction();
+	}
+	else if (gameState.destinationState == TO_AUGMENTATION)
+	{
+		return PrepareTemporaryAugmentationAction();
+	}
 }
