@@ -73,3 +73,7 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 
 	return FSM::NoAction();
 }
+
+void GameRunningState::exit(Component::State state) {
+
+}
