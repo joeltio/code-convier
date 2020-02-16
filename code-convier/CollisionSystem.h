@@ -4,6 +4,7 @@
 #include <forward_list>
 #include <list>
 #include <tuple>
+#include <algorithm>
 
 #include "Entity.h"
 #include "System.h"
@@ -38,7 +39,8 @@ namespace System {
 				std::unordered_map<Types::TypeId, ECS::RETRIEVER_PAIR>& retrieverMap,
 				std::function<float(Types::TypeId, ECS::Component*)> extentRetriever
 			);
-			void insertNewExtent(
+			void repositionExtents(std::vector<size_t>& positions);
+			size_t findExtentInsertPos(
 				std::tuple<Types::TypeId, size_t, float>& newExtent
 			);
 
