@@ -86,7 +86,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	{
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
 		// ignore if the charge is still on cooldown
-		if (chargeComponent.cooldownTimer - frametime < 0)
+		if (chargeComponent.cooldownTimer - frametime <= 0)
 		{
 			transformComponent.flipHorizontal = false;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
@@ -107,7 +107,5 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 			return ChargingPlayerMovement();
 		}
 	}
-
-	return FSM::NoAction();
 }
  
