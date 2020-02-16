@@ -35,10 +35,8 @@ const char CREDITSBACKGROUND_IMAGE[] = "CreditsBackground.png";
 const char TEMPORARY_AUGMENTATION_IMAGE[] = "TemporaryAugmentation.png";
 const char PLAYER_DEATH_SCREEN_IMAGE[] = "PlayerDeathScreen.png";
 
-const char PLAYER_CHARGED_ICON[] = "PlayerChargedIcon.png";
-const char PLAYER_CHARGING_ICON[] = "PlayerChargingIcon.png";
-const char PLAYER_RUN_ICON[] = "PlayerRunIcon.png";
-const char PLAYER_RUNNING_ICON[] = "PlayerRunningIcon.png";
+const char PLAYER_CHARGING_ICON[] = "ChargingSprite.png";
+const char PLAYER_RUNNING_ICON[] = "RunningSprite.png";
 
 const char ENERGY_EFFICIENT_IMAGE[] = "EnergyEfficient.png";
 const char INCREASED_DAMAGE_IMAGE[] = "IncreasedDamage.png";
@@ -132,7 +130,10 @@ const int CARD_MARGIN = 87;
 const float PLAYER_SPEED = 100.0f;
 const float PLAYER_CHARGE_SPEED = 200.0f;
 const float RUN_MULTIPLIER = 1.5f;
-const float JUMP_SPEED = 50.0f;
+const float JUMP_SPEED = 1000.0f;
+const int PLAYER_DAMAGE = 10;
+const float PLAYER_ATTACK_COOLDOWN = 4.0f;
+const float PLAYER_ATTACK_RANGE = 50.0f;
 const int PLAYER_HEALTH = 100;
 const int HEALTH_TICK = 3;
 const int RUNNING_HEATLH_TICK = 4;

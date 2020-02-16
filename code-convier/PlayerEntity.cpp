@@ -52,11 +52,15 @@ namespace Entity {
 
 		// add the attack component
 		Component::Attack attackComponent = Component::Attack();
-		// tune the values later on
+		attackComponent.damage = PLAYER_DAMAGE;
+		attackComponent.cooldown = PLAYER_ATTACK_COOLDOWN;
+		attackComponent.range = PLAYER_ATTACK_RANGE;
 		manager->addComponent<Component::Attack>(entityId, attackComponent);
 
 		// add the charging component
 		Component::Charge chargeComponent = Component::Charge();
+		chargeComponent.cooldown = 5;
+		chargeComponent.damage = 30;
 		manager->addComponent<Component::Charge>(entityId, chargeComponent);
 
 		// add the Jumping component
@@ -70,6 +74,14 @@ namespace Entity {
 			Types::toTypeId<PlayerMovementMovingState>()
 		};
 		manager->addComponent<Component::PlayerMovementState>(entityId, movementStateComponent);
+
+		// add the attack state component
+		Component::PlayerAttackState attackStateComponent = Component::PlayerAttackState{
+			entityId,
+			true,
+			Types::toTypeId<PlayerAttackIdleState>()
+		};
+		manager->addComponent<Component::PlayerAttackState>(entityId, attackStateComponent);
 
 		return entityId;
 	}

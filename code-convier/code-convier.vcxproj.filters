@@ -168,12 +168,6 @@
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="AttackIdleState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackingState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
     <ClCompile Include="AugmentationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
@@ -257,9 +251,6 @@
     </ClCompile>
     <ClCompile Include="GamePlayerDeathState.cpp">
       <Filter>Source Files\States\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="GameReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
     <ClCompile Include="GameRunningState.cpp">
       <Filter>Source Files\States\Game</Filter>
@@ -378,11 +369,17 @@
     <ClCompile Include="PlayerRunningIconEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerRunIconEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="PlayerAttackReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerChargedIconEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="PlayerAttackIdleState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackingState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="GameReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
     <ClCompile Include="EnergyOrbIdleState.cpp">
       <Filter>Source Files\States\Orb</Filter>
@@ -417,12 +414,6 @@
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="AttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackingState.h">
       <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
     <ClInclude Include="AttackingState.h">
@@ -761,17 +752,29 @@
     <ClInclude Include="PreparePlayerDeathAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerChargedIconEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerRunningIconEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="PlayerChargingIconEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerRunIconEntity.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="PlayerAttackReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackingAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAtttackIdleAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
     <ClInclude Include="EnergyOrbIdleState.h">
       <Filter>Header Files\States\Orb</Filter>
@@ -903,16 +906,10 @@
     <Image Include="PlayerDeathScreen.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
-    <Image Include="PlayerRunIcon.png">
+    <Image Include="ChargingSprite.png">
       <Filter>Resource Files\Icons</Filter>
     </Image>
-    <Image Include="PlayerChargedIcon.png">
-      <Filter>Resource Files\Icons</Filter>
-    </Image>
-    <Image Include="PlayerRunningIcon.png">
-      <Filter>Resource Files\Icons</Filter>
-    </Image>
-    <Image Include="PlayerChargingIcon.png">
+    <Image Include="RunningSprite.png">
       <Filter>Resource Files\Icons</Filter>
     </Image>
   </ItemGroup>

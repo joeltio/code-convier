@@ -6,6 +6,7 @@
 #include "JumpingComponent.h"
 #include "HealthComponent.h"
 #include "ChargeComponent.h"
+#include "TransformComponent.h"
 #include "IdlePlayerMovementAction.h"
 #include "ChargingPlayerMovementAction.h"
 #include "WalkingPlayerMovementAction.h"

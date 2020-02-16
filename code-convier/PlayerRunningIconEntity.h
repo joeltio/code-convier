@@ -5,6 +5,7 @@
 #include "graphics.h"
 #include "TextureComponent.h"
 #include "TransformComponent.h"
+#include "AnimatableComponent.h"
 
 namespace Entity {
 

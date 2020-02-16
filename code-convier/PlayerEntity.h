@@ -15,6 +15,8 @@
 #include "AttackComponent.h"
 #include "PlayerMovementStateComponent.h"
 #include "PlayerMovementMovingState.h"
+#include "PlayerAttackStateComponent.h"
+#include "PlayerAttackIdleState.h"
 
 namespace Entity {
 
