@@ -10,7 +10,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// reset the x velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
 
-	// Set icon frames to 1
+	// Set icon frames to 1 for the animation frame
 	std::unordered_set<ECS::EntityIdType> playerRunningEntityIds = *this->manager->getEntities<Entity::PlayerRunningIcon>();
 	for (ECS::EntityIdType playerRunningEntityId : playerRunningEntityIds)
 	{
