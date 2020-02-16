@@ -49,6 +49,13 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 			physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
 			healthComponent.health -= RUNNING_HEATLH_TICK;
 		}
+
+		std::unordered_set<ECS::EntityIdType> playerRunningEntityIds = *this->manager->getEntities<Entity::PlayerRunningIcon>();
+		for (ECS::EntityIdType playerRunningEntityId : playerRunningEntityIds)
+		{
+			Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerRunningEntityId);
+			animatableComponent.currentFrame = 2;
+		}
 	}
 
 	// mutually exclusive with running and walking
@@ -61,6 +68,13 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * SCALE_FACTOR;
 		healthComponent.health -= CHARGE_HEALTH_TICK;
 		chargeComponent.cooldownTimer = chargeComponent.cooldown;
+
+		std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
+		for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
+		{
+			Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
+			animatableComponent.currentFrame = 2;
+		}
 
 		return ChargingPlayerMovement();
 	}
