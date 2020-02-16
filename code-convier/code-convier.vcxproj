@@ -304,7 +304,6 @@
     <ClInclude Include="GameCreditsState.h" />
     <ClInclude Include="HealthbarEntity.h" />
     <ClInclude Include="HealthComponent.h" />
-    <ClInclude Include="HealthRecoverComponent.h" />
     <ClInclude Include="JumpingComponent.h" />
     <ClInclude Include="LineOfSightComponent.h" />
     <ClInclude Include="NotClickedState.h" />
