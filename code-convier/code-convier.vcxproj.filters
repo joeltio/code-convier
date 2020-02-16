@@ -393,6 +393,9 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameDestroyLevelState.cpp">
+      <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -802,6 +805,12 @@
     </ClInclude>
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="DestroyGameLevelAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDestroyLevelState.h">
+      <Filter>Header Files\States\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
