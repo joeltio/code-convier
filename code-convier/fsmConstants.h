@@ -42,7 +42,7 @@ const Types::TypeId STATE_COMPONENT_TYPES[] = {
 	Types::toTypeId<Component::GameState>(),
 	Types::toTypeId<Component::ClickState>(),
 	Types::toTypeId<Component::PlayerMovementState>(),
-	Types::toTypeId<Component::EnergyOrbState>()
+	Types::toTypeId<Component::EnergyOrbState>(),
 	Types::toTypeId<Component::PlayerMovementState>(),
 	Types::toTypeId<Component::PlayerAttackState>()
 };
@@ -61,7 +61,7 @@ const std::unordered_map<Types::TypeId, FSM::State*> TYPE_STATE_MAP({
 	{Types::toTypeId<PlayerMovementMovingState>(), new PlayerMovementMovingState()},
 	{Types::toTypeId<PlayerMovementChargingState>(), new PlayerMovementChargingState()},
 	{Types::toTypeId<EnergyOrbHomingState>(), new EnergyOrbHomingState()},
-	{Types::toTypeId<EnergyOrbIdleState>(), new EnergyOrbIdleState()}
+	{Types::toTypeId<EnergyOrbIdleState>(), new EnergyOrbIdleState()},
 	{Types::toTypeId<PlayerMovementChargingState>(), new PlayerMovementChargingState()},
 	{Types::toTypeId<PlayerAttackIdleState>(), new PlayerAttackIdleState()},
 	{Types::toTypeId<PlayerAttackingState>(), new PlayerAttackingState()}
@@ -72,7 +72,7 @@ const std::unordered_map<Types::TypeId, FSM::State*> TYPE_STATE_MAP({
 static FSM::Reducer* ENABLED_REDUCERS[] = {
 	new GameReducer(),
 	new PlayerMovementReducer(),
-	new PlayerAttackReducer()
+	new PlayerAttackReducer(),
 	new PlayerMovementReducer(),
 	new EnergyOrbReducer()
 };
