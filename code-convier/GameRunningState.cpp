@@ -17,12 +17,23 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 	float xCenter = 0;
 	float yCenter = 0;
 	std::unordered_set<ECS::EntityIdType>* players = this->manager->getEntities<Entity::Player>();
-
 	for (ECS::EntityIdType playerId : *players)
 	{
 		Component::Transform playerPosition = this->manager->getEntityComponent<Component::Transform>(playerId);
 		xCenter += playerPosition.x;
 		yCenter += playerPosition.y;
+
+	}
+
+	std::unordered_set<ECS::EntityIdType>* healthbarIds = this->manager->getEntities<Entity::Healthbar>();
+	for (ECS::EntityIdType healthbarId : *healthbarIds) {
+		Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(healthbarId);
+		std::unordered_set<ECS::EntityIdType>* players = this->manager->getEntities<Entity::Player>();
+		for (ECS::EntityIdType playerId : *players)
+		{
+			Component::Health healthComponent = manager->getEntityComponent<Component::Health>(playerId);
+			textureComponent.viewableRect.right = (healthComponent.health / (float)PLAYER_HEALTH) * textureComponent.totalWidth;
+		}
 	}
 
 	xCenter /= players->size();
