@@ -569,9 +569,6 @@
     <ClInclude Include="HealthComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="HealthRecoverComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
     <ClInclude Include="HurtBoxComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>

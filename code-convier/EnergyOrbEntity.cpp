@@ -58,8 +58,7 @@ namespace Entity {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
 				Component::Health& entityHP = manager->getEntityComponent<Component::Health>(id);
-
-				entityHP.storedHealth += energy; 
+				entityHP.storedHealth += energy;
 
 				manager->removeEntity<EnergyOrb>(entityId);
 			}
@@ -74,7 +73,6 @@ namespace Entity {
 
 		manager->addComponent<Component::Physics>(entityId, physicsComponent);
 		manager->addComponent<Component::EnergyOrbState>(entityId, orbStateComponent);
-		manager->addComponent<Component::HealthRecover>(entityId, HPRegenComponent);
 		manager->addComponent<Component::Transform>(entityId, transformComponent);
 		manager->addComponent<Component::Texture>(entityId, textureComponent);
 		manager->addComponent<Component::StaticCollidable>(entityId, collidable);

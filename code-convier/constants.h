@@ -134,7 +134,7 @@ const int PLAYER_CHARGE_DAMAGE = 20;
 const float PLAYER_CHARGE_COOLDOWN = 15.0f;
 const float PLAYER_CHARGE_TIMER = 2.0f;
 const float RUN_MULTIPLIER = 1.5f;
-const float JUMP_SPEED = -20.0f;
+const float JUMP_SPEED = -30.0f;
 const int PLAYER_DAMAGE = 10;
 const float PLAYER_ATTACK_COOLDOWN = 4.0f;
 const float PLAYER_ATTACK_RANGE = 20.0f;
@@ -164,6 +164,6 @@ const int TO_AUGMENTATION = 1;
 const UCHAR ESC_KEY = VK_ESCAPE;   // escape key
 const UCHAR ALT_KEY = VK_MENU;     // Alt key
 const UCHAR ENTER_KEY = VK_RETURN;   // Enter key
-const UCHAR LSHIFT_KEY = VK_LSHIFT;
+const UCHAR SHIFT_KEY = VK_SHIFT; // Shift key
 
 #endif

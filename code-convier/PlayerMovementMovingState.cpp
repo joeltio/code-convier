@@ -19,7 +19,6 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		animatableComponent.startFrame = 1;
 	}
 
-
 	std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
 	for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
 	{
@@ -55,7 +54,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	}
 
 	// mutually exclusive with charging, and walking 
-	if (input->isKeyDown(VK_SHIFT))
+	if (input->isKeyDown(SHIFT_KEY))
 	{
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		// check for direction
@@ -63,14 +62,14 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		{
 			transformComponent.flipHorizontal = true;
 			physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
-			healthComponent.health -= RUNNING_HEATLH_TICK;
+			healthComponent.health -= RUNNING_HEATLH_TICK * frametime;
 		}
 
 		else if (input->isKeyDown('D')) // right run
 		{
 			transformComponent.flipHorizontal = false;
 			physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR * RUN_MULTIPLIER;
-			healthComponent.health -= RUNNING_HEATLH_TICK;
+			healthComponent.health -= RUNNING_HEATLH_TICK * frametime;
 		}
 
 		std::unordered_set<ECS::EntityIdType> playerRunningEntityIds = *this->manager->getEntities<Entity::PlayerRunningIcon>();
