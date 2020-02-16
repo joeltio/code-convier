@@ -10,6 +10,24 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// reset the x velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
 
+	// Set icon frames to 1
+	std::unordered_set<ECS::EntityIdType> playerRunningEntityIds = *this->manager->getEntities<Entity::PlayerRunningIcon>();
+	for (ECS::EntityIdType playerRunningEntityId : playerRunningEntityIds)
+	{
+		Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerRunningEntityId);
+		animatableComponent.currentFrame = 1;
+		animatableComponent.startFrame = 1;
+	}
+
+
+	std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
+	for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
+	{
+		Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
+		animatableComponent.currentFrame = 1;
+		animatableComponent.startFrame = 1;
+	}
+
 	// check if the entity is already jumping or not
 	if (!jumpingComponent.isJumping)
 	{
@@ -59,6 +77,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		{
 			Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerRunningEntityId);
 			animatableComponent.currentFrame = 2;
+			animatableComponent.startFrame = 2;
 		}
 	}
 
@@ -82,6 +101,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 			{
 				Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
 				animatableComponent.currentFrame = 2;
+				animatableComponent.startFrame = 2;
 			}
 
 			return ChargingPlayerMovement();
