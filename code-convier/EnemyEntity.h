@@ -15,6 +15,10 @@
 #include "AugmentationComponent.h"
 #include "AnimatableComponent.h"
 
+#include "EnemyMovementStateComponent.h"
+
+#include "EnemyMovementChaseState.h"
+
 namespace Entity {
 
 	class Enemy : public ECS::Entity {

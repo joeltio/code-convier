@@ -56,6 +56,14 @@ namespace Entity {
 		attackComponent.cooldown = ENEMY_ATTACK_COOLDOWN;
 		manager->addComponent<Component::Attack>(enemyEntityId, attackComponent);
 
+		// add the enemy movement state component
+		Component::EnemyMovementState movementStateComp = Component::EnemyMovementState {
+			enemyEntityId,
+			true,
+			Types::toTypeId<EnemyMovementChaseState>()
+		};
+		manager->addComponent<Component::EnemyMovementState>(enemyEntityId, movementStateComp);
+
 		return enemyEntityId;
 	}
 }
