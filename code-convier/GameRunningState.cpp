@@ -19,12 +19,18 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 	std::unordered_set<ECS::EntityIdType>* players = this->manager->getEntities<Entity::Player>();
 	for (ECS::EntityIdType playerId : *players)
 	{
-		Component::Transform playerPosition = this->manager->getEntityComponent<Component::Transform>(playerId);
+		Component::Transform& playerPosition = this->manager->getEntityComponent<Component::Transform>(playerId);
+		Component::Collidable& playerCollide = this->manager->getEntityComponent<Component::Collidable>(playerId);
 		xCenter += playerPosition.x;
 		yCenter += playerPosition.y;
 		if (playerPosition.x < 0)
 		{
 			playerPosition.x = 0;
+			float width = playerCollide.corners[1][0] - playerCollide.corners[0][0];
+			playerCollide.corners[0][0] = 0;
+			playerCollide.corners[1][0] = width;
+			playerCollide.corners[2][0] = width;
+			playerCollide.corners[3][0] = 0;
 		}
 		else if (playerPosition.x > levelWidth * tileWidth)
 		{

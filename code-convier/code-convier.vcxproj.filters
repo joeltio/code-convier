@@ -396,6 +396,9 @@
     <ClCompile Include="GameDestroyLevelState.cpp">
       <Filter>Source Files\States\Game</Filter>
     </ClCompile>
+    <ClCompile Include="GameLevelComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">

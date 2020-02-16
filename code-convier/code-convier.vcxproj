@@ -158,6 +158,7 @@
     <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="GameDestroyLevelState.cpp" />
+    <ClCompile Include="GameLevelComponent.cpp" />
     <ClCompile Include="PlayerAttackIdleState.cpp" />
     <ClCompile Include="PlayerAttackingState.cpp" />
     <ClCompile Include="AugmentationSystem.cpp" />
