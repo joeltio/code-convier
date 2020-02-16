@@ -10,6 +10,24 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// reset the x velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
 
+	// Set icon frames to 1
+	std::unordered_set<ECS::EntityIdType> playerRunningEntityIds = *this->manager->getEntities<Entity::PlayerRunningIcon>();
+	for (ECS::EntityIdType playerRunningEntityId : playerRunningEntityIds)
+	{
+		Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerRunningEntityId);
+		animatableComponent.currentFrame = 1;
+		animatableComponent.startFrame = 1;
+	}
+
+
+	std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
+	for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
+	{
+		Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
+		animatableComponent.currentFrame = 1;
+		animatableComponent.startFrame = 1;
+	}
+
 	// check if the entity is already jumping or not
 	if (!jumpingComponent.isJumping)
 	{
@@ -37,7 +55,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	}
 
 	// mutually exclusive with charging, and walking 
-	if (input->isKeyDown(LSHIFT_KEY))
+	if (input->isKeyDown(VK_SHIFT))
 	{
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		// check for direction
@@ -60,6 +78,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		{
 			Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerRunningEntityId);
 			animatableComponent.currentFrame = 2;
+			animatableComponent.startFrame = 2;
 		}
 	}
 
@@ -68,7 +87,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	{
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
 		// ignore if the charge is still on cooldown
-		if (chargeComponent.cooldownTimer - frametime < 0)
+		if (chargeComponent.cooldownTimer - frametime <= 0)
 		{
 			transformComponent.flipHorizontal = false;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
@@ -83,12 +102,11 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 			{
 				Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
 				animatableComponent.currentFrame = 2;
+				animatableComponent.startFrame = 2;
 			}
 
 			return ChargingPlayerMovement();
 		}
 	}
-
-	return FSM::NoAction();
 }
  
