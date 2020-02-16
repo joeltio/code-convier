@@ -4,10 +4,10 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 
 	// Get the direction the entity is facing, using right as the benchmark
 	ECS::EntityIdType playerId = stateComponent.entityId;
-	Component::Transform transformComponent = manager->getEntityComponent<Component::Transform>(playerId);
-	Component::Texture textureComponent = manager->getEntityComponent<Component::Texture>(playerId);
-	Component::Animatable animatableComponent = manager->getEntityComponent<Component::Animatable>(playerId);
-	Component::Attack attackComponent = manager->getEntityComponent<Component::Attack>(playerId);
+	Component::Transform& transformComponent = manager->getEntityComponent<Component::Transform>(playerId);
+	Component::Texture& textureComponent = manager->getEntityComponent<Component::Texture>(playerId);
+	Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerId);
+	Component::Attack& attackComponent = manager->getEntityComponent<Component::Attack>(playerId);
 	int attackDirectionSign = (transformComponent.flipHorizontal) ? 1 : -1;
 
 	// Create the hitboxes, taking into account the direction
@@ -36,18 +36,30 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 		transformComponent.y + playerHeight
 	));
 
-	hitBoxComponent.onEnter = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id) {
-		// check for collision with enemy types and deal damage to them
-		if (manager->getEntity(id)->isSameType<Entity::Enemy>())
-		{
-			manager->getEntityComponent<Component::Health>(id).health -= attackComponent.damage;
-			if (!attackComponent.multiHits)
+	// determine whether component should be destroyed on first impact
+	if (!attackComponent.multiHits)
+	{
+		hitBoxComponent.onEnter = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id) {
+			// check for collision with enemy types and deal damage to them
+			if (manager->getEntity(id)->isSameType<Entity::Enemy>())
 			{
+				manager->getEntityComponent<Component::Health>(id).health -= attackComponent.damage;
 				manager->removeComponent<Component::HurtBox>(playerId);
 			}
-		}
-	};
-
+		};
+	}
+	else
+	{
+		hitBoxComponent.onStay = [playerId, attackComponent](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
+			// check for collision with enemy types and deal damage to them
+			if (manager->getEntity(id)->isSameType<Entity::Enemy>())
+			{
+				manager->getEntityComponent<Component::Health>(id).health -= attackComponent.damage;
+				manager->removeComponent<Component::HurtBox>(playerId);
+			}
+		};
+	}
+	
 	// reset the attack timer
 	attackComponent.cooldownTimer = attackComponent.cooldown;
 
