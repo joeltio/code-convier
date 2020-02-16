@@ -60,8 +60,21 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 		};
 	}
 	
-	// reset the attack timer
+	// reset the attack timer, and the sprite
 	attackComponent.cooldownTimer = attackComponent.cooldown;
+
+	textureComponent.zIndex = 2;
+	if (!textureComponent.loadTexture(graphics, PLAYER_IMAGE))
+	{
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
+	}
+	animatableComponent.columns = 10;
+	animatableComponent.rows = 1;
+	animatableComponent.startFrame = 1;
+	animatableComponent.endFrame = 10;
+	animatableComponent.currentFrame = 1;
+	animatableComponent.frameDelay = 1000;
+	transformComponent.scale = 1;
 
 	return PlayerAttackingIdle();
 }
