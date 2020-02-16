@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <time.h>
 #include "Action.h"
 #include "State.h"
 #include "StateComponent.h"
