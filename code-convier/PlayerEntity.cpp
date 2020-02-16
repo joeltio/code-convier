@@ -84,11 +84,12 @@ namespace Entity {
 		manager->addComponent<Component::PlayerAttackState>(entityId, attackStateComponent);
 
 		// add the health state component
-		Component::PlayerHealthState healthStateComponent = Component::PlayerHealthState{
+		Component::PlayerHealthState healthStateComponent = Component::PlayerHealthState {
 			entityId,
 			true,
 			Types::toTypeId<PlayerHealthIdleState>()
 		};
+		manager->addComponent<Component::PlayerHealthState>(entityId, healthStateComponent);
 
 		return entityId;
 	}
