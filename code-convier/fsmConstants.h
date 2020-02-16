@@ -23,7 +23,6 @@
 #include "ClickingState.h"
 #include "NotClickedState.h"
 
-#include "PlayerMovementIdleState.h"
 #include "PlayerMovementMovingState.h"
 #include "PlayerMovementChargingState.h"
 
@@ -65,12 +64,10 @@ const std::unordered_map<Types::TypeId, FSM::State*> TYPE_STATE_MAP({
 	{Types::toTypeId<GameRunningState>(), new GameRunningState()},
 	{Types::toTypeId<ClickingState>(), new ClickingState()},
 	{Types::toTypeId<NotClickedState>(), new NotClickedState()},
-	{Types::toTypeId<PlayerMovementIdleState>(), new PlayerMovementIdleState()},
 	{Types::toTypeId<PlayerMovementMovingState>(), new PlayerMovementMovingState()},
 	{Types::toTypeId<PlayerMovementChargingState>(), new PlayerMovementChargingState()},
 	{Types::toTypeId<EnergyOrbHomingState>(), new EnergyOrbHomingState()},
 	{Types::toTypeId<EnergyOrbIdleState>(), new EnergyOrbIdleState()},
-	{Types::toTypeId<PlayerMovementChargingState>(), new PlayerMovementChargingState()},
 	{Types::toTypeId<PlayerAttackIdleState>(), new PlayerAttackIdleState()},
 	{Types::toTypeId<PlayerAttackingState>(), new PlayerAttackingState()},
 	{Types::toTypeId<PlayerHealthIdleState>(), new PlayerHealthIdleState()},

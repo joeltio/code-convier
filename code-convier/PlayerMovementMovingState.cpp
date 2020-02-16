@@ -10,7 +10,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// reset the x velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
 
-	// Set icon frames to 1
+	// Set icon frames to 1 for the animation frame
 	std::unordered_set<ECS::EntityIdType> playerRunningEntityIds = *this->manager->getEntities<Entity::PlayerRunningIcon>();
 	for (ECS::EntityIdType playerRunningEntityId : playerRunningEntityIds)
 	{
@@ -89,10 +89,10 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		// ignore if the charge is still on cooldown
 		if (chargeComponent.cooldownTimer <= 0)
 		{
-			transformComponent.flipHorizontal = false;
+			int attackDirectionSign = (transformComponent.flipHorizontal) ? 1 : -1;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 
-			physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * SCALE_FACTOR;
+			physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * attackDirectionSign * SCALE_FACTOR;
 			healthComponent.health -= CHARGE_HEALTH_TICK; // initial tick
 			chargeComponent.cooldownTimer = chargeComponent.cooldown;
 			chargeComponent.chargeTime = PLAYER_CHARGE_TIMER;

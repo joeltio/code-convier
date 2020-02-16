@@ -54,6 +54,7 @@ namespace Entity {
 		Component::Attack attackComponent = Component::Attack();
 		attackComponent.damage = ENEMY_ATTACK_DAMAGE;
 		attackComponent.cooldown = ENEMY_ATTACK_COOLDOWN;
+		attackComponent.range = ENEMY_ATTACK_RANGE;
 		manager->addComponent<Component::Attack>(enemyEntityId, attackComponent);
 
 		// add the enemy movement state component
@@ -63,6 +64,12 @@ namespace Entity {
 			Types::toTypeId<EnemyMovementChaseState>()
 		};
 		manager->addComponent<Component::EnemyMovementState>(enemyEntityId, movementStateComp);
+
+		// add the enemy AI component
+		Component::EnemyAI enemyAIComponent = Component::EnemyAI();
+		enemyAIComponent.minRange = ENEMY_MIN_RANGE;
+		enemyAIComponent.chaseRange = ENEMY_CHASE_RANGE;
+		manager->addComponent<Component::EnemyAI>(enemyEntityId, enemyAIComponent);
 
 		return enemyEntityId;
 	}

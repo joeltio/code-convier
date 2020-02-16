@@ -5,6 +5,8 @@
 #include "graphics.h"
 #include "TextureComponent.h"
 #include "TransformComponent.h"
+#include "GameStateComponent.h"
+#include "GamePauseState.h"
 
 namespace Entity {
 
