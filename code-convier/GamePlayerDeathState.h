@@ -7,6 +7,8 @@
 
 #include "PlayerDeathScreenEntity.h"
 
+#include "PrepareMenuAction.h"
+
 class GamePlayerDeathState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);
 	void enter(Component::State state);
