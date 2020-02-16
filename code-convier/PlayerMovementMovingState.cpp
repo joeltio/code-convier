@@ -6,9 +6,20 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	Component::Physics& physicsComponent = manager->getEntityComponent<Component::Physics>(referenceId);
 	Component::Transform& transformComponent = manager->getEntityComponent<Component::Transform>(referenceId);
 
-	// reset the velocity in the state before checking for input
+	// reset the x velocity in the state before checking for input
 	physicsComponent.velocity.x = 0;
-	physicsComponent.velocity.y = 0;
+
+	// check if the entity is already jumping or not
+	if (!manager->getEntityComponent<Component::Jumping>(referenceId).isJumping)
+	{
+		// reset the y velocity if the player is not jumping
+		physicsComponent.velocity.y = 0;
+		// handle the jump velocity first
+		if (input->isKeyDown('W')) // jump
+		{
+			physicsComponent.velocity.y = JUMP_SPEED * SCALE_FACTOR;
+		}
+	}
 
 	// check for player movement button clicks
 	if (input->isKeyDown('A')) // left
@@ -21,17 +32,8 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		transformComponent.flipHorizontal = false;
 		physicsComponent.velocity.x = PLAYER_SPEED * SCALE_FACTOR;
 	}
-	if (input->isKeyDown('W')) // jump
-	{
-		// check if the entity is already jumping or not
-		if (!manager->getEntityComponent<Component::Jumping>(referenceId).isJumping)
-		{
-			// initial velocity, slowly decelerated by gravity
-			physicsComponent.velocity.y = JUMP_SPEED * SCALE_FACTOR;
-		}
-	}
 
-	// mutually exclusive with charging, and walking states
+	// mutually exclusive with charging, and walking 
 	if (input->isKeyDown(LSHIFT_KEY))
 	{
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
@@ -61,22 +63,28 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	// mutually exclusive with running and walking
 	if (input->isKeyDown('K')) // charge
 	{
-		transformComponent.flipHorizontal = true;
-		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
-
-		physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * SCALE_FACTOR;
-		healthComponent.health -= CHARGE_HEALTH_TICK;
-		chargeComponent.cooldownTimer = chargeComponent.cooldown;
-
-		std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
-		for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
+		if (chargeComponent.cooldownTimer - frametime > 0)
 		{
-			Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
-			animatableComponent.currentFrame = 2;
-		}
+			transformComponent.flipHorizontal = false;
+			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 
-		return ChargingPlayerMovement();
+			physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * SCALE_FACTOR;
+			healthComponent.health -= CHARGE_HEALTH_TICK; // initial tick
+			chargeComponent.cooldownTimer = chargeComponent.cooldown;
+			chargeComponent.chargeTime = PLAYER_CHARGE_TIMER;
+
+			std::unordered_set<ECS::EntityIdType> playerChargingEntityIds = *this->manager->getEntities<Entity::PlayerChargingIcon>();
+			for (ECS::EntityIdType playerChargingEntityId : playerChargingEntityIds)
+			{
+				Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerChargingEntityId);
+				animatableComponent.currentFrame = 2;
+			}
+
+			return ChargingPlayerMovement();
+		}
+		
+		// ignore if the charge is still on cooldown
 	}
 
 	return FSM::NoAction();

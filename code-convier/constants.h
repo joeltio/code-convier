@@ -129,6 +129,9 @@ const int CARD_MARGIN = 87;
 
 const float PLAYER_SPEED = 100.0f;
 const float PLAYER_CHARGE_SPEED = 200.0f;
+const int PLAYER_CHARGE_DAMAGE = 20;
+const float PLAYER_CHARGE_COOLDOWN = 15.0f;
+const float PLAYER_CHARGE_TIMER = 2.0f;
 const float RUN_MULTIPLIER = 1.5f;
 const float JUMP_SPEED = 1000.0f;
 const int PLAYER_DAMAGE = 10;

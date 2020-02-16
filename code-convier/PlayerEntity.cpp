@@ -6,7 +6,7 @@ namespace Entity {
 
 		// add the physics component
 		Component::Physics physicsComponent = Component::Physics();
-		physicsComponent.acceleration.y = 9.81f * 5;
+		physicsComponent.acceleration.y = 9.81f;
 		manager->addComponent<Component::Physics>(entityId, physicsComponent);
 
 		// add the transform component
@@ -59,8 +59,8 @@ namespace Entity {
 
 		// add the charging component
 		Component::Charge chargeComponent = Component::Charge();
-		chargeComponent.cooldown = 5;
-		chargeComponent.damage = 30;
+		chargeComponent.cooldown = PLAYER_CHARGE_COOLDOWN;
+		chargeComponent.damage = PLAYER_CHARGE_DAMAGE;
 		manager->addComponent<Component::Charge>(entityId, chargeComponent);
 
 		// add the Jumping component
