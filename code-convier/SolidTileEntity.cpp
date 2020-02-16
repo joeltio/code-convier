@@ -118,12 +118,24 @@ namespace Entity {
 		collidable.corners.push_back(D3DXVECTOR2(x + width, y + height));
 		collidable.corners.push_back(D3DXVECTOR2(x, y + height));
 
+		collidable.onEnter = [entityId](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (manager->getEntity(id)->isSameType<Player>())
+			{
+				Component::Jumping& playerJump = manager->getEntityComponent<Component::Jumping>(id);
+				playerJump.isJumping = false;
+			}
+		};
+
 		collidable.onStay = [entityId](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
 			if (manager->getEntity(id)->isSameType<Player>())
 			{
 				Component::Transform& entityPos = manager->getEntityComponent<Component::Transform>(id);
 				Component::Collidable& entityCol = manager->getEntityComponent<Component::Collidable>(id);
+				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
 				Component::StaticCollidable tileCol = manager->getEntityComponent<Component::StaticCollidable>(entityId);
+
+				entityPhy.velocity[1] = 0;
+
 				float entityWidth = entityCol.corners[1][0] - entityCol.corners[0][0];
 				float entityHeight = entityCol.corners[2][1] - entityCol.corners[0][1];
 

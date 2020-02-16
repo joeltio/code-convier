@@ -390,6 +390,9 @@
     <ClCompile Include="EnergyOrbHomingState.cpp">
       <Filter>Source Files\States\Orb</Filter>
     </ClCompile>
+    <ClCompile Include="EnergyOrbReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">

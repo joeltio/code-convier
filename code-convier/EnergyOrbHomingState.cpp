@@ -14,7 +14,7 @@ FSM::Action EnergyOrbHomingState::update(float frametime, Component::State state
 	for (ECS::EntityIdType orbID : orbEntityIds)
 	{
 		Component::Collidable orbCollidable = this->manager->getEntityComponent<Component::Collidable>(orbID);
-		Component::Physics orbPhysics = this->manager->getEntityComponent<Component::Physics>(orbID);
+		Component::Physics& orbPhysics = this->manager->getEntityComponent<Component::Physics>(orbID);
 		float xDiff = playerCollidable.getCenter()[0] - orbCollidable.getCenter()[0];
 		float yDiff = playerCollidable.getCenter()[1] - orbCollidable.getCenter()[1];
 		float angle;

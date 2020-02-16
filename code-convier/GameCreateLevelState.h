@@ -15,6 +15,8 @@
 #include "EnemyEntity.h"
 #include "HealthbarEntity.h"
 #include "ResumeGameAction.h"
+#include "PlayerChargingIconEntity.h"
+#include "PlayerRunningIconEntity.h"
 
 class GameCreateLevelState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);

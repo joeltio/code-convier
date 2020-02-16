@@ -178,6 +178,7 @@
     <ClCompile Include="EnemyMovementIdleState.cpp" />
     <ClCompile Include="EnergyOrbHomingState.cpp" />
     <ClCompile Include="EnergyOrbIdleState.cpp" />
+    <ClCompile Include="EnergyOrbReducer.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FiniteStateSystem.cpp" />
     <ClInclude Include="ChargeComponent.h" />
