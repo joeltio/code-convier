@@ -266,7 +266,7 @@
     <ClInclude Include="OrbDetectPlayerAction.h" />
     <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
     <ClInclude Include="TemporaryAugmentationEntity.h" />
-    <ClInclude Include="WalkingPlayerMovementAction.h" />
+    <ClInclude Include="MovingPlayerMovementAction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h" />

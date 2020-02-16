@@ -740,9 +740,6 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="WalkingPlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerDeathScreenEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -801,6 +798,9 @@
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PlayerHealthDeathAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>

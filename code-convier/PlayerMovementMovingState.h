@@ -9,7 +9,7 @@
 #include "TransformComponent.h"
 #include "IdlePlayerMovementAction.h"
 #include "ChargingPlayerMovementAction.h"
-#include "WalkingPlayerMovementAction.h"
+#include "MovingPlayerMovementAction.h"
 #include "PlayerChargingIconEntity.h"
 #include "PlayerRunningIconEntity.h"
 
