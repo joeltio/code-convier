@@ -35,13 +35,4 @@ void PlayerMovementReducer::reduce(
 
 		FSM::Reducer::changeState<PlayerMovementChargingState>(states, movementState);
 	}
-
-	else if (action.type == IDLE_PLAYER_MOVEMENT)
-	{
-		// Change the state of the player entity
-		ECS::EntityIdType playerEntityId = *manager->getEntities<Entity::Player>()->begin();
-		Component::PlayerMovementState& movementState = manager->getEntityComponent<Component::PlayerMovementState>(playerEntityId);
-
-		FSM::Reducer::changeState<PlayerMovementIdleState>(states, movementState);
-	}
 }

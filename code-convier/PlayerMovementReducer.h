@@ -6,16 +6,13 @@
 #include "PlayerEntity.h"
 #include "PlayerMovementStateComponent.h"
 
-#include "IdlePlayerMovementAction.h"
 #include "MovingPlayerMovementAction.h"
 #include "ChargingPlayerMovementAction.h"
 
-#include "PlayerMovementIdleState.h"
 #include "PlayerMovementMovingState.h"
 #include "PlayerMovementChargingState.h"
 
 static std::string MOVEMENT_ACCEPTED_ACTIONS[] = {
-	IDLE_PLAYER_MOVEMENT,
 	MOVING_PLAYER_MOVEMENT,
 	CHARGING_PLAYER_MOVEMENT
 };

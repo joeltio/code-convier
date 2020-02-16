@@ -306,9 +306,6 @@
     <ClCompile Include="PlayerMovementChargingState.cpp">
       <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerMovementIdleState.cpp">
-      <Filter>Source Files\States\PlayerMovement</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerMovementMovingState.cpp">
       <Filter>Source Files\States\PlayerMovement</Filter>
     </ClCompile>
@@ -572,9 +569,6 @@
     <ClInclude Include="HurtBoxComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="IdlePlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -648,9 +642,6 @@
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementChargingState.h">
-      <Filter>Header Files\States\PlayerMovement</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementIdleState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementIdleState.h">
