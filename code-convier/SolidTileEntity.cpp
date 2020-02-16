@@ -123,6 +123,50 @@ namespace Entity {
 			{
 				Component::Jumping& playerJump = manager->getEntityComponent<Component::Jumping>(id);
 				playerJump.isJumping = false;
+
+				Component::Transform& entityPos = manager->getEntityComponent<Component::Transform>(id);
+				Component::Collidable& entityCol = manager->getEntityComponent<Component::Collidable>(id);
+				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
+				Component::StaticCollidable tileCol = manager->getEntityComponent<Component::StaticCollidable>(entityId);
+
+				float entityWidth = entityCol.corners[1][0] - entityCol.corners[0][0];
+				float entityHeight = entityCol.corners[2][1] - entityCol.corners[0][1];
+
+				float xDiff = tileCol.getCenter()[0] - entityCol.getCenter()[0];
+				float yDiff = tileCol.getCenter()[1] - entityCol.getCenter()[1];
+				if (abs(yDiff) > abs(xDiff))
+				{
+					if (yDiff > 0)
+					{
+						entityPos.y = tileCol.corners[0][1] - entityHeight;
+					}
+					else if (yDiff < 0)
+					{
+						entityPos.y = tileCol.corners[3][1];
+					}
+					entityPhy.velocity[1] = 0;
+				}
+				else if (abs(xDiff) > abs(yDiff))
+				{
+					if (xDiff > 0)
+					{
+						entityPos.x = tileCol.corners[0][0] - entityWidth;
+					}
+					else if (xDiff < 0)
+					{
+						entityPos.x = tileCol.corners[1][0];
+					}
+					entityPhy.velocity[0] = 0;
+				}
+
+				std::vector<D3DXVECTOR2> corners = {
+					{(float)entityPos.x, (float)entityPos.y},
+					{(float)entityPos.x + entityWidth, (float)entityPos.y},
+					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
+					{(float)entityPos.x, (float)entityPos.y + entityHeight}
+				};
+
+				entityCol.corners = corners;
 			}
 		};
 
@@ -134,8 +178,6 @@ namespace Entity {
 				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
 				Component::StaticCollidable tileCol = manager->getEntityComponent<Component::StaticCollidable>(entityId);
 
-				entityPhy.velocity[1] = 0;
-
 				float entityWidth = entityCol.corners[1][0] - entityCol.corners[0][0];
 				float entityHeight = entityCol.corners[2][1] - entityCol.corners[0][1];
 
@@ -145,23 +187,25 @@ namespace Entity {
 				{
 					if (yDiff > 0)
 					{
-						entityPos.y = tileCol.corners[0][1] - entityHeight - 1;
+						entityPos.y = tileCol.corners[0][1] - entityHeight;
 					}
 					else if (yDiff < 0)
 					{
-						entityPos.y = tileCol.corners[3][1] + 1;
+						entityPos.y = tileCol.corners[3][1];
 					}
+					entityPhy.velocity[1] = 0;
 				}
 				else if (abs(xDiff) > abs(yDiff))
 				{
 					if (xDiff > 0)
 					{
-						entityPos.x = tileCol.corners[0][0] - entityWidth - 1;
+						entityPos.x = tileCol.corners[0][0] - entityWidth;
 					}
 					else if (xDiff < 0)
 					{
-						entityPos.x = tileCol.corners[1][0] + 1;
+						entityPos.x = tileCol.corners[1][0];
 					}
+					entityPhy.velocity[0] = 0;
 				}
 
 				std::vector<D3DXVECTOR2> corners = {
