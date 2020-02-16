@@ -50,6 +50,9 @@
     <Filter Include="Header Files\States\Game">
       <UniqueIdentifier>{935062c0-ac9c-41f2-a0c6-4d59fcf0a799}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\States\Orb">
+      <UniqueIdentifier>{5e36c0d5-dad0-47ec-8d2f-d6fbc90a35d0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\States\PlayerHealth">
       <UniqueIdentifier>{3f436459-026d-4adc-af71-0083a6fc4b6b}</UniqueIdentifier>
     </Filter>
@@ -75,6 +78,9 @@
     <Filter Include="Resource Files\HUD">
       <UniqueIdentifier>{6356c15f-6dbb-4dd8-9599-3ce750ddc1f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Icons">
+      <UniqueIdentifier>{151f56c5-5b83-451d-9cb6-d7f24a265042}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files\map">
       <UniqueIdentifier>{6ccf98d2-3d3c-421f-bd5f-5dcfdec5d68e}</UniqueIdentifier>
     </Filter>
@@ -86,6 +92,9 @@
     </Filter>
     <Filter Include="Resource Files\sprites">
       <UniqueIdentifier>{397cccc2-f039-4f85-ad97-01cb1fb0b42e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Temporary Augmentations">
+      <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files\Temporary Augmentations">
       <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
@@ -133,6 +142,9 @@
     <Filter Include="Source Files\States\Game">
       <UniqueIdentifier>{106c62b3-54a9-49fc-9280-93840294ff4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Orb">
+      <UniqueIdentifier>{cec8c820-033e-4b58-91cc-4df539b9047d}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\States\PlayerHealth">
       <UniqueIdentifier>{7b93894d-003a-404b-921c-58a64fe56ec2}</UniqueIdentifier>
     </Filter>
@@ -141,18 +153,6 @@
     </Filter>
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{be293b0c-f66a-45e2-b48e-8be4ddc4789a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Temporary Augmentations">
-      <UniqueIdentifier>{5b4bcb09-c5e9-4d73-b920-4da517766115}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Icons">
-      <UniqueIdentifier>{151f56c5-5b83-451d-9cb6-d7f24a265042}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\States\Orb">
-      <UniqueIdentifier>{5e36c0d5-dad0-47ec-8d2f-d6fbc90a35d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Orb">
-      <UniqueIdentifier>{cec8c820-033e-4b58-91cc-4df539b9047d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +222,15 @@
     <ClCompile Include="EnergyOrbEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="EnergyOrbHomingState.cpp">
+      <Filter>Source Files\States\Orb</Filter>
+    </ClCompile>
+    <ClCompile Include="EnergyOrbIdleState.cpp">
+      <Filter>Source Files\States\Orb</Filter>
+    </ClCompile>
+    <ClCompile Include="EnergyOrbReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
@@ -251,6 +260,9 @@
     </ClCompile>
     <ClCompile Include="GamePlayerDeathState.cpp">
       <Filter>Source Files\States\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
     <ClCompile Include="GameRunningState.cpp">
       <Filter>Source Files\States\Game</Filter>
@@ -288,6 +300,21 @@
     <ClCompile Include="PhysicsSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerAttackIdleState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackingState.cpp">
+      <Filter>Source Files\States\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerChargingIconEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDeathScreenEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerDeathState.cpp">
       <Filter>Source Files\States\PlayerHealth</Filter>
     </ClCompile>
@@ -299,6 +326,9 @@
     </ClCompile>
     <ClCompile Include="PlayerHealthIdleState.cpp">
       <Filter>Source Files\States\PlayerHealth</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
     <ClCompile Include="PlayerHealthReplenishingState.cpp">
       <Filter>Source Files\States\PlayerHealth</Filter>
@@ -317,6 +347,9 @@
     </ClCompile>
     <ClCompile Include="PlayerMovementReducer.cpp">
       <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRunningIconEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Reducer.tpp">
       <Filter>Source Files\FSM</Filter>
@@ -359,39 +392,6 @@
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerDeathScreenEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerChargingIconEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerRunningIconEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerAttackReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerAttackIdleState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerAttackingState.cpp">
-      <Filter>Source Files\States\Attack</Filter>
-    </ClCompile>
-    <ClCompile Include="GameReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
-    </ClCompile>
-    <ClCompile Include="EnergyOrbIdleState.cpp">
-      <Filter>Source Files\States\Orb</Filter>
-    </ClCompile>
-    <ClCompile Include="EnergyOrbHomingState.cpp">
-      <Filter>Source Files\States\Orb</Filter>
-    </ClCompile>
-    <ClCompile Include="EnergyOrbReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerHealthReducer.cpp">
-      <Filter>Source Files\Reducers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -506,6 +506,18 @@
     <ClInclude Include="EnergyOrbEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="EnergyOrbHomingState.h">
+      <Filter>Header Files\States\Orb</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbIdleState.h">
+      <Filter>Header Files\States\Orb</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyOrbStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
@@ -593,11 +605,17 @@
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="MovingPlayerMovementAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="NotClickedState.h">
       <Filter>Header Files\States\Click</Filter>
     </ClInclude>
     <ClInclude Include="OBBOBBCollisionStrategy.h">
       <Filter>Header Files\CollisionUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbDetectPlayerAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="PauseGameAction.h">
       <Filter>Header Files\Actions</Filter>
@@ -620,6 +638,30 @@
     <ClInclude Include="PhysicsSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerAttackIdleState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackingAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackingState.h">
+      <Filter>Header Files\States\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAtttackIdleAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerChargingIconEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeathScreenEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerDeathState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
     </ClInclude>
@@ -632,17 +674,32 @@
     <ClInclude Include="PlayerEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerHealthDeathAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthIdleAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerHealthIdleState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
     </ClInclude>
     <ClInclude Include="PlayerHealthIdleState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReplenishingAction.h">
+      <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="PlayerHealthReplenishingState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
     </ClInclude>
     <ClInclude Include="PlayerHealthReplenishingState.h">
       <Filter>Header Files\States\PlayerHealth</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthStateComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovementChargingState.h">
       <Filter>Header Files\States\PlayerMovement</Filter>
@@ -668,10 +725,16 @@
     <ClInclude Include="PlayerMovementStateComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerRunningIconEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="PrepareGameAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="PrepareMenuAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PreparePlayerDeathAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
     <ClInclude Include="PrepareTemporaryAugmentationAction.h">
@@ -740,69 +803,6 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerDeathScreenEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="PreparePlayerDeathAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerRunningIconEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerChargingIconEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAttackReducer.h">
-      <Filter>Header Files\Reducers</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAttackingAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAtttackIdleAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAttackStateComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerAttackingState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="EnergyOrbIdleState.h">
-      <Filter>Header Files\States\Orb</Filter>
-    </ClInclude>
-    <ClInclude Include="EnergyOrbHomingState.h">
-      <Filter>Header Files\States\Orb</Filter>
-    </ClInclude>
-    <ClInclude Include="EnergyOrbReducer.h">
-      <Filter>Header Files\Reducers</Filter>
-    </ClInclude>
-    <ClInclude Include="EnergyOrbStateComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="OrbDetectPlayerAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthReducer.h">
-      <Filter>Header Files\Reducers</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthIdleAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthReplenishingAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthStateComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerHealthDeathAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="MovingPlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entity.tpp">
@@ -819,6 +819,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="ChargingSprite.png">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
     <Image Include="Credits.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
@@ -876,11 +879,17 @@
     <Image Include="Player_Slide.png">
       <Filter>Resource Files\Player</Filter>
     </Image>
+    <Image Include="PlayerDeathScreen.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
     <Image Include="Quit.png">
       <Filter>Resource Files\Button</Filter>
     </Image>
     <Image Include="Resume.png">
       <Filter>Resource Files\Button</Filter>
+    </Image>
+    <Image Include="RunningSprite.png">
+      <Filter>Resource Files\Icons</Filter>
     </Image>
     <Image Include="Skeleton_Attack.png">
       <Filter>Resource Files\Enemy</Filter>
@@ -914,15 +923,6 @@
     </Image>
     <Image Include="TemporaryAugmentation.png">
       <Filter>Resource Files\Background</Filter>
-    </Image>
-    <Image Include="PlayerDeathScreen.png">
-      <Filter>Resource Files\Background</Filter>
-    </Image>
-    <Image Include="ChargingSprite.png">
-      <Filter>Resource Files\Icons</Filter>
-    </Image>
-    <Image Include="RunningSprite.png">
-      <Filter>Resource Files\Icons</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
