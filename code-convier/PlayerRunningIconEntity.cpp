@@ -20,6 +20,13 @@ namespace Entity {
 		textureComponent.zIndex = 3;
 		manager->addComponent<Component::Texture>(playerRunningIconEntityId, textureComponent);
 
+		//add animation component
+		Component::Animatable animatableComponent = Component::Animatable();
+		animatableComponent.columns = 2;
+		animatableComponent.currentFrame = 1;
+		animatableComponent.rows = 1;
+		manager->addComponent<Component::Animatable>(playerRunningIconEntityId, animatableComponent);
+
 		return playerRunningIconEntityId;
 	}
 }

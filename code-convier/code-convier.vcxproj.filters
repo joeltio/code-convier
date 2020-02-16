@@ -372,12 +372,6 @@
     <ClCompile Include="PlayerRunningIconEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerRunIconEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerChargedIconEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -746,16 +740,10 @@
     <ClInclude Include="PreparePlayerDeathAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerChargedIconEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerRunningIconEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="PlayerChargingIconEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerRunIconEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>
@@ -873,16 +861,10 @@
     <Image Include="PlayerDeathScreen.png">
       <Filter>Resource Files\Background</Filter>
     </Image>
-    <Image Include="PlayerRunIcon.png">
+    <Image Include="ChargingSprite.png">
       <Filter>Resource Files\Icons</Filter>
     </Image>
-    <Image Include="PlayerChargedIcon.png">
-      <Filter>Resource Files\Icons</Filter>
-    </Image>
-    <Image Include="PlayerRunningIcon.png">
-      <Filter>Resource Files\Icons</Filter>
-    </Image>
-    <Image Include="PlayerChargingIcon.png">
+    <Image Include="RunningSprite.png">
       <Filter>Resource Files\Icons</Filter>
     </Image>
   </ItemGroup>
