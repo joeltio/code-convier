@@ -8,7 +8,7 @@
 #include <string>
 
 namespace Component {
-	struct GameLevel : public Component::State {
+	struct GameLevel : public ECS::Component {
 		bool isOnSamePlatform(float x1, float y1, float x2, float y2);
 	};
 }
