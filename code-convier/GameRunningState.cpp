@@ -23,6 +23,15 @@ FSM::Action GameRunningState::update(float frameTime, Component::State state) {
 		Component::Transform playerPosition = this->manager->getEntityComponent<Component::Transform>(playerId);
 		xCenter += playerPosition.x;
 		yCenter += playerPosition.y;
+		if (playerPosition.x < 0)
+		{
+			playerPosition.x = 0;
+		}
+		else if (playerPosition.x > levelWidth * tileWidth)
+		{
+			gameState.destinationState = TO_AUGMENTATION;
+			return DestroyGameLevelAction();
+		}
 	}
 
 	xCenter /= players->size();

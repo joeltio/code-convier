@@ -155,6 +155,9 @@ const float ENEMY_ATTACK_DAMAGE = 6.0f;
 const float ENEMY_ATTACK_COOLDOWN = 1.5f;
 const int ENEMY_COUNT = 20;
 
+const int TO_MAIN_MENU = 0;
+const int TO_AUGMENTATION = 1;
+
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used
 // it would be possible to save and restore key mappings from a data file.

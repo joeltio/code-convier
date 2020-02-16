@@ -782,9 +782,6 @@
     <ClInclude Include="EnergyOrbReducer.h">
       <Filter>Header Files\Reducers</Filter>
     </ClInclude>
-    <ClInclude Include="EnergyOrbStateComponent.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
     <ClInclude Include="OrbDetectPlayerAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>

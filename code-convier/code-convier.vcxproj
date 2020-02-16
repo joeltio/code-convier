@@ -205,7 +205,6 @@
     <ClInclude Include="EnergyOrbEntity.h" />
     <ClInclude Include="EnergyOrbHomingState.h" />
     <ClInclude Include="EnergyOrbIdleState.h" />
-    <ClInclude Include="EnergyOrbStateComponent.h" />
     <ClInclude Include="EnergyOrbReducer.h" />
     <ClInclude Include="FiniteStateSystem.h" />
     <ClCompile Include="game.cpp" />

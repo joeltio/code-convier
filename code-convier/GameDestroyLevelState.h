@@ -9,6 +9,8 @@
 #include "PlayerChargingIconEntity.h"
 #include "HealthbarEntity.h"
 #include "GameStateComponent.h"
+#include "PrepareMenuAction.h"
+#include "PrepareTemporaryAugmentationAction.h"
 
 class GameDestroyLevelState : public FSM::State {
 	FSM::Action update(float frameTime, Component::State state);
