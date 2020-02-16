@@ -12,6 +12,7 @@
 #include "collisionConstants.h"
 #include "CollisionStrategy.h"
 
+#include "PlayerEntity.h"
 #include "CollidableComponent.h"
 #include "StaticCollidableComponent.h"
 #include "LineOfSightComponent.h"

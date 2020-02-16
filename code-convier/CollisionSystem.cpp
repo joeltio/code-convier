@@ -50,8 +50,10 @@ namespace System {
 		std::unordered_map<Types::TypeId, ECS::RETRIEVER_PAIR>& retrieverMap,
 		std::function<float(Types::TypeId, ECS::Component*)> extentRetriever
 	) {
-		// Keep track of the new pairs to be inserted and removed
+		// Keep track of the new triples to be inserted and removed
 		std::forward_list<std::tuple<Types::TypeId, size_t, float>> toBeInserted;
+		// Keep track of the triples to be reordered
+		std::forward_list<std::tuple<Types::TypeId, size_t, float>> toBeMoved;
 
 		// Determine the size of the components vectors
 		std::unordered_map<Types::TypeId, size_t> compSize;
@@ -68,7 +70,7 @@ namespace System {
 			auto& extentTriple = this->sortedExtents->at(i);
 			Types::TypeId type = std::get<0>(extentTriple);
 			size_t componentIndex = std::get<1>(extentTriple);
-			float storedExtent = std::get<2>(extentTriple);
+			float& storedExtent = std::get<2>(extentTriple);
 
 			// Update max component index
 			size_t& maxSize = compSize.at(type);
@@ -92,10 +94,10 @@ namespace System {
 			float currentExtent = extentRetriever(type, componentPtr);
 			if (currentExtent != storedExtent)
 			{
-				this->sortedExtents->erase(this->sortedExtents->begin() + i);
-				i--;
 				storedExtent = currentExtent;
 				toBeInserted.push_front(extentTriple);
+				this->sortedExtents->erase(this->sortedExtents->begin() + i);
+				i--;
 			}
 
 			i++;
@@ -222,11 +224,6 @@ namespace System {
 			float maxExtent = component->getMaxExtent(this->pruneAxis);
 
 			bool isStatic = Types::isSameType(type, Types::toTypeId<Component::StaticCollidable>());
-
-			if (std::get<2>(extentTriple) < 551)
-			{
-				int x =3;
-			}
 
 			// Iterate through subsequent elements
 			for (size_t j = i+1; j < this->sortedExtents->size(); j++)

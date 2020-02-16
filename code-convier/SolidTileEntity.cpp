@@ -12,7 +12,7 @@ namespace Entity {
 
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
-		
+
 		switch (type)
 		{
 		case('.'):
@@ -176,7 +176,7 @@ namespace Entity {
 				Component::Transform& entityPos = manager->getEntityComponent<Component::Transform>(id);
 				Component::Collidable& entityCol = manager->getEntityComponent<Component::Collidable>(id);
 				Component::Physics& entityPhy = manager->getEntityComponent<Component::Physics>(id);
-				Component::StaticCollidable tileCol = manager->getEntityComponent<Component::StaticCollidable>(entityId);
+				Component::StaticCollidable& tileCol = manager->getEntityComponent<Component::StaticCollidable>(entityId);
 
 				float entityWidth = entityCol.corners[1][0] - entityCol.corners[0][0];
 				float entityHeight = entityCol.corners[2][1] - entityCol.corners[0][1];
@@ -214,7 +214,7 @@ namespace Entity {
 					{(float)entityPos.x + entityWidth, (float)entityPos.y + entityHeight},
 					{(float)entityPos.x, (float)entityPos.y + entityHeight}
 				};
-				
+
 				entityCol.corners = corners;
 			}
 		};
