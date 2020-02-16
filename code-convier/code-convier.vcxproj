@@ -157,6 +157,7 @@
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
     <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
+    <ClCompile Include="EnemyMovementReducer.cpp" />
     <ClCompile Include="GameDestroyLevelState.cpp" />
     <ClCompile Include="GameLevelComponent.cpp" />
     <ClCompile Include="PlayerAttackIdleState.cpp" />
@@ -190,6 +191,8 @@
     <ClInclude Include="EnemyAIComponent.h" />
     <ClInclude Include="EnemyAISystem.h" />
     <ClInclude Include="EnemyAttackAction.h" />
+    <ClInclude Include="EnemyMovementReducer.h" />
+    <ClInclude Include="EnemyMovementStateComponent.h" />
     <ClInclude Include="GameDestroyLevelState.h" />
     <ClInclude Include="PlayerAttackingAction.h" />
     <ClInclude Include="PlayerAttackReducer.h" />
@@ -237,7 +240,6 @@
     <ClCompile Include="PlayerHealthReducer.cpp" />
     <ClCompile Include="PlayerHealthReplenishingState.cpp" />
     <ClCompile Include="PlayerMovementChargingState.cpp" />
-    <ClCompile Include="PlayerMovementIdleState.cpp" />
     <ClCompile Include="PlayerMovementReducer.cpp" />
     <ClCompile Include="PlayerMovementMovingState.cpp" />
     <ClCompile Include="PlayerRunningIconEntity.cpp" />
@@ -260,7 +262,6 @@
     <ClInclude Include="GameAugmentationState.h" />
     <ClInclude Include="GameLevelComponent.h" />
     <ClInclude Include="HurtBoxComponent.h" />
-    <ClInclude Include="IdlePlayerMovementAction.h" />
     <ClInclude Include="LineLineCollisionStrategy.h" />
     <ClInclude Include="PlayerChargingIconEntity.h" />
     <ClInclude Include="PlayerDeathScreenEntity.h" />
@@ -332,7 +333,6 @@
     <ClInclude Include="PhysicsSystem.h" />
     <ClInclude Include="PlayerEntity.h" />
     <ClInclude Include="PlayerMovementChargingState.h" />
-    <ClInclude Include="PlayerMovementIdleState.h" />
     <ClInclude Include="PlayerMovementMovingState.h" />
     <ClInclude Include="PlayerMovementReducer.h" />
     <ClInclude Include="PlayerMovementStateComponent.h" />

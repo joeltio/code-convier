@@ -39,6 +39,17 @@ FSM::Action EnemyMovementChaseState::update(float frameTime, Component::State st
 		velocitySign *= -1;
 	}
 
+	// Get the attack component and check if the player is in range
+	Component::Attack& attackComp =
+		this->manager->getEntityComponent<Component::Attack>(state.entityId);
+	float distance = losComponent.getSqDistance();
+	if (distance <= attackComp.range)
+	{
+		// Get the current enemy's type
+		ECS::Entity* ownerEntity = this->manager->getEntity(state.entityId);
+		return EnemyAttackAction(ownerEntity->getTypeId());
+	}
+
 	physicsComponent.velocity.x = ENEMY_SPEED * velocitySign;
 
 	return FSM::NoAction();

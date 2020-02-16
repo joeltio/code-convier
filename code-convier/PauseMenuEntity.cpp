@@ -16,12 +16,20 @@ namespace Entity {
 		manager->addComponent<Component::Texture>(pauseMenuId, textureComponent);
 
 		Component::Transform transformComponent = Component::Transform();
-		//transformComponent.scale = GAME_HEIGHT / (float)textureComponent.totalHeight;
-		//transformComponent.x = -(textureComponent.totalWidth * transformComponent.scale - GAME_WIDTH) / 2.0f;
 		transformComponent.x = 0;
 		transformComponent.y = 0;
 
 		manager->addComponent<Component::Transform>(pauseMenuId, transformComponent);
+
+		Component::GameState gameStateComponent = Component::GameState{
+		pauseMenuId,
+		true, // isActive
+		Types::toTypeId<GamePauseState>()
+		};
+		gameStateComponent.renderRect.top = 0;
+		gameStateComponent.renderRect.left = 0;
+		manager->addComponent<Component::GameState>(pauseMenuId, gameStateComponent);
+
 
 		return pauseMenuId;
 	}
