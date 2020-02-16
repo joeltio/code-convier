@@ -6,8 +6,9 @@ FSM::Action PlayerAttackIdleState::update(float frametime, Component::State stat
 		// check if player attack cooldown is already up
 		ECS::EntityIdType playerEntityId = stateComponent.entityId;
 		Component::Attack attackComponent = manager->getEntityComponent<Component::Attack>(playerEntityId);
+		attackComponent.cooldownTimer -= frametime;
 
-		if (attackComponent.cooldownTimer -= frametime < 0)
+		if (attackComponent.cooldownTimer <= 0)
 		{	
 			// valid to attack
 			Component::Texture& textureComponent = manager->getEntityComponent<Component::Texture>(playerEntityId);
@@ -25,7 +26,7 @@ FSM::Action PlayerAttackIdleState::update(float frametime, Component::State stat
 			animatableComponent.currentFrame = 1;
 			animatableComponent.frameDelay = 1000;
 			Component::Transform& transformComponent = manager->getEntityComponent<Component::Transform>(playerEntityId);
-			transformComponent.scale = 0.35;
+			transformComponent.scale = 0.22 * SCALE_FACTOR;
 			return PlayerAttacking();
 		}
 	}
