@@ -6,7 +6,7 @@ namespace Entity {
 
 		// add the physics component
 		Component::Physics physicsComponent = Component::Physics();
-		physicsComponent.acceleration.y = 9.81f;
+		physicsComponent.acceleration.y = GRAVITY_ACCELERATION;
 		manager->addComponent<Component::Physics>(entityId, physicsComponent);
 
 		// add the transform component
