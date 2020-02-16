@@ -29,6 +29,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		transformComponent.flipHorizontal = true;
 		physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR;
 	}
+
 	if (input->isKeyDown('D')) // right
 	{
 		transformComponent.flipHorizontal = false;

@@ -17,6 +17,8 @@
 #include "PlayerMovementMovingState.h"
 #include "PlayerAttackStateComponent.h"
 #include "PlayerAttackIdleState.h"
+#include "PlayerHealthStateComponent.h"
+#include "PlayerHealthIdleState.h"
 
 namespace Entity {
 

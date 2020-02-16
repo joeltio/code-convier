@@ -76,12 +76,19 @@ namespace Entity {
 		manager->addComponent<Component::PlayerMovementState>(entityId, movementStateComponent);
 
 		// add the attack state component
-		Component::PlayerAttackState attackStateComponent = Component::PlayerAttackState{
+		Component::PlayerAttackState attackStateComponent = Component::PlayerAttackState {
 			entityId,
 			true,
 			Types::toTypeId<PlayerAttackIdleState>()
 		};
 		manager->addComponent<Component::PlayerAttackState>(entityId, attackStateComponent);
+
+		// add the health state component
+		Component::PlayerHealthState healthStateComponent = Component::PlayerHealthState{
+			entityId,
+			true,
+			Types::toTypeId<PlayerHealthIdleState>()
+		};
 
 		return entityId;
 	}
