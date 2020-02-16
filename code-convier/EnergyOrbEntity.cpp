@@ -64,7 +64,7 @@ namespace Entity {
 				Component::Health& entityHP = manager->getEntityComponent<Component::Health>(id);
 				Component::HealthRecover orbEnergy = manager->getEntityComponent<Component::HealthRecover>(entityId);
 
-				entityHP.health += orbEnergy.health;
+				entityHP.storedHealth += orbEnergy.health;
 
 				manager->removeEntity<EnergyOrb>(entityId);
 			}

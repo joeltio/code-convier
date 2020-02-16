@@ -77,4 +77,12 @@ void GameReducer::reduce(
 
 		FSM::Reducer::changeState<GamePlayerDeathState>(states, gameState);
 	}
+	else if (action.type == DESTROY_GAME_LEVEL_ACTION) 
+	{
+		// Change the state of the game entity
+		ECS::EntityIdType gameEntityId = *manager->getEntities<Entity::Game>()->begin();
+		Component::GameState& gameState = manager->getEntityComponent<Component::GameState>(gameEntityId);
+
+		FSM::Reducer::changeState<GameDestroyLevelState>(states, gameState);
+	}
 }

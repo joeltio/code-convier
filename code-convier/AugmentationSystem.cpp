@@ -22,11 +22,11 @@ namespace System {
 			Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(id);
 
 			// set as base values to ensure its not compounded
-			healthComponent.health = healthComponent.health + augmentationComponent.energyHealAugmentation * AUGMENTATED_HEAL;
-			attackComponent.damage = attackComponent.damage + augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
-			attackComponent.cooldown = attackComponent.cooldown - augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
-			chargeComponent.damage = chargeComponent.damage + augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
-			chargeComponent.cooldown = chargeComponent.cooldown - augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
+			healthComponent.health = PLAYER_HEALTH + augmentationComponent.energyHealAugmentation * AUGMENTATED_HEAL;
+			attackComponent.damage = PLAYER_DAMAGE + augmentationComponent.damageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
+			attackComponent.cooldown = PLAYER_ATTACK_COOLDOWN - augmentationComponent.meleeCooldownAugmentation * AUGMENTATED_COOLDOWN_REDUCTION;
+			chargeComponent.damage = PLAYER_CHARGE_DAMAGE + augmentationComponent.chargeDamageAugmentation * AUGMENTATED_DAMAGE_MULTIPLIER;
+			chargeComponent.cooldown = PLAYER_CHARGE_COOLDOWN - augmentationComponent.chargeCooldownAugemntation * AUGMENTATED_COOLDOWN_REDUCTION;
 			if (augmentationComponent.multiHitAugmentation)
 			{
 				attackComponent.multiHits = true;
