@@ -7,7 +7,8 @@
 #include "HealthComponent.h"
 #include "PlayerEntity.h"
 
-#include "PreparePlayerDeathAction.h"
+#include "PlayerHealthDeathAction.h"
+#include "PlayerHealthReplenishingAction.h"
 
 class PlayerHealthIdleState : public FSM::State {
 	FSM::Action update(float frametime, Component::State stateComponent);

@@ -390,6 +390,9 @@
     <ClCompile Include="EnergyOrbReducer.cpp">
       <Filter>Source Files\Reducers</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerHealthReducer.cpp">
+      <Filter>Source Files\Reducers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -412,12 +415,6 @@
     </ClInclude>
     <ClInclude Include="AttackComponent.h">
       <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackIdleState.h">
-      <Filter>Header Files\States\Attack</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackingState.h">
-      <Filter>Header Files\States\Attack</Filter>
     </ClInclude>
     <ClInclude Include="AugmentationComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -743,9 +740,6 @@
     <ClInclude Include="vectorUtil.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="WalkingPlayerMovementAction.h">
-      <Filter>Header Files\Actions</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerDeathScreenEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -789,6 +783,24 @@
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="OrbDetectPlayerAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReducer.h">
+      <Filter>Header Files\Reducers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthIdleAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthReplenishingAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthDeathAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingPlayerMovementAction.h">
       <Filter>Header Files\Actions</Filter>
     </ClInclude>
   </ItemGroup>

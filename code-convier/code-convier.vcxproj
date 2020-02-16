@@ -191,6 +191,11 @@
     <ClInclude Include="PlayerAttackReducer.h" />
     <ClInclude Include="PlayerAttackStateComponent.h" />
     <ClInclude Include="PlayerAtttackIdleAction.h" />
+    <ClInclude Include="PlayerHealthDeathAction.h" />
+    <ClInclude Include="PlayerHealthIdleAction.h" />
+    <ClInclude Include="PlayerHealthReducer.h" />
+    <ClInclude Include="PlayerHealthReplenishingAction.h" />
+    <ClInclude Include="PlayerHealthStateComponent.h" />
     <ClInclude Include="SkeletonAttackState.h" />
     <ClInclude Include="EnemyMovementChaseState.h" />
     <ClInclude Include="EnemyMovementIdleState.h" />
@@ -226,6 +231,7 @@
     <ClCompile Include="PlayerDeathState.cpp" />
     <ClCompile Include="PlayerEntity.cpp" />
     <ClCompile Include="PlayerHealthIdleState.cpp" />
+    <ClCompile Include="PlayerHealthReducer.cpp" />
     <ClCompile Include="PlayerHealthReplenishingState.cpp" />
     <ClCompile Include="PlayerMovementChargingState.cpp" />
     <ClCompile Include="PlayerMovementIdleState.cpp" />
@@ -260,7 +266,7 @@
     <ClInclude Include="OrbDetectPlayerAction.h" />
     <ClInclude Include="PrepareTemporaryAugmentationAction.h" />
     <ClInclude Include="TemporaryAugmentationEntity.h" />
-    <ClInclude Include="WalkingPlayerMovementAction.h" />
+    <ClInclude Include="MovingPlayerMovementAction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h" />

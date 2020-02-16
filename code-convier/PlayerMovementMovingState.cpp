@@ -47,6 +47,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		transformComponent.flipHorizontal = true;
 		physicsComponent.velocity.x = -PLAYER_SPEED * SCALE_FACTOR;
 	}
+
 	if (input->isKeyDown('D')) // right
 	{
 		transformComponent.flipHorizontal = false;
@@ -54,7 +55,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	}
 
 	// mutually exclusive with charging, and walking 
-	if (input->isKeyDown(LSHIFT_KEY))
+	if (input->isKeyDown(VK_SHIFT))
 	{
 		Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		// check for direction
@@ -86,7 +87,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 	{
 		Component::Charge& chargeComponent = manager->getEntityComponent<Component::Charge>(stateComponent.entityId);
 		// ignore if the charge is still on cooldown
-		if (chargeComponent.cooldownTimer - frametime < 0)
+		if (chargeComponent.cooldownTimer - frametime <= 0)
 		{
 			transformComponent.flipHorizontal = false;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
@@ -107,7 +108,5 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 			return ChargingPlayerMovement();
 		}
 	}
-
-	return FSM::NoAction();
 }
  

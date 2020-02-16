@@ -4,7 +4,8 @@ FSM::Action PlayerMovementChargingState::update(float frametime, Component::Stat
 {
 	// get the charge component
 	Component::Charge chargeComponent = manager->getComponents<Component::Charge>()->at(0);
-	if ((chargeComponent.chargeTime - frametime) > 0)
+	chargeComponent.chargeTime -= frametime;
+	if (chargeComponent.chargeTime >= 0)
 	{
 		Component::Health healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 		healthComponent.health -= CHARGE_HEALTH_TICK;
@@ -12,6 +13,6 @@ FSM::Action PlayerMovementChargingState::update(float frametime, Component::Stat
 	}
 	else
 	{
-		return WalkingPlayerMovement();
+		return MovingPlayerMovement();
 	}
 }

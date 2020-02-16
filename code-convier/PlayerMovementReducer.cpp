@@ -18,7 +18,7 @@ void PlayerMovementReducer::reduce(
 	FSM::Action action
 )
 {
-	if (action.type == WALKING_PLAYER_MOVEMENT)
+	if (action.type == MOVING_PLAYER_MOVEMENT)
 	{
 		// Change the state of the player entity
 		ECS::EntityIdType playerEntityId = *manager->getEntities<Entity::Player>()->begin();
