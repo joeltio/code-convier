@@ -18,7 +18,7 @@ namespace Entity {
 
 		// add the texture component
 		Component::Texture textureComponent = Component::Texture();
-		textureComponent.zIndex = 3;
+		textureComponent.zIndex = 2;
 		if (!textureComponent.loadTexture(graphics, SKELETON_IDLE_IMAGE))
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading enemy entity texture"));

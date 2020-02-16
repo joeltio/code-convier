@@ -17,7 +17,7 @@ namespace Entity {
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading Player Charging Icon entity texture"));
 		}
 		textureComponent.visible = true;
-		textureComponent.zIndex = 3;
+		textureComponent.zIndex = 2;
 		manager->addComponent<Component::Texture>(playerChargingIconEntityId, textureComponent);
 
 		//add animation component

@@ -5,7 +5,7 @@ void GameCreateLevelState::enter(Component::State state) {
 
 	std::string decoTiles = DECORATIVE_TILES;
 	std::string solidTiles = SOLID_TILES;
-
+	srand(time(0));
 	//Create rng map
 	std::vector<int> maplist;
 	for (size_t i = 0; i < mapFragment; i++)
@@ -71,6 +71,8 @@ void GameCreateLevelState::enter(Component::State state) {
 	}
 	//Store game level in temp map file
 	std::ofstream tempMap("./map/temp.txt", std::ofstream::out | std::ofstream::trunc);
+	tempMap.close();
+	tempMap.open("./map/temp.txt", std::ofstream::out);
 	for (size_t i = 0; i < gamemap.size(); i++)
 	{
 		if (i % (mapFragment + 2) == 0)
@@ -134,7 +136,7 @@ void GameCreateLevelState::enter(Component::State state) {
 		int randomX = rand() % levelWidth;
 		int randomY = rand() % levelHeight;
 
-		if (randomY >= levelHeight - 2 || randomX <= 12)
+		if (randomY >= levelHeight - 2 || randomX <= 12 || randomX >= levelWidth - 12)
 		{
 			continue;
 		}
