@@ -18,6 +18,7 @@
 #include "GamePauseState.h"
 #include "GamePlayerDeathState.h"
 #include "GameRunningState.h"
+#include "GameDestroyLevelState.h"
 
 #include "ClickingState.h"
 #include "NotClickedState.h"
@@ -74,7 +75,8 @@ const std::unordered_map<Types::TypeId, FSM::State*> TYPE_STATE_MAP({
 	{Types::toTypeId<PlayerAttackingState>(), new PlayerAttackingState()},
 	{Types::toTypeId<PlayerHealthIdleState>(), new PlayerHealthIdleState()},
 	{Types::toTypeId<PlayerHealthReplenishingState>(), new PlayerHealthReplenishingState()},
-	{Types::toTypeId<PlayerDeathState>(), new PlayerDeathState()}
+	{Types::toTypeId<PlayerDeathState>(), new PlayerDeathState()},
+	{Types::toTypeId<GameDestroyLevelState>(), new GameDestroyLevelState()}
 });
 
 

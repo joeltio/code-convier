@@ -10,7 +10,7 @@ namespace System {
 		for (Component::Animatable& animatableComponent : *componentsPtr)
 		{
 			// Ignore completed animations
-			if (animatableComponent.isComplete)
+			if (animatableComponent.isComplete || animatableComponent.isActive == false)
 			{
 				continue;
 			}
