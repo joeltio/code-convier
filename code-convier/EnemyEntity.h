@@ -14,6 +14,7 @@
 #include "AttackComponent.h"
 #include "AugmentationComponent.h"
 #include "AnimatableComponent.h"
+#include "EnemyAIComponent.h"
 
 namespace Entity {
 

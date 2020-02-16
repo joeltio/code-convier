@@ -4,7 +4,7 @@ namespace System {
 
 	void Augmentation::update(float frameTime)
 	{
-		// get the id of the player entity
+		// get the id of the player entity, and check if it has been created
 		std::unordered_set<ECS::EntityIdType>* playerPtrs = manager->getEntities<Entity::Player>();
 		if (playerPtrs->empty())
 		{
@@ -13,6 +13,7 @@ namespace System {
 
 		std::vector<Component::Augmentation>* augmentationPtrs = manager->getComponents<Component::Augmentation>();
 		Component::Augmentation& augmentationComponent = augmentationPtrs->at(0);
+
 		for (ECS::EntityIdType id : *playerPtrs)
 		{
 			// get all components that are affected by the augmentations
@@ -34,8 +35,6 @@ namespace System {
 
 			physicsComponent.velocity.x = physicsComponent.velocity.x * augmentationComponent.speedAugmentation * AUGMENTATED_SPEED_MULTIPLIER;
 		}
-
-		// applied on the last step of changing the player's values
 	}
 
 }

@@ -153,6 +153,9 @@ const float ENEMY_SPEED = 100.0f;
 const int ENEMY_HEALTH = 40;
 const float ENEMY_ATTACK_DAMAGE = 6.0f;
 const float ENEMY_ATTACK_COOLDOWN = 1.5f;
+const float ENEMY_ATTACK_RANGE = 20.0f;
+const float ENEMY_MIN_RANGE = 20.0f;
+const float ENEMY_CHASE_RANGE = 400.0f;
 const int ENEMY_COUNT = 20;
 
 const int TO_MAIN_MENU = 0;
