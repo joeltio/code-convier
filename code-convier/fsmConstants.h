@@ -10,6 +10,7 @@
 #include "PlayerAttackStateComponent.h"
 #include "PlayerHealthStateComponent.h"
 #include "EnergyOrbStateComponent.h"
+#include "EnemyMovementStateComponent.h"
 
 // States
 #include "GameCreateLevelState.h"
@@ -36,12 +37,17 @@
 #include "PlayerHealthReplenishingState.h"
 #include "PlayerDeathState.h"
 
+#include "EnemyMovementIdleState.h"
+#include "EnemyMovementChaseState.h"
+#include "SkeletonAttackState.h"
+
 // Reducers
 #include "GameReducer.h"
 #include "PlayerMovementReducer.h"
 #include "PlayerAttackReducer.h"
 #include "PlayerHealthReducer.h"
 #include "EnergyOrbReducer.h"
+#include "EnemyMovementReducer.h"
 
 // List of all the components which store states for FSMs
 const Types::TypeId STATE_COMPONENT_TYPES[] = {
@@ -51,7 +57,8 @@ const Types::TypeId STATE_COMPONENT_TYPES[] = {
 	Types::toTypeId<Component::EnergyOrbState>(),
 	Types::toTypeId<Component::PlayerMovementState>(),
 	Types::toTypeId<Component::PlayerAttackState>(),
-	Types::toTypeId<Component::PlayerHealthState>()
+	Types::toTypeId<Component::PlayerHealthState>(),
+	Types::toTypeId<Component::EnemyMovementState>()
 };
 
 // Maps all state types to their static object instance
@@ -73,7 +80,10 @@ const std::unordered_map<Types::TypeId, FSM::State*> TYPE_STATE_MAP({
 	{Types::toTypeId<PlayerHealthIdleState>(), new PlayerHealthIdleState()},
 	{Types::toTypeId<PlayerHealthReplenishingState>(), new PlayerHealthReplenishingState()},
 	{Types::toTypeId<PlayerDeathState>(), new PlayerDeathState()},
-	{Types::toTypeId<GameDestroyLevelState>(), new GameDestroyLevelState()}
+	{Types::toTypeId<GameDestroyLevelState>(), new GameDestroyLevelState()},
+	{Types::toTypeId<EnemyMovementIdleState>(), new EnemyMovementIdleState()},
+	{Types::toTypeId<EnemyMovementChaseState>(), new EnemyMovementChaseState()},
+	{Types::toTypeId<SkeletonAttackState>(), new SkeletonAttackState()}
 });
 
 
@@ -84,5 +94,6 @@ static FSM::Reducer* ENABLED_REDUCERS[] = {
 	new PlayerAttackReducer(),
 	new PlayerMovementReducer(),
 	new PlayerHealthReducer(),
-	new EnergyOrbReducer()
+	new EnergyOrbReducer(),
+	new EnemyMovementReducer()
 };
