@@ -6,6 +6,9 @@
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 
+#include "GameStateComponent.h"
+#include "GamePlayerDeathState.h"
+
 namespace Entity {
 
 	class PlayerDeathScreen : public ECS::Entity {

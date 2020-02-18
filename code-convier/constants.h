@@ -122,19 +122,19 @@ const int tileHeight = 64;
 const int tileWidth = 64;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
-const float GRAVITY_ACCELERATION = 9.81f;
+const float GRAVITY_ACCELERATION = 9.81f * 10;
 
 const int BUTTON_MARGIN = 30;
 const int CARD_SIDE_MARGIN = 65;
 const int CARD_MARGIN = 87;
 
-const float PLAYER_SPEED = 100.0f;
+const float PLAYER_SPEED = 200.0f;
 const float PLAYER_CHARGE_SPEED = 200.0f;
 const int PLAYER_CHARGE_DAMAGE = 20;
 const float PLAYER_CHARGE_COOLDOWN = 15.0f;
 const float PLAYER_CHARGE_TIMER = 2.0f;
 const float RUN_MULTIPLIER = 1.5f;
-const float JUMP_SPEED = -30.0f;
+const float JUMP_SPEED = -200.0f;
 const int PLAYER_DAMAGE = 10;
 const float PLAYER_ATTACK_COOLDOWN = 4.0f;
 const float PLAYER_ATTACK_RANGE = 20.0f;
@@ -153,9 +153,9 @@ const float ENEMY_SPEED = 100.0f;
 const int ENEMY_HEALTH = 40;
 const float ENEMY_ATTACK_DAMAGE = 6.0f;
 const float ENEMY_ATTACK_COOLDOWN = 1.5f;
-const float ENEMY_ATTACK_RANGE = 20.0f;
-const float ENEMY_MIN_RANGE = 20.0f;
-const float ENEMY_CHASE_RANGE = 400.0f;
+const float ENEMY_ATTACK_RANGE = 500.0f;
+const float ENEMY_MIN_RANGE = 100.0f;
+const float ENEMY_CHASE_RANGE = 1000.0f;
 const int ENEMY_COUNT = 20;
 
 const int TO_MAIN_MENU = 0;

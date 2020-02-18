@@ -21,6 +21,17 @@ namespace Entity {
 
 		manager->addComponent<Component::Transform>(playerDeathScreenId, transformComponent);
 
+
+		Component::GameState gameStateComponent = Component::GameState{
+		playerDeathScreenId,
+		true, // isActive
+		Types::toTypeId<GamePlayerDeathState>()
+		};
+		gameStateComponent.renderRect.top = 0;
+		gameStateComponent.renderRect.left = 0;
+		manager->addComponent<Component::GameState>(playerDeathScreenId, gameStateComponent);
+
+
 		return playerDeathScreenId;
 	}
 }
