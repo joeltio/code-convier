@@ -23,7 +23,7 @@ void Physics::update(float frameTime) {
 		D3DXVECTOR2 offset = physicsComponent.velocity * frameTime;
 		if (offset.x == 0 && offset.y == 0)
 		{
-			return;
+			continue;
 		}
 
 		transformComponent.x += offset.x;
