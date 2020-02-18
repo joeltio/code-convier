@@ -6,7 +6,7 @@ FSM::Action EnemyMovementChaseState::update(float frameTime, Component::State st
 		this->manager->getEntityComponent<Component::LineOfSight>(state.entityId);
 
 	// Check if there are any obstacles between the enemy and the player
-	if (losComponent.collidingWith.empty())
+	if (!losComponent.collidingWith.empty())
 	{
 		return FSM::NoAction();
 	}
@@ -45,6 +45,11 @@ FSM::Action EnemyMovementChaseState::update(float frameTime, Component::State st
 	{
 		// Player is on the left of enemy
 		velocitySign *= -1;
+		enemyTrans.flipHorizontal = true;
+	}
+	else
+	{
+		enemyTrans.flipHorizontal = false;
 	}
 
 	// Get the attack component and check if the player is in range
@@ -55,7 +60,7 @@ FSM::Action EnemyMovementChaseState::update(float frameTime, Component::State st
 	{
 		// Get the current enemy's type
 		ECS::Entity* ownerEntity = this->manager->getEntity(state.entityId);
-		return EnemyAttackAction(ownerEntity->getTypeId());
+		return EnemyAttackAction();
 	}
 
 	physicsComponent.velocity.x = ENEMY_SPEED * velocitySign;

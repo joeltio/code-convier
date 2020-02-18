@@ -28,8 +28,8 @@ void EnemyMovementReducer::reduce(
 	else if (action.type == ENEMY_ATTACK_ACTION)
 	{
 		// Determine the type of enemy
-		EnemyAttackAction* attackAction = (EnemyAttackAction*) &action;
-		if (Types::isSameType(attackAction->enemyType, Types::toTypeId<Entity::Enemy>()))
+		ECS::Entity* enemyEntity = manager->getEntity(action.dispatcherEntityId);
+		if (enemyEntity->isSameType<Entity::Enemy>())
 		{
 			FSM::Reducer::changeState<SkeletonAttackState>(states, movementStateComp);
 		}
