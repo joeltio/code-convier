@@ -71,6 +71,10 @@ namespace Entity {
 		enemyAIComponent.chaseRange = ENEMY_CHASE_RANGE;
 		manager->addComponent<Component::EnemyAI>(enemyEntityId, enemyAIComponent);
 
+		// add physics component
+		Component::Physics physicsComponent = Component::Physics();
+		manager->addComponent<Component::Physics>(enemyEntityId, physicsComponent);
+
 		return enemyEntityId;
 	}
 }

@@ -15,6 +15,7 @@
 #include "AugmentationComponent.h"
 #include "AnimatableComponent.h"
 #include "EnemyAIComponent.h"
+#include "PhysicsComponent.h"
 
 #include "EnemyMovementStateComponent.h"
 
