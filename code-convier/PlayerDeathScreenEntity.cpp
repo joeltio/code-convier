@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType PlayerDeathScreen::create(ECS::Manager* manager, Graphics* graphics) {
+	ECS::EntityIdType PlayerDeathScreen::create(ECS::Manager* manager, Graphics* graphics, float x, float y) {
 
 		ECS::EntityIdType playerDeathScreenId = manager->createEntity<PlayerDeathScreen>();
 
@@ -16,8 +16,8 @@ namespace Entity {
 		manager->addComponent<Component::Texture>(playerDeathScreenId, textureComponent);
 
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.x = 0;
-		transformComponent.y = 0;
+		transformComponent.x = x;
+		transformComponent.y = y;
 
 		manager->addComponent<Component::Transform>(playerDeathScreenId, transformComponent);
 

@@ -8,7 +8,7 @@ FSM::Action PlayerAttackingState::update(float frameTime, Component::State state
 	Component::Texture& textureComponent = manager->getEntityComponent<Component::Texture>(playerId);
 	Component::Animatable& animatableComponent = manager->getEntityComponent<Component::Animatable>(playerId);
 	Component::Attack& attackComponent = manager->getEntityComponent<Component::Attack>(playerId);
-	int attackDirectionSign = (transformComponent.flipHorizontal) ? 1 : -1;
+	int attackDirectionSign = (transformComponent.flipHorizontal) ? -1 : 1;
 
 	// Create the hitboxes, taking into account the direction
 	Component::HurtBox hitBoxComponent = Component::HurtBox();

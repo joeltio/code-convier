@@ -12,7 +12,7 @@
 #include "JumpingComponent.h"
 #include "AnimatableComponent.h"
 #include "CollidableComponent.h"
-#include "AttackComponent.h"
+#include "AttackComponent.h"  
 #include "PlayerMovementStateComponent.h"
 #include "PlayerMovementMovingState.h"
 #include "PlayerAttackStateComponent.h"

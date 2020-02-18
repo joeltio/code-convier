@@ -89,7 +89,7 @@ FSM::Action PlayerMovementMovingState::update(float frametime, Component::State 
 		// ignore if the charge is still on cooldown
 		if (chargeComponent.cooldownTimer <= 0)
 		{
-			int attackDirectionSign = (transformComponent.flipHorizontal) ? 1 : -1;
+			int attackDirectionSign = (transformComponent.flipHorizontal) ? -1 : 1;
 			Component::Health& healthComponent = manager->getEntityComponent<Component::Health>(stateComponent.entityId);
 
 			physicsComponent.velocity.x = PLAYER_CHARGE_SPEED * attackDirectionSign * SCALE_FACTOR;
