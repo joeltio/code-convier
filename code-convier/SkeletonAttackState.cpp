@@ -6,7 +6,7 @@ void SkeletonAttackState::enter(Component::State state) {
 		this->manager->getEntityComponent<Component::Attack>(state.entityId);
 
 	// Set the initial cooldown delay
-	attackComponent.initialDelayTimer = attackComponent.initialDelayTimer;
+	attackComponent.initialDelayTimer = attackComponent.initialDelay;
 	attackComponent.cooldownTimer = attackComponent.cooldown;
 }
 
